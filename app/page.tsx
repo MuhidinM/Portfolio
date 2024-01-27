@@ -3,6 +3,7 @@ import AchievementsSection from "@/components/achievement-section";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
+import ProjectsSection from "@/components/project-section";
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
         <HeroSection />
         <AchievementsSection />
         <AboutSection />
+        <ProjectsSection />
       </div>
-      <Footer/>
+      <Footer />
     </main>
   );
 }
