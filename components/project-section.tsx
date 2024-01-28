@@ -44,11 +44,6 @@ const ProjectsSection = () => {
           name="API"
           isSelected={tag === "Api"}
         />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Others"
-          isSelected={tag === "Others"}
-        />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
