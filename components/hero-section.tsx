@@ -4,14 +4,8 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const handleDownload = () => {
-  const pdfUrl = "/MuhidinMisbah.pdf"; // Path to the PDF file in the public directory
-  const link = document.createElement("a");
-  link.href = pdfUrl;
-  link.download = "MuhidinMisbah.pdf";
-  link.click();
-};
+import { handleDownload } from "@/lib/download";
+import { heroMd, heroMobile } from "@/constants";
 
 const HeroSection = () => {
   return (
@@ -43,20 +37,15 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] block md:hidden text-base sm:text-lg mb-6 lg:text-xl">
-            Passionate software engineer with a year of professional experience
-            and four years of personal projects. Specializing in web and API
-            development.
+            {heroMobile}
           </p>
           <p className="text-[#ADB7BE] hidden md:block text-base sm:text-lg mb-6 lg:text-xl">
-            Passionate software engineer with a year of professional experience
-            and four years of personal projects. Currently working at Cooperate
-            Bank of Oromia as Software Developer, specializing in web and API
-            development. Eager to contribute expertise.
+            {heroMd}
           </p>
           <div>
             <Link
               href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-3xl mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
               Hire Me
             </Link>

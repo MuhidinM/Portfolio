@@ -20,6 +20,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { sendEmail } from "@/actions/email";
+import { contactMe } from "@/constants";
 
 const EmailSection = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -56,17 +57,12 @@ const EmailSection = () => {
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
-        </p>
+        <p className="text-[#ADB7BE] mb-4 max-w-md">{contactMe}</p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link href="https://github.com/MuhidinM">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="http://www.linkedin.com/in/MuhidinM">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
@@ -136,7 +132,11 @@ const EmailSection = () => {
               {error}
               {success}
             </div>
-            <Button type="submit" disabled={isPending} className="w-full">
+            <Button
+              type="submit"
+              disabled={isPending}
+              className="w-full bg-sky-500 hover:bg-blue-500"
+            >
               Send Message
             </Button>
           </form>

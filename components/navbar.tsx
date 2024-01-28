@@ -1,24 +1,9 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import NavLink from "./nav-link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./menu-overlay";
-
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
-];
+import { navLinks } from "@/constants";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -30,7 +15,9 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
         >
-          {"<Muhidin />"}
+          {"<"}
+          <span className="text-primary-500">Muhidin</span>
+          {" />"}
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

@@ -81,8 +81,8 @@ const config = {
     },
     colors: {
       ...colors,
-      primary: colors.purple,
-      secondary: colors.pink,
+      primary: colors.sky,
+      secondary: colors.blue,
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
+import { achievementsList } from "@/constants";
 
 const AnimatedNumbers = dynamic(
   () => {
@@ -8,27 +9,6 @@ const AnimatedNumbers = dynamic(
   },
   { ssr: false }
 );
-
-const achievementsList = [
-  {
-    metric: "Projects",
-    value: "100",
-    postfix: "+",
-  },
-  {
-    prefix: "~",
-    metric: "Users",
-    value: "100,000",
-  },
-  {
-    metric: "Awards",
-    value: "7",
-  },
-  {
-    metric: "Years",
-    value: "5",
-  },
-];
 
 const AchievementsSection = () => {
   return (
@@ -67,3 +47,4 @@ const AchievementsSection = () => {
 };
 
 export default AchievementsSection;
+  
