@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface TabData {
   title: string;
   id: string;
@@ -68,13 +70,42 @@ export const TAB_DATA: TabData[] = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>DevOps, Cloud, and Agile Foundations by IBM</li>
+        <li>
+          <Link
+            target="_blank"
+            href={
+              "https://www.coursera.org/account/accomplishments/specialization/4GZZDYM5YEAW"
+            }
+          >
+            DevOps, Cloud, and Agile Foundations Specialization from IBM
+          </Link>
+        </li>
       </ul>
     ),
   },
 ];
 
 export const projectsData = [
+  {
+    id: 1,
+    title: "Souq",
+    description:
+      "Coop product facilitating users with payment processing, buy-now-pay-later options, and revenue-based financing.",
+    image: "/images/projects/4.png",
+    tag: ["All", "Web", "API"],
+    gitUrl: "/",
+    previewUrl: "https://souqpass.coopbankoromiasc.com/",
+  },
+  {
+    id: 1,
+    title: "Advanced Authentication Project",
+    description:
+      "An online platform empowering users toinitiate crowdfunding campaigns.",
+    image: "/images/projects/5.png",
+    tag: ["All", "Web", "API"],
+    gitUrl: "/",
+    previewUrl: "https://debo.coopbankoromiasc.com//",
+  },
   {
     id: 1,
     title: "Advanced Authentication Project",

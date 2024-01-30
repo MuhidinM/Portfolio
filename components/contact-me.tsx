@@ -43,6 +43,7 @@ const EmailSection = () => {
       sendEmail(values).then((data) => {
         setError(data?.error);
         setSuccess(data?.success);
+        form.reset();
       });
     });
   };
@@ -59,10 +60,10 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">{contactMe}</p>
         <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/MuhidinM">
+          <Link target="_blank" href="https://github.com/MuhidinM">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="http://www.linkedin.com/in/MuhidinM">
+          <Link target="_blank" href="http://www.linkedin.com/in/MuhidinM">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
