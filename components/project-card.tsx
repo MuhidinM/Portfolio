@@ -1,6 +1,7 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { Badge } from "./ui/badge";
 
 interface ProjectCardProps {
   imgUrl: string;
@@ -8,6 +9,7 @@ interface ProjectCardProps {
   description: string;
   gitUrl: string;
   previewUrl: string;
+  app: string[];
 }
 
 const ProjectCard = ({
@@ -16,6 +18,7 @@ const ProjectCard = ({
   description,
   gitUrl,
   previewUrl,
+  app,
 }: ProjectCardProps) => {
   return (
     <div>
@@ -43,7 +46,17 @@ const ProjectCard = ({
       <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
         <p className="text-[#ADB7BE]">{description}</p>
-        
+        <div className="rounded-lg p-2 space-x-2">
+          {app.map((item, index) => (
+            <Badge
+              key={index}
+              variant="default"
+              className="bg-sky-500 hover:bg-blue-500"
+            >
+              {item}
+            </Badge>
+          ))}
+        </div>
       </div>
     </div>
   );

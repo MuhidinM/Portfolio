@@ -95,16 +95,18 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "https://souqpass.coopbankoromiasc.com/",
+    app: ["React", "Redux", "Tailwind"],
   },
   {
     id: 1,
-    title: "Advanced Authentication Project",
+    title: "Deboo",
     description:
-      "An online platform empowering users toinitiate crowdfunding campaigns.",
+      "An online platform empowering users to initiate crowdfunding campaigns.",
     image: "/images/projects/5.png",
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "https://debo.coopbankoromiasc.com//",
+    app: ["React", "Redux", "MaterialUI"],
   },
   {
     id: 1,
@@ -115,6 +117,7 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "https://github.com/MuhidinM/completeAuth",
     previewUrl: "https://complete-auth-weld.vercel.app/",
+    app: ["Next.js", "Auth.js", "Tailwind", "TypeScript", "Shadcn-UI"],
   },
   {
     id: 1,
@@ -125,6 +128,7 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "https://github.com/MuhidinM/carShowcase",
     previewUrl: "https://muhidinm.github.io/carShowcase/",
+    app: ["Next.js", "Tailwind", "TypeScript"],
   },
   {
     id: 1,
@@ -135,5 +139,6 @@ export const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/MuhidinM/Portfolio",
     previewUrl: "https://muhidinm.vercel.app/",
+    app: ["Next.js", "Tailwind", "TypeScript", "Shadcn-UI", "Framer Motion"],
   },
 ];
