@@ -112,7 +112,7 @@ export const projectsData = [
     id: 1,
     title: "Advanced Authentication Project",
     description:
-      "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role. It was developed using Next.js, Auth.js, TypeScript, Tailwind, Shadcn-UI, Zod, and other technologies.",
+      "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
     image: "/images/projects/1.png",
     tag: ["All", "Web", "API"],
     gitUrl: "https://github.com/MuhidinM/completeAuth",
@@ -122,8 +122,7 @@ export const projectsData = [
   {
     id: 1,
     title: "Car Showcase",
-    description:
-      "A showcase project featuring a collection of car APIs, developed using Next.js, TypeScript, and Tailwind.",
+    description: "A showcase project featuring a collection of car APIs",
     image: "/images/projects/2.png",
     tag: ["All", "Web", "API"],
     gitUrl: "https://github.com/MuhidinM/carShowcase",
@@ -132,9 +131,8 @@ export const projectsData = [
   },
   {
     id: 1,
-    title: "Next.js Portfolio Website",
-    description:
-      "Portfolio Website done with next.js, typescript, tailwind, shadcn-ui, zod and framer-motion",
+    title: "Portfolio Website",
+    description: "Portfolio Website ",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/MuhidinM/Portfolio",

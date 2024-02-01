@@ -21,7 +21,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { sendEmail } from "@/actions/email";
 import { contactMe } from "@/constants";
-import { PhoneIcon } from "@heroicons/react/24/solid";
+import { ContactCard } from "./contact-card";
 
 const EmailSection = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -60,18 +60,19 @@ const EmailSection = () => {
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">{contactMe}</p>
-        <div className="md:w-3/4">
-          <div className="flex items-center justify-start space-x-6 lg:space-x-12 text-white border border-gray-700 rounded-lg p-4 bg-transparent">
-            <div className="bg-sky-200 p-4 rounded-full">
-              <PhoneIcon width={"24"} className="text-sky-500" />
-            </div>
-            <div className="flex flex-col items-start justify-center">
-              <h3>Contact on phone</h3>
-              <p className="font-light">+251921435868</p>
-              <p className="font-light">+251921435868</p>
-            </div>
-            <div className="hidden md:block"></div>
-          </div>
+        <div className="md:w-3/4 my-4 space-y-4 ">
+          <ContactCard
+            icon="phone"
+            title="Phone"
+            first="+251921435868"
+            second="+251921435868"
+          />
+          <ContactCard
+            icon="phone"
+            title="Phone"
+            first="misbahmuhidin@ gmail.com"
+            second="muhidin.misbah@ coopbankoromiasc.com"
+          />
         </div>
         <div className="socials flex flex-row gap-2">
           <Link target="_blank" href="https://github.com/MuhidinM">
