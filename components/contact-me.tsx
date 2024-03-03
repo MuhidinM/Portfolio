@@ -66,12 +66,21 @@ const EmailSection = () => {
             title="Phone"
             first="+251921435868"
             second="+251921435868"
+            customClass=""
+          />
+          <ContactCard
+            icon="phone"
+            title="Phone"
+            first="misbahmuhidin@gmail.com"
+            second="muhidin.misbah@coopbankoromiasc.com"
+            customClass="hidden md:block"
           />
           <ContactCard
             icon="phone"
             title="Phone"
             first="misbahmuhidin@ gmail.com"
             second="muhidin.misbah@ coopbankoromiasc.com"
+            customClass="block md:hidden"
           />
         </div>
         <div className="socials flex flex-row gap-2">

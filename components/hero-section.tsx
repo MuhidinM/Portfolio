@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { handleDownload } from "@/lib/download";
-import { heroMd, heroMobile } from "@/constants";
+import { heroMobile } from "@/constants";
 
 const HeroSection = () => {
   return (
@@ -36,12 +36,12 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] block md:hidden text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             {heroMobile}
           </p>
-          <p className="text-[#ADB7BE] hidden md:block text-base sm:text-lg mb-6 lg:text-xl">
+          {/* <p className="text-[#ADB7BE] hidden md:block text-base sm:text-lg mb-6 lg:text-xl">
             {heroMd}
-          </p>
+          </p> */}
           <div>
             <Link
               href="/#contact"

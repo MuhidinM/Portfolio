@@ -6,6 +6,7 @@ interface ContactCardProps {
   title: string;
   first: string;
   second: string;
+  customClass: string;
 }
 
 export const ContactCard = ({
@@ -13,9 +14,12 @@ export const ContactCard = ({
   title,
   first,
   second,
+  customClass,
 }: ContactCardProps) => {
   return (
-    <div className="flex items-center justify-start space-x-6 lg:space-x-12 text-white border border-gray-700 rounded-lg p-4 bg-gray-200 bg-opacity-10">
+    <div
+      className={`flex items-center justify-start space-x-6 lg:space-x-12 text-white border border-gray-700 rounded-lg p-4 bg-gray-200 bg-opacity-10 ${customClass}`}
+    >
       <div className="bg-sky-200 p-4 rounded-full">
         {icon === "phone" ? (
           <PhoneIcon width={"24"} className="text-sky-500" />
