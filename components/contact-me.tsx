@@ -73,6 +73,13 @@ const EmailSection = () => {
             title="Phone"
             first="misbahmuhidin@gmail.com"
             second="muhidin.misbah@coopbankoromiasc.com"
+            customClass=""
+          />
+          {/* <ContactCard
+            icon="phone"
+            title="Phone"
+            first="misbahmuhidin@gmail.com"
+            second="muhidin.misbah@coopbankoromiasc.com"
             customClass="hidden md:block"
           />
           <ContactCard
@@ -81,7 +88,7 @@ const EmailSection = () => {
             first="misbahmuhidin@ gmail.com"
             second="muhidin.misbah@ coopbankoromiasc.com"
             customClass="block md:hidden"
-          />
+          /> */}
         </div>
         <div className="socials flex flex-row gap-2">
           <Link target="_blank" href="https://github.com/MuhidinM">
