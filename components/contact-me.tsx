@@ -65,7 +65,7 @@ const EmailSection = () => {
             icon="phone"
             title="Phone"
             first="+251921435868"
-            second="+251921435868"
+            second="+251799450102"
             customClass=""
           />
           <ContactCard
