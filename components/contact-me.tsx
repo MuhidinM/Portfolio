@@ -60,7 +60,7 @@ const EmailSection = () => {
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">{contactMe}</p>
-        <div className="md:w-3/4 my-4 space-y-4 ">
+        <div className="hidden md:block md:w-3/4 my-4 space-y-4 ">
           <ContactCard
             icon="phone"
             title="Phone"
@@ -69,26 +69,28 @@ const EmailSection = () => {
             customClass=""
           />
           <ContactCard
-            icon="phone"
-            title="Phone"
+            icon="EnvelopeIcon"
+            title="Email"
             first="misbahmuhidin@gmail.com"
             second="muhidin.misbah@coopbankoromiasc.com"
             customClass=""
           />
-          {/* <ContactCard
-            icon="phone"
-            title="Phone"
-            first="misbahmuhidin@gmail.com"
-            second="muhidin.misbah@coopbankoromiasc.com"
-            customClass="hidden md:block"
-          />
+        </div>
+        <div className="md:hidden md:w-3/4 my-4 space-y-4">
           <ContactCard
             icon="phone"
             title="Phone"
-            first="misbahmuhidin@ gmail.com"
+            first="+251921435868"
+            second="+251799450102"
+            customClass=""
+          />
+          <ContactCard
+            icon="EnvelopeIcon"
+            title="Email"
+            first="misbahmuhidin@gmail.com"
             second="muhidin.misbah@ coopbankoromiasc.com"
-            customClass="block md:hidden"
-          /> */}
+            customClass=""
+          />
         </div>
         <div className="socials flex flex-row gap-2">
           <Link target="_blank" href="https://github.com/MuhidinM">
