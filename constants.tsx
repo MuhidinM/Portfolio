@@ -99,6 +99,17 @@ export const projectsData = [
   },
   {
     id: 2,
+    title: "Dxvalley",
+    description:
+      "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
+    image: "/images/projects/dxvalley.png",
+    tag: ["All", "Web", "API"],
+    gitUrl: "/",
+    previewUrl: "https://dxvalley.com/",
+    app: ["Next.js", "Tailwind", "Framer Motion"],
+  },
+  {
+    id: 3,
     title: "Souq",
     description:
       "Coop product facilitating users with payment processing, buy-now-pay-later options, and revenue-based financing.",
@@ -109,7 +120,7 @@ export const projectsData = [
     app: ["React", "Redux", "Tailwind"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Deboo",
     description:
       "An online platform empowering users to initiate crowdfunding campaigns.",
@@ -120,22 +131,22 @@ export const projectsData = [
     app: ["React", "Redux", "MaterialUI"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Advanced Authentication Project",
     description:
       "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
     image: "/images/projects/auth.png",
-    tag: ["All", "Web", "API"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/MuhidinM/completeAuth",
     previewUrl: "https://complete-auth-weld.vercel.app/",
     app: ["Next.js", "Auth.js", "Tailwind", "TypeScript"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Car Showcase",
     description: "A showcase project featuring a collection of car APIs",
     image: "/images/projects/car.png",
-    tag: ["All", "Web", "API"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/MuhidinM/carShowcase",
     previewUrl: "https://muhidinm.github.io/carShowcase/",
     app: ["Next.js", "Tailwind", "TypeScript"],
