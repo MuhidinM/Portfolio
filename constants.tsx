@@ -88,14 +88,13 @@ export const TAB_DATA: TabData[] = [
 export const projectsData = [
   {
     id: 1,
-    title: "Fetawa",
-    description:
-      "A collaborative online platform I contributed to, where users can pose questions and connect with knowledgeable teachers for insightful answers.",
-    image: "/images/projects/fetawa.png",
+    title: "Michu Mizan",
+    description: "An alternative financing platform for interest free banking.",
+    image: "/images/projects/michumizan.png",
     tag: ["All", "Web", "API"],
     gitUrl: "/",
-    previewUrl: "https://fatwa.vercel.app/",
-    app: ["Next.js", "Firebase", "Tailwind", "Framer Motion"],
+    previewUrl: "https://michumizan.com/",
+    app: ["Next.js", "Tailwind", "Framer Motion"],
   },
   {
     id: 2,
@@ -120,15 +119,26 @@ export const projectsData = [
     app: ["React", "Redux", "Tailwind"],
   },
   {
-    id: 4,
-    title: "Deboo",
+    id: 5,
+    title: "Omicron",
     description:
-      "An online platform empowering users to initiate crowdfunding campaigns.",
-    image: "/images/projects/debo.png",
+      "A landing site for Omicron, Ethiopia's only supplier of Chint products.",
+    image: "/images/projects/omicron.png",
     tag: ["All", "Web", "API"],
     gitUrl: "/",
-    previewUrl: "https://debo.coopbankoromiasc.com//",
-    app: ["React", "Redux", "MaterialUI"],
+    previewUrl: "/",
+    app: ["Next.js", "Tailwind", "Framer Motion", "Laravel"],
+  },
+  {
+    id: 6,
+    title: "Fetawa",
+    description:
+      "A collaborative online platform I contributed to, where users can pose questions and connect with knowledgeable teachers for insightful answers.",
+    image: "/images/projects/fetawa.png",
+    tag: ["All", "Web", "API"],
+    gitUrl: "/",
+    previewUrl: "https://fatwa.vercel.app/",
+    app: ["Next.js", "Firebase", "Tailwind", "Framer Motion"],
   },
   {
     id: 5,
