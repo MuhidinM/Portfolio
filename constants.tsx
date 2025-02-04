@@ -94,7 +94,7 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "https://michumizan.com/",
-    app: ["Next.js", "Tailwind", "Framer Motion"],
+    app: ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
   },
   {
     id: 2,
@@ -105,7 +105,7 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "https://dxvalley.com/",
-    app: ["Next.js", "Tailwind", "Framer Motion"],
+    app: ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
   },
   {
     id: 3,
@@ -116,10 +116,11 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "https://souqpass.coopbankoromiasc.com/",
-    app: ["React", "Redux", "Tailwind"],
+    app: ["React", "Redux", "Tailwind", "JavaScript"],
   },
   {
     id: 5,
+
     title: "Omicron",
     description:
       "A landing site for Omicron, Ethiopia's only supplier of Chint products.",
@@ -127,7 +128,7 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "/",
-    app: ["Next.js", "Tailwind", "Framer Motion", "Laravel"],
+    app: ["Next.js", "Tailwind", "Framer Motion", "Laravel", "TypeScript"],
   },
   {
     id: 6,
@@ -138,7 +139,7 @@ export const projectsData = [
     tag: ["All", "Web", "API"],
     gitUrl: "/",
     previewUrl: "https://fatwa.vercel.app/",
-    app: ["Next.js", "Firebase", "Tailwind", "Framer Motion"],
+    app: ["Next.js", "Firebase", "Tailwind", "Framer Motion", "TypeScript"],
   },
   {
     id: 5,

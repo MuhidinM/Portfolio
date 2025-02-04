@@ -50,7 +50,7 @@ const ProjectCard = ({
       <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
         <p className="text-[#ADB7BE]">{description}</p>
-        <div className="rounded-lg p-2 space-x-2">
+        <div className="rounded-lg p-2 flex flex-wrap gap-2">
           {app.map((item, index) => (
             <Badge
               key={index}
