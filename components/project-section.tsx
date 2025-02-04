@@ -7,16 +7,22 @@ import { projectsData } from "@/constants";
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
+  const [visibleProjects, setVisibleProjects] = useState(6);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   const handleTagChange = (newTag: string) => {
     setTag(newTag);
+    setVisibleProjects(6); // Reset to show first 6 when tag changes
   };
 
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
+
+  const handleLoadMore = () => {
+    setVisibleProjects((prev) => prev + 6);
+  };
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -46,7 +52,7 @@ const ProjectsSection = () => {
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
+        {filteredProjects.slice(0, visibleProjects).map((project, index) => (
           <motion.li
             key={index}
             variants={cardVariants}
@@ -66,6 +72,16 @@ const ProjectsSection = () => {
           </motion.li>
         ))}
       </ul>
+      {visibleProjects < filteredProjects.length && (
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={handleLoadMore}
+            className="px-6 py-3 rounded-xl bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-gradient-to-br hover:from-blue-600 hover:to-secondary-700 text-white font-semibold transition-all duration-300"
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </section>
   );
 };
