@@ -44,10 +44,10 @@ const AchievementsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-8 px-4 sm:py-12 xl:px-16"
+      className="py-8 sm:py-12"
       aria-label="Achievements"
     >
-      <div className="rounded-lg border border-stone-800/90 bg-zinc-900/40 py-10 px-8 sm:px-16 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-4">
+      <div className="rounded-lg border border-stone-800/90 bg-zinc-900/40 py-10 px-6 sm:px-10 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6 items-start justify-items-center">
         {achievementsList.map((achievement, index) => {
           const n = parseInt(achievement.value, 10);
           return (

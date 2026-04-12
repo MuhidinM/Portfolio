@@ -172,21 +172,32 @@ const EmailSection = () => {
             customClass=""
           />
         </div>
-        <div className="socials socials-block flex flex-row gap-3 pt-2">
-          <Link
-            target="_blank"
-            href="https://github.com/MuhidinM"
-            className="opacity-80 hover:opacity-100 transition-opacity"
-          >
-            <Image src={GithubIcon} alt="GitHub" width={36} height={36} />
-          </Link>
-          <Link
-            target="_blank"
-            href="http://www.linkedin.com/in/MuhidinM"
-            className="opacity-80 hover:opacity-100 transition-opacity"
-          >
-            <Image src={LinkedinIcon} alt="LinkedIn" width={36} height={36} />
-          </Link>
+        <div className="socials socials-block flex flex-col gap-3 pt-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-stone-500">
+            Profiles
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+            <Link
+              target="_blank"
+              href="https://github.com/MuhidinM"
+              className="contact-block group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
+            >
+              <Image src={GithubIcon} alt="" width={32} height={32} />
+              <span className="border-b border-transparent text-sm group-hover:border-stone-500">
+                github.com/MuhidinM
+              </span>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/MuhidinM"
+              className="contact-block group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
+            >
+              <Image src={LinkedinIcon} alt="" width={32} height={32} />
+              <span className="border-b border-transparent text-sm group-hover:border-stone-500">
+                linkedin.com/in/MuhidinM
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
       <div ref={formColRef} className="relative z-10">

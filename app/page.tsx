@@ -22,7 +22,9 @@ export default function Home() {
           <AboutSection />
         </div>
         <AchievementsSection />
-        <ScrollMarqueeBand />
+      </div>
+      <ScrollMarqueeBand />
+      <div className="relative z-10 container mx-auto px-4 md:px-12 py-4">
         <div id="projects">
           <ProjectsSection />
         </div>

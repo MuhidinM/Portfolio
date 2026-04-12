@@ -108,7 +108,7 @@ const AboutSection = () => {
       className="text-stone-100 [perspective:1000px]"
       id="about"
     >
-      <div className="md:grid md:grid-cols-2 gap-8 py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="md:grid md:grid-cols-2 gap-8 py-8 sm:py-12 md:py-16 xl:gap-16">
         <div
           ref={imageWrapRef}
           className="relative overflow-hidden rounded-xl border border-stone-800/90 bg-zinc-900/40"
@@ -134,7 +134,7 @@ const AboutSection = () => {
           </h2>
           <p
             ref={copyRef}
-            className="text-base lg:text-lg text-stone-400 leading-relaxed max-w-prose"
+            className="text-base lg:text-lg text-stone-400 leading-relaxed"
           >
             {aboutMe}
           </p>

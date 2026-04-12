@@ -107,7 +107,7 @@ const HeroSection = () => {
   useLayoutEffect(() => {
     if (reduced || !hireRef.current || !cvRef.current) return;
     registerGsap();
-    const strength = 0.38;
+    const strength = 0.22;
 
     const magnetic = (el: HTMLElement) => {
       const xTo = gsap.quickTo(el, "x", { duration: 0.6, ease: "power3.out" });
@@ -144,10 +144,10 @@ const HeroSection = () => {
   return (
     <section
       ref={rootRef}
-      className="relative lg:py-16 overflow-hidden [perspective:1200px]"
+      className="relative lg:py-16 overflow-x-hidden overflow-y-visible [perspective:1200px]"
     >
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+        <div className="col-span-8 min-w-0 place-self-center text-center sm:text-left justify-self-start overflow-visible">
           <h1 className="text-stone-100 mb-4 text-4xl sm:text-5xl lg:text-7xl xl:text-8xl lg:leading-[1.08] font-semibold tracking-tight">
             <span className="hero-word-line block [transform-style:preserve-3d]">
               <span className="hero-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-stone-200 to-stone-500">
@@ -169,7 +169,7 @@ const HeroSection = () => {
           </p>
           <div
             ref={ctaRef}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-start"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-start -mx-1 px-1 sm:mx-0 sm:px-0"
           >
             <Link
               href="/#contact"
@@ -199,14 +199,14 @@ const HeroSection = () => {
         <div className="col-span-4 place-self-center mt-10 lg:mt-0">
           <div
             ref={avatarWrapRef}
-            className="rounded-full bg-zinc-900/80 border border-stone-800 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative mx-auto"
+            className="relative mx-auto h-[250px] w-[250px] overflow-hidden rounded-full border border-stone-800 bg-zinc-900/80 lg:h-[400px] lg:w-[400px]"
           >
             <Image
               src="/images/hero-image.png"
               alt="Muhidin Misbah"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full object-cover"
-              width={300}
-              height={300}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 250px, 400px"
               priority
             />
           </div>

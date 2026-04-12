@@ -78,15 +78,15 @@ const ProjectCard = ({
   }, [reduced]);
 
   return (
-    <div ref={magRef} className="rounded-xl will-change-transform">
+    <div ref={magRef} className="h-full rounded-xl will-change-transform">
       <div
         ref={rootRef}
-        className="group rounded-xl overflow-hidden border border-stone-800/90 bg-zinc-900/30 shadow-sm [perspective:1100px]"
+        className="group flex h-full min-h-[28rem] flex-col overflow-hidden rounded-xl border border-stone-800/90 bg-zinc-900/30 shadow-sm [perspective:1100px] sm:min-h-[30rem]"
         style={{ transformStyle: "preserve-3d" }}
       >
         <div
           ref={mediaRef}
-          className="h-52 md:h-72 rounded-t-xl relative overflow-hidden"
+          className="h-52 flex-shrink-0 rounded-t-xl md:h-72 relative overflow-hidden"
           style={{
             background: `url(${imgUrl}) center/cover no-repeat`,
             transformOrigin: "center center",
@@ -115,12 +115,14 @@ const ProjectCard = ({
             )}
           </div>
         </div>
-        <div className="text-stone-100 rounded-b-xl mt-0 bg-zinc-950/60 py-5 px-4 border-t border-stone-800/80">
-          <h5 className="text-lg font-semibold mb-2 tracking-tight">{title}</h5>
-          <p className="text-stone-500 text-sm leading-relaxed line-clamp-4">
+        <div className="flex flex-1 flex-col rounded-b-xl bg-zinc-950/60 px-4 py-5 border-t border-stone-800/80">
+          <h5 className="flex-shrink-0 text-lg font-semibold tracking-tight text-stone-100">
+            {title}
+          </h5>
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-500 line-clamp-4 min-h-[5rem]">
             {description}
           </p>
-          <div className="rounded-lg pt-3 flex flex-wrap gap-1.5">
+          <div className="mt-auto flex flex-wrap gap-1.5 pt-4">
             {app.map((item, index) => (
               <Badge
                 key={index}

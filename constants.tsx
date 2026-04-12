@@ -21,21 +21,6 @@ export interface AchievementItem {
   postfix: string;
 }
 
-export const achievementsList: AchievementItem[] = [
-  {
-    metric: "Projects",
-    value: "10",
-    prefix: "",
-    postfix: "+",
-  },
-  {
-    metric: "Years",
-    value: "4",
-    prefix: "",
-    postfix: "",
-  },
-];
-
 export const navLinks = [
   {
     title: "About",
@@ -51,18 +36,32 @@ export const navLinks = [
   },
 ];
 
+const SKILL_PILLS = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Tailwind CSS",
+  "REST & GraphQL",
+  "Git & CI/CD",
+];
+
 export const TAB_DATA: TabData[] = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>Node.js</li>
-      </ul>
+      <div className="flex flex-wrap gap-2">
+        {SKILL_PILLS.map((skill) => (
+          <span
+            key={skill}
+            className="rounded-full border border-stone-700/90 bg-stone-900/50 px-3 py-1.5 text-sm text-stone-300"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
     ),
   },
   {
@@ -362,5 +361,32 @@ export const projectsData = [
     gitUrl: "https://github.com/MuhidinM/carShowcase",
     previewUrl: "https://muhidinm.github.io/carShowcase/",
     app: ["Next.js", "Tailwind", "TypeScript"],
+  },
+];
+
+export const achievementsList: AchievementItem[] = [
+  {
+    metric: "Projects shipped",
+    value: String(projectsData.length),
+    prefix: "",
+    postfix: "+",
+  },
+  {
+    metric: "Years building",
+    value: "5",
+    prefix: "",
+    postfix: "",
+  },
+  {
+    metric: "Core technologies",
+    value: "12",
+    prefix: "",
+    postfix: "+",
+  },
+  {
+    metric: "Production domains",
+    value: "8",
+    prefix: "",
+    postfix: "+",
   },
 ];

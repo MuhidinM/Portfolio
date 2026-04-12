@@ -156,7 +156,11 @@ const ProjectsSection = () => {
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
       >
         {slice.map((project) => (
-          <li key={project.id} data-project-id={project.id} className="project-card-item">
+          <li
+            key={project.id}
+            data-project-id={project.id}
+            className="project-card-item flex h-full"
+          >
             <ProjectCard
               title={project.title}
               description={project.description}
