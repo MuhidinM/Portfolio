@@ -12,12 +12,11 @@ const ROLES = ["<Muhidin />", "Web Developer", "UI/UX Designer"];
 
 const HeroSection = () => {
   const rootRef = useRef<HTMLElement>(null);
-  const helloRef = useRef<HTMLSpanElement>(null);
   const roleRef = useRef<HTMLSpanElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  const hireRef = useRef<HTMLAnchorElement>(null);
-  const cvRef = useRef<HTMLAnchorElement>(null);
+  const hireRef = useRef<HTMLSpanElement>(null);
+  const cvRef = useRef<HTMLSpanElement>(null);
   const avatarWrapRef = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
 
@@ -26,21 +25,41 @@ const HeroSection = () => {
     registerGsap();
 
     const ctx = gsap.context(() => {
+      const q = gsap.utils.selector(rootRef);
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.from(helloRef.current, { opacity: 0, y: 28, duration: 0.65 }, 0)
-        .from(roleRef.current, { opacity: 0, y: 20, duration: 0.55 }, "-=0.35")
-        .from(subRef.current, { opacity: 0, y: 16, duration: 0.5 }, "-=0.3")
-        .from(ctaRef.current?.children || [], { opacity: 0, y: 12, duration: 0.45, stagger: 0.1 }, "-=0.25")
+      tl.from(
+        q(".hero-word"),
+        {
+          opacity: 0,
+          y: 40,
+          rotateX: -42,
+          stagger: 0.09,
+          duration: 0.62,
+          transformOrigin: "50% 100%",
+        },
+        0
+      )
+        .from(
+          roleRef.current,
+          { opacity: 0, y: 22, duration: 0.55 },
+          "-=0.28"
+        )
+        .from(subRef.current, { opacity: 0, y: 16, duration: 0.5 }, "-=0.32")
+        .from(
+          ctaRef.current?.children || [],
+          { opacity: 0, y: 12, duration: 0.45, stagger: 0.1 },
+          "-=0.28"
+        )
         .from(
           avatarWrapRef.current,
           { opacity: 0, scale: 0.94, duration: 0.7 },
-          "-=0.55"
+          "-=0.5"
         );
 
       const roleEl = roleRef.current;
       if (roleEl) {
         let idx = 0;
-        gsap.delayedCall(1.4, () => {
+        gsap.delayedCall(1.35, () => {
           gsap
             .timeline({ repeat: -1, repeatDelay: 0.4 })
             .to(roleEl, { opacity: 0, duration: 0.35, ease: "power2.in" })
@@ -70,7 +89,11 @@ const HeroSection = () => {
         scrub: 1.2,
         onUpdate: (self) => {
           const p = self.progress;
-          gsap.set([helloRef.current, subRef.current], {
+          gsap.set(q(".hero-word-line"), {
+            y: p * 12,
+            opacity: 1 - p * 0.22,
+          });
+          gsap.set(subRef.current, {
             y: p * 14,
             opacity: 1 - p * 0.25,
           });
@@ -84,7 +107,7 @@ const HeroSection = () => {
   useLayoutEffect(() => {
     if (reduced || !hireRef.current || !cvRef.current) return;
     registerGsap();
-    const strength = 0.35;
+    const strength = 0.38;
 
     const magnetic = (el: HTMLElement) => {
       const xTo = gsap.quickTo(el, "x", { duration: 0.6, ease: "power3.out" });
@@ -119,17 +142,21 @@ const HeroSection = () => {
   }, [reduced]);
 
   return (
-    <section ref={rootRef} className="lg:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+    <section
+      ref={rootRef}
+      className="relative lg:py-16 overflow-hidden [perspective:1200px]"
+    >
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
           <h1 className="text-stone-100 mb-4 text-4xl sm:text-5xl lg:text-7xl xl:text-8xl lg:leading-[1.08] font-semibold tracking-tight">
-            <span
-              ref={helloRef}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-stone-200 to-stone-500"
-            >
-              Hello, I&apos;m{" "}
+            <span className="hero-word-line block [transform-style:preserve-3d]">
+              <span className="hero-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-stone-200 to-stone-500">
+                Hello,
+              </span>{" "}
+              <span className="hero-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-stone-200 to-stone-500">
+                I&apos;m
+              </span>
             </span>
-            <br />
             <span ref={roleRef} className="block mt-1 text-stone-100">
               {ROLES[0]}
             </span>
@@ -140,7 +167,10 @@ const HeroSection = () => {
           >
             {heroMobile}
           </p>
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-start">
+          <div
+            ref={ctaRef}
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-start"
+          >
             <Link
               href="/#contact"
               className="inline-block w-full sm:w-fit rounded-full will-change-transform"

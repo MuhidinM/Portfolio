@@ -64,18 +64,40 @@ const EmailSection = () => {
     registerGsap();
     const ctx = gsap.context(() => {
       if (leftColRef.current) {
-        gsap.from(leftColRef.current.children, {
-          opacity: 0,
-          y: 16,
-          duration: 0.45,
-          stagger: 0.08,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: leftColRef.current,
-            start: "top 88%",
-            once: true,
-          },
-        });
+        const q = gsap.utils.selector(leftColRef);
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: leftColRef.current,
+              start: "top 88%",
+              once: true,
+            },
+          })
+          .from(q(".contact-kw"), {
+            opacity: 0,
+            y: 22,
+            rotateX: -32,
+            stagger: 0.12,
+            duration: 0.52,
+            ease: "power2.out",
+            transformOrigin: "50% 100%",
+          })
+          .from(
+            q(".contact-block"),
+            {
+              opacity: 0,
+              y: 12,
+              stagger: 0.07,
+              duration: 0.42,
+              ease: "power2.out",
+            },
+            "-=0.28"
+          )
+          .from(
+            q(".socials-block a"),
+            { opacity: 0, y: 8, stagger: 0.06, duration: 0.35 },
+            "-=0.22"
+          );
       }
       if (formColRef.current) {
         gsap.from(formColRef.current.querySelectorAll(".form-field"), {
@@ -119,19 +141,22 @@ const EmailSection = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-16 py-20 md:py-24 gap-10 md:gap-12 relative z-0 scroll-mt-24"
+      className="grid md:grid-cols-2 my-12 md:my-16 py-20 md:py-24 gap-10 md:gap-12 relative z-0 scroll-mt-24 [perspective:900px]"
     >
       <div
         ref={blobRef}
         className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/50 via-transparent to-transparent rounded-full h-72 w-72 z-0 blur-3xl absolute top-1/2 -left-24 -translate-y-1/2 pointer-events-none opacity-40"
         aria-hidden
       />
-      <div ref={leftColRef} className="z-10 space-y-1">
-        <h5 className="text-lg font-semibold text-stone-100 tracking-tight">
-          Let&apos;s connect
+      <div ref={leftColRef} className="z-10 space-y-1 relative">
+        <h5 className="text-lg font-semibold text-stone-100 tracking-tight flex flex-wrap gap-x-2 [transform-style:preserve-3d]">
+          <span className="contact-kw inline-block">Let&apos;s</span>
+          <span className="contact-kw inline-block">connect</span>
         </h5>
-        <p className="text-stone-500 mb-6 max-w-md leading-relaxed">{contactMe}</p>
-        <div className="md:w-4/5 my-4 space-y-3">
+        <p className="contact-block text-stone-500 mb-6 max-w-md leading-relaxed">
+          {contactMe}
+        </p>
+        <div className="contact-block md:w-4/5 my-4 space-y-3">
           <ContactCard
             icon="phone"
             title="Phone"
@@ -147,7 +172,7 @@ const EmailSection = () => {
             customClass=""
           />
         </div>
-        <div className="socials flex flex-row gap-3 pt-2">
+        <div className="socials socials-block flex flex-row gap-3 pt-2">
           <Link
             target="_blank"
             href="https://github.com/MuhidinM"
@@ -164,7 +189,7 @@ const EmailSection = () => {
           </Link>
         </div>
       </div>
-      <div ref={formColRef}>
+      <div ref={formColRef} className="relative z-10">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-4">

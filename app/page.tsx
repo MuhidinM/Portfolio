@@ -5,12 +5,16 @@ import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
 import ProjectsSection from "@/components/project-section";
+import { ScrollMarqueeBand } from "@/components/scroll-marquee-band";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <main
+      id="page-root"
+      className="relative flex min-h-screen flex-col overflow-x-hidden"
+    >
       <Navbar />
-      <div className="container mt-24 mx-auto px-4 md:px-12 py-4">
+      <div className="relative z-10 container mt-24 mx-auto px-4 md:px-12 py-4">
         <div id="home">
           <HeroSection />
         </div>
@@ -18,6 +22,7 @@ export default function Home() {
           <AboutSection />
         </div>
         <AchievementsSection />
+        <ScrollMarqueeBand />
         <div id="projects">
           <ProjectsSection />
         </div>
@@ -25,7 +30,9 @@ export default function Home() {
           <EmailSection />
         </div>
       </div>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </main>
   );
 }

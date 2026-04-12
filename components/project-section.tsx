@@ -10,6 +10,7 @@ import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const [visibleProjects, setVisibleProjects] = useState(6);
+  const sectionRef = useRef<HTMLElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const loadBtnRef = useRef<HTMLButtonElement>(null);
   const flipState = useRef<ReturnType<typeof Flip.getState> | null>(null);
@@ -20,6 +21,26 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
   const slice = filteredProjects.slice(0, visibleProjects);
+
+  useLayoutEffect(() => {
+    if (!sectionRef.current || reduced) return;
+    registerGsap();
+    const q = gsap.utils.selector(sectionRef);
+    gsap.from(q(".proj-head-word"), {
+      opacity: 0,
+      y: 32,
+      rotateX: -36,
+      stagger: 0.12,
+      duration: 0.62,
+      ease: "power3.out",
+      transformOrigin: "50% 100%",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 86%",
+        once: true,
+      },
+    });
+  }, [reduced]);
 
   const handleTagChange = (newTag: string) => {
     if (newTag === tag) return;
@@ -104,9 +125,14 @@ const ProjectsSection = () => {
   }, [slice.length, tag, reduced]);
 
   return (
-    <section id="projects" className="scroll-mt-24">
-      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-stone-100 mt-6 mb-6 md:mb-10 tracking-tight">
-        My Projects
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="scroll-mt-24 [perspective:960px]"
+    >
+      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-stone-100 mt-6 mb-6 md:mb-10 tracking-tight [transform-style:preserve-3d]">
+        <span className="proj-head-word inline-block">My</span>{" "}
+        <span className="proj-head-word inline-block">Projects</span>
       </h2>
       <div className="flex flex-row flex-wrap justify-center items-center gap-2 py-6">
         <ProjectTag

@@ -11,6 +11,7 @@ import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const logoRef = useRef<HTMLSpanElement>(null);
   const mobileListRef = useRef<HTMLUListElement>(null);
   const reduced = usePrefersReducedMotion();
 
@@ -36,6 +37,31 @@ const Navbar = () => {
       });
     }, navRef);
     return () => ctx.revert();
+  }, [reduced]);
+
+  useLayoutEffect(() => {
+    if (!logoRef.current || reduced) return;
+    registerGsap();
+    const el = logoRef.current;
+    const xTo = gsap.quickTo(el, "x", { duration: 0.55, ease: "power3.out" });
+    const yTo = gsap.quickTo(el, "y", { duration: 0.55, ease: "power3.out" });
+    const onMove = (e: PointerEvent) => {
+      const r = el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      xTo((e.clientX - cx) * 0.22);
+      yTo((e.clientY - cy) * 0.22);
+    };
+    const onLeave = () => {
+      xTo(0);
+      yTo(0);
+    };
+    el.addEventListener("pointermove", onMove);
+    el.addEventListener("pointerleave", onLeave);
+    return () => {
+      el.removeEventListener("pointermove", onMove);
+      el.removeEventListener("pointerleave", onLeave);
+    };
   }, [reduced]);
 
   useLayoutEffect(() => {
@@ -74,11 +100,13 @@ const Navbar = () => {
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-4xl text-stone-100 font-semibold tracking-tight"
+          className="text-2xl md:text-4xl text-stone-100 font-semibold tracking-tight inline-block will-change-transform"
         >
-          {"<"}
-          <span className="text-stone-400">Muhidin</span>
-          {" />"}
+          <span ref={logoRef} className="inline-block">
+            {"<"}
+            <span className="text-stone-400">Muhidin</span>
+            {" />"}
+          </span>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

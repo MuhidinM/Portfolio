@@ -58,6 +58,7 @@ const AboutSection = () => {
       }
 
       if (titleRef.current && copyRef.current) {
+        const q = gsap.utils.selector(sectionRef);
         ScrollTrigger.create({
           trigger: titleRef.current,
           start: "top 88%",
@@ -65,16 +66,19 @@ const AboutSection = () => {
           onEnter: () => {
             gsap
               .timeline()
-              .from(titleRef.current, {
+              .from(q(".about-word"), {
                 opacity: 0,
-                y: 20,
-                duration: 0.55,
+                y: 28,
+                rotateX: -38,
+                stagger: 0.11,
+                duration: 0.58,
                 ease: "power2.out",
+                transformOrigin: "50% 100%",
               })
               .from(
                 copyRef.current,
                 { opacity: 0, y: 16, duration: 0.55, ease: "power2.out" },
-                "-=0.25"
+                "-=0.22"
               );
           },
         });
@@ -99,7 +103,11 @@ const AboutSection = () => {
   }, [tab, reduced]);
 
   return (
-    <section ref={sectionRef} className="text-stone-100" id="about">
+    <section
+      ref={sectionRef}
+      className="text-stone-100 [perspective:1000px]"
+      id="about"
+    >
       <div className="md:grid md:grid-cols-2 gap-8 py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <div
           ref={imageWrapRef}
@@ -119,9 +127,10 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2
             ref={titleRef}
-            className="text-3xl sm:text-4xl font-semibold text-stone-100 mb-4 tracking-tight"
+            className="text-3xl sm:text-4xl font-semibold text-stone-100 mb-4 tracking-tight [transform-style:preserve-3d]"
           >
-            About Me
+            <span className="about-word inline-block">About</span>{" "}
+            <span className="about-word inline-block">Me</span>
           </h2>
           <p
             ref={copyRef}
