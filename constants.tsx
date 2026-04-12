@@ -364,6 +364,10 @@ export const projectsData = [
   },
 ];
 
+const livePreviewCount = projectsData.filter(
+  (p) => p.previewUrl && p.previewUrl !== "/"
+).length;
+
 export const achievementsList: AchievementItem[] = [
   {
     metric: "Projects shipped",
@@ -384,8 +388,8 @@ export const achievementsList: AchievementItem[] = [
     postfix: "+",
   },
   {
-    metric: "Production domains",
-    value: "8",
+    metric: "Live Products",
+    value: String(livePreviewCount),
     prefix: "",
     postfix: "+",
   },

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main
       id="page-root"
-      className="relative flex min-h-screen flex-col overflow-x-hidden"
+      className="relative flex min-h-screen flex-col"
     >
       <Navbar />
       <div className="relative z-10 container mt-24 mx-auto px-4 md:px-12 py-4">

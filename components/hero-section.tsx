@@ -144,7 +144,7 @@ const HeroSection = () => {
   return (
     <section
       ref={rootRef}
-      className="relative lg:py-16 overflow-x-hidden overflow-y-visible [perspective:1200px]"
+      className="relative overflow-visible lg:py-16 [perspective:1200px]"
     >
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-8 min-w-0 place-self-center text-center sm:text-left justify-self-start overflow-visible">
@@ -169,27 +169,27 @@ const HeroSection = () => {
           </p>
           <div
             ref={ctaRef}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-start -mx-1 px-1 sm:mx-0 sm:px-0"
+            className="relative z-20 flex flex-col gap-3 overflow-visible py-2 sm:flex-row sm:gap-4 sm:items-start"
           >
             <Link
               href="/#contact"
-              className="inline-block w-full sm:w-fit rounded-full will-change-transform"
+              className="inline-block w-full overflow-visible rounded-full sm:w-fit"
             >
               <span
                 ref={hireRef}
-                className="block px-6 py-3 text-center text-stone-100 bg-zinc-800/90 border border-stone-700/80 hover:bg-zinc-700/90 hover:border-stone-600 transition-colors duration-300 rounded-full"
+                className="relative z-10 block rounded-full border border-stone-700/80 bg-zinc-800/90 px-6 py-3 text-center text-stone-100 transition-colors duration-300 will-change-transform hover:border-stone-600 hover:bg-zinc-700/90"
               >
                 Hire Me
               </span>
             </Link>
             <Link
               href="/"
-              className="inline-block w-full sm:w-fit rounded-full will-change-transform"
+              className="inline-block w-full overflow-visible rounded-full sm:w-fit"
               onClick={handleDownload}
             >
               <span
                 ref={cvRef}
-                className="block px-6 py-3 text-center text-stone-200 bg-zinc-900 border border-stone-700 hover:border-stone-600 hover:bg-zinc-800/80 transition-colors duration-300 rounded-full"
+                className="relative z-10 block rounded-full border border-stone-700 bg-zinc-900 px-6 py-3 text-center text-stone-200 transition-colors duration-300 will-change-transform hover:border-stone-600 hover:bg-zinc-800/80"
               >
                 Download CV
               </span>

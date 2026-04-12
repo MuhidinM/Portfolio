@@ -78,10 +78,10 @@ const ProjectCard = ({
   }, [reduced]);
 
   return (
-    <div ref={magRef} className="h-full rounded-xl will-change-transform">
+    <div ref={magRef} className="h-full w-full min-w-0 rounded-xl will-change-transform">
       <div
         ref={rootRef}
-        className="group flex h-full min-h-[28rem] flex-col overflow-hidden rounded-xl border border-stone-800/90 bg-zinc-900/30 shadow-sm [perspective:1100px] sm:min-h-[30rem]"
+        className="group flex h-full w-full min-h-[28rem] min-w-0 flex-col overflow-hidden rounded-xl border border-stone-800/90 bg-zinc-900/30 shadow-sm [perspective:1100px] sm:min-h-[30rem]"
         style={{ transformStyle: "preserve-3d" }}
       >
         <div

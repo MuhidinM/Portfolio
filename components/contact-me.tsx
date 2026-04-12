@@ -180,7 +180,7 @@ const EmailSection = () => {
             <Link
               target="_blank"
               href="https://github.com/MuhidinM"
-              className="contact-block group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
+              className="group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
             >
               <Image src={GithubIcon} alt="" width={32} height={32} />
               <span className="border-b border-transparent text-sm group-hover:border-stone-500">
@@ -190,7 +190,7 @@ const EmailSection = () => {
             <Link
               target="_blank"
               href="https://www.linkedin.com/in/MuhidinM"
-              className="contact-block group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
+              className="group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
             >
               <Image src={LinkedinIcon} alt="" width={32} height={32} />
               <span className="border-b border-transparent text-sm group-hover:border-stone-500">

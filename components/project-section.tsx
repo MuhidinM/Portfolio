@@ -89,6 +89,14 @@ const ProjectsSection = () => {
       onLeave: (elements) => {
         gsap.to(elements, { opacity: 0, duration: 0.22, ease: "power2.in" });
       },
+      onComplete: () => {
+        const list = listRef.current;
+        if (!list) return;
+        gsap.set(Array.from(list.children), {
+          clearProps:
+            "width,height,top,left,right,bottom,margin,zIndex,position,maxWidth",
+        });
+      },
     });
   }, [tag, filteredProjects.length, visibleProjects, reduced]);
 
@@ -130,7 +138,7 @@ const ProjectsSection = () => {
       id="projects"
       className="scroll-mt-24 [perspective:960px]"
     >
-      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-stone-100 mt-6 mb-6 md:mb-10 tracking-tight [transform-style:preserve-3d]">
+      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-white mt-6 mb-6 md:mb-10 tracking-tight [transform-style:preserve-3d]">
         <span className="proj-head-word inline-block">My</span>{" "}
         <span className="proj-head-word inline-block">Projects</span>
       </h2>
@@ -153,13 +161,13 @@ const ProjectsSection = () => {
       </div>
       <ul
         ref={listRef}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+        className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
       >
         {slice.map((project) => (
           <li
             key={project.id}
             data-project-id={project.id}
-            className="project-card-item flex h-full"
+            className="project-card-item flex h-full min-w-0 w-full max-w-full"
           >
             <ProjectCard
               title={project.title}
