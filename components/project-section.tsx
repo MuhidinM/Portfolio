@@ -1,40 +1,114 @@
 "use client";
-import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+
+import React, { useLayoutEffect, useRef, useState } from "react";
 import ProjectTag from "./project-tag";
 import ProjectCard from "./project-card";
 import { projectsData } from "@/constants";
+import { Flip, gsap, registerGsap } from "@/lib/gsap-client";
+import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const [visibleProjects, setVisibleProjects] = useState(6);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const handleTagChange = (newTag: string) => {
-    setTag(newTag);
-    setVisibleProjects(6); // Reset to show first 6 when tag changes
-  };
+  const listRef = useRef<HTMLUListElement>(null);
+  const loadBtnRef = useRef<HTMLButtonElement>(null);
+  const flipState = useRef<ReturnType<typeof Flip.getState> | null>(null);
+  const prevSliceLen = useRef(0);
+  const reduced = usePrefersReducedMotion();
 
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
+  const slice = filteredProjects.slice(0, visibleProjects);
+
+  const handleTagChange = (newTag: string) => {
+    if (newTag === tag) return;
+    prevSliceLen.current = 0;
+    if (listRef.current && !reduced) {
+      registerGsap();
+      flipState.current = Flip.getState(listRef.current.children, {
+        simple: true,
+      });
+    }
+    setTag(newTag);
+    setVisibleProjects(6);
+  };
 
   const handleLoadMore = () => {
+    if (loadBtnRef.current && !reduced) {
+      registerGsap();
+      gsap
+        .timeline()
+        .to(loadBtnRef.current, { scale: 0.97, duration: 0.1, ease: "power2.in" })
+        .to(loadBtnRef.current, { scale: 1, duration: 0.2, ease: "power2.out" });
+    }
     setVisibleProjects((prev) => prev + 6);
   };
 
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
+  useLayoutEffect(() => {
+    if (!flipState.current || !listRef.current || reduced) return;
+    const state = flipState.current;
+    flipState.current = null;
+    registerGsap();
+    Flip.from(state, {
+      duration: 0.48,
+      ease: "power2.out",
+      stagger: 0.03,
+      absolute: true,
+      scale: true,
+      prune: true,
+      onEnter: (elements) => {
+        gsap.from(elements, {
+          opacity: 0,
+          scale: 0.97,
+          duration: 0.35,
+          ease: "power2.out",
+        });
+      },
+      onLeave: (elements) => {
+        gsap.to(elements, { opacity: 0, duration: 0.22, ease: "power2.in" });
+      },
+    });
+  }, [tag, filteredProjects.length, visibleProjects, reduced]);
+
+  useLayoutEffect(() => {
+    if (!listRef.current || reduced) return;
+    registerGsap();
+    const len = slice.length;
+    const prev = prevSliceLen.current;
+    if (len <= prev) {
+      prevSliceLen.current = len;
+      return;
+    }
+    const newLis = Array.from(listRef.current.querySelectorAll("li")).slice(
+      prev
+    );
+    prevSliceLen.current = len;
+    newLis.forEach((li) => {
+      gsap.fromTo(
+        li,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.42,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: li,
+            start: "top 93%",
+            once: true,
+          },
+        }
+      );
+    });
+  }, [slice.length, tag, reduced]);
 
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+    <section id="projects" className="scroll-mt-24">
+      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-stone-100 mt-6 mb-6 md:mb-10 tracking-tight">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -48,20 +122,16 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="API"
-          isSelected={tag === "Api"}
+          isSelected={tag === "API"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.slice(0, visibleProjects).map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
+      <ul
+        ref={listRef}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+      >
+        {slice.map((project) => (
+          <li key={project.id} data-project-id={project.id} className="project-card-item">
             <ProjectCard
-              key={project.id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
@@ -69,16 +139,18 @@ const ProjectsSection = () => {
               previewUrl={project.previewUrl}
               app={project.app}
             />
-          </motion.li>
+          </li>
         ))}
       </ul>
       {visibleProjects < filteredProjects.length && (
         <div className="mt-10 flex justify-center">
           <button
+            ref={loadBtnRef}
+            type="button"
             onClick={handleLoadMore}
-            className="px-6 py-3 rounded-xl bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-gradient-to-br hover:from-blue-600 hover:to-secondary-700 text-white font-semibold transition-all duration-300"
+            className="px-8 py-3 rounded-full border border-stone-700 bg-zinc-900/60 text-stone-200 text-sm font-medium hover:bg-zinc-800/80 hover:border-stone-600 transition-colors"
           >
-            Load More
+            Load more
           </button>
         </div>
       )}

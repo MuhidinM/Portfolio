@@ -14,15 +14,25 @@ export const heroMobile = `Adaptable web developer with over a year of professio
 
 // export const heroMd = `Adaptable web developer with over a year of professional experience, complemented by dedicated practice during university and personal time. Proficient in front-end development with a solid foundation in DevOps. Skilled in developing plans, managing projects, and user documentation.`;
 
-export const achievementsList = [
+export interface AchievementItem {
+  metric: string;
+  value: string;
+  prefix: string;
+  postfix: string;
+}
+
+export const achievementsList: AchievementItem[] = [
   {
     metric: "Projects",
     value: "10",
+    prefix: "",
     postfix: "+",
   },
   {
     metric: "Years",
     value: "4",
+    prefix: "",
+    postfix: "",
   },
 ];
 

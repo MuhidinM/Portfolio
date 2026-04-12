@@ -17,6 +17,7 @@ export default function Home() {
         <div id="about">
           <AboutSection />
         </div>
+        <AchievementsSection />
         <div id="projects">
           <ProjectsSection />
         </div>

@@ -8,12 +8,13 @@ interface ProjectTagProps {
 
 const ProjectTag = ({ name, onClick, isSelected }: ProjectTagProps) => {
   const buttonStyles = isSelected
-    ? "text-white border-primary-500"
-    : "text-[#ADB7BE] border-slate-600 hover:border-white";
+    ? "text-stone-100 border-stone-400 bg-zinc-900/50"
+    : "text-stone-500 border-stone-700 hover:border-stone-500 hover:text-stone-300";
 
   return (
     <button
-      className={`${buttonStyles} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
+      type="button"
+      className={`${buttonStyles} rounded-full border px-5 py-2.5 text-base sm:text-lg cursor-pointer transition-colors`}
       onClick={() => onClick(name)}
     >
       {name}

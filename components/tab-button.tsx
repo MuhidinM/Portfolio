@@ -1,5 +1,7 @@
-import React from "react";
-import { motion, Variants } from "framer-motion";
+"use client";
+
+import React, { useLayoutEffect, useRef } from "react";
+import { gsap, registerGsap } from "@/lib/gsap-client";
 
 interface TabButtonProps {
   active: boolean;
@@ -7,24 +9,32 @@ interface TabButtonProps {
   children: React.ReactNode;
 }
 
-const variants: Variants = {
-  default: { width: 0 },
-  active: { width: "calc(100% - 0.75rem)" },
-};
-
 const TabButton = ({ active, selectTab, children }: TabButtonProps) => {
-  const buttonClasses = active ? "text-white" : "text-[#ADB7BE]";
+  const lineRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (!lineRef.current) return;
+    registerGsap();
+    gsap.to(lineRef.current, {
+      width: active ? "calc(100% - 0.75rem)" : 0,
+      duration: 0.35,
+      ease: "power2.out",
+    });
+  }, [active]);
+
+  const buttonClasses = active ? "text-stone-100" : "text-stone-500";
 
   return (
-    <button onClick={selectTab}>
-      <p className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+    <button type="button" onClick={selectTab} className="text-left">
+      <p
+        className={`mr-3 font-semibold hover:text-stone-200 transition-colors ${buttonClasses}`}
+      >
         {children}
       </p>
-      <motion.div
-        animate={active ? "active" : "default"}
-        variants={variants}
-        className="h-1 bg-primary-500 mt-2 mr-3"
-      ></motion.div>
+      <div
+        ref={lineRef}
+        className="h-0.5 bg-stone-500 mt-2 mr-3 w-0 rounded-full"
+      />
     </button>
   );
 };
