@@ -26,20 +26,22 @@ const ProjectsSection = () => {
     if (!sectionRef.current || reduced) return;
     registerGsap();
     const q = gsap.utils.selector(sectionRef);
-    gsap.from(q(".proj-head-word"), {
-      opacity: 0,
-      y: 32,
-      rotateX: -36,
-      stagger: 0.12,
-      duration: 0.62,
-      ease: "power3.out",
-      transformOrigin: "50% 100%",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 86%",
-        once: true,
-      },
-    });
+    gsap.fromTo(
+      q(".proj-head-word"),
+      { autoAlpha: 0, y: 20 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.55,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 88%",
+          once: true,
+        },
+      }
+    );
   }, [reduced]);
 
   const handleTagChange = (newTag: string) => {
@@ -133,14 +135,10 @@ const ProjectsSection = () => {
   }, [slice.length, tag, reduced]);
 
   return (
-    <section
-      ref={sectionRef}
-      id="projects"
-      className="scroll-mt-24 [perspective:960px]"
-    >
-      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-white mt-6 mb-6 md:mb-10 tracking-tight [transform-style:preserve-3d]">
-        <span className="proj-head-word inline-block">My</span>{" "}
-        <span className="proj-head-word inline-block">Projects</span>
+    <section ref={sectionRef} id="projects" className="scroll-mt-24">
+      <h2 className="mt-6 mb-6 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl md:mb-10">
+        <span className="proj-head-word inline-block text-white">My</span>{" "}
+        <span className="proj-head-word inline-block text-white">Projects</span>
       </h2>
       <div className="flex flex-row flex-wrap justify-center items-center gap-2 py-6">
         <ProjectTag
