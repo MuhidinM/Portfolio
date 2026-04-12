@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import AboutSection from "@/components/about-section";
 import AchievementsSection from "@/components/achievement-section";
 import EmailSection from "@/components/contact-me";
@@ -5,6 +6,7 @@ import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
 import ProjectsSection from "@/components/project-section";
+import { ProjectsSectionFallback } from "@/components/projects-section-fallback";
 import { ScrollMarqueeBand } from "@/components/scroll-marquee-band";
 
 export default function Home() {
@@ -26,7 +28,9 @@ export default function Home() {
       <ScrollMarqueeBand />
       <div className="relative z-10 container mx-auto px-4 md:px-12 py-4">
         <div id="projects">
-          <ProjectsSection />
+          <Suspense fallback={<ProjectsSectionFallback />}>
+            <ProjectsSection />
+          </Suspense>
         </div>
         <div id="contact">
           <EmailSection />

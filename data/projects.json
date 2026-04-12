@@ -1,0 +1,539 @@
+[
+  {
+    "id": 1,
+    "slug": "michu-mizan",
+    "title": "Michu Mizan",
+    "description": "An alternative financing platform for interest free banking.",
+    "image": "/images/projects/michumizan.png",
+    "categories": [
+      "web",
+      "api"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://michumizan.com/",
+    "featured": true,
+    "published": true,
+    "date": "2024-02-11"
+  },
+  {
+    "id": 2,
+    "slug": "dxvalley",
+    "title": "Dxvalley",
+    "description": "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
+    "image": "/images/projects/dxvalley.png",
+    "categories": [
+      "web",
+      "api"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://dxvalley.com/",
+    "featured": true,
+    "published": true,
+    "date": "2024-03-12"
+  },
+  {
+    "id": 3,
+    "slug": "souq",
+    "title": "Souq",
+    "description": "Coop product facilitating users with payment processing, buy-now-pay-later options, and revenue-based financing.",
+    "image": "/images/projects/souqpass.png",
+    "categories": [
+      "web",
+      "api"
+    ],
+    "stack": [
+      "React",
+      "Redux",
+      "Tailwind",
+      "JavaScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://souqpass.coopbankoromiasc.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-04-13"
+  },
+  {
+    "id": 4,
+    "slug": "cartoon-any",
+    "title": "Cartoon Any",
+    "description": "Transform photos into cartoon-style illustrations",
+    "image": "/images/projects/cartoonany.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://cartoonany.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-05-14"
+  },
+  {
+    "id": 5,
+    "slug": "watermark-gone",
+    "title": "Watermark Gone",
+    "description": "Advanced watermark removal and image restoration tool",
+    "image": "/images/projects/watermarkgone.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://watermarkgone.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-06-15"
+  },
+  {
+    "id": 6,
+    "slug": "where-is-the-place",
+    "title": "Where Is The Place",
+    "description": "Location discovery and identification application",
+    "image": "/images/projects/whereistheplace.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://whereistheplace.net/en",
+    "featured": false,
+    "published": true,
+    "date": "2024-07-16"
+  },
+  {
+    "id": 7,
+    "slug": "they-see-your-photo",
+    "title": "They See Your Photo",
+    "description": "Privacy-focused photo sharing and analysis platform",
+    "image": "/images/projects/theyseeyourphoto.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://theyseeyourphotos.net/",
+    "featured": false,
+    "published": true,
+    "date": "2024-08-17"
+  },
+  {
+    "id": 8,
+    "slug": "tattoo-editor",
+    "title": "Tattoo Editor",
+    "description": "Digital tool for designing and editing tattoo artwork",
+    "image": "/images/projects/tattooeditor.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://tattooeditor.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-09-18"
+  },
+  {
+    "id": 9,
+    "slug": "geospy-2",
+    "title": "GeoSpy 2",
+    "description": "Enhanced version of the location intelligence platform",
+    "image": "/images/projects/geospy2.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://geospy.tech/",
+    "featured": false,
+    "published": true,
+    "date": "2024-10-19"
+  },
+  {
+    "id": 10,
+    "slug": "byd",
+    "title": "BYD",
+    "description": "A modern web application for automotive solutions",
+    "image": "/images/projects/byd.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://electriccar-byd.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-11-20"
+  },
+  {
+    "id": 11,
+    "slug": "ai-image-checker",
+    "title": "AI Image Checker",
+    "description": "An AI-powered tool to detect and analyze images for authenticity",
+    "image": "/images/projects/aiimagechecker.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://aiimagechecker.net/",
+    "featured": false,
+    "published": true,
+    "date": "2024-12-21"
+  },
+  {
+    "id": 12,
+    "slug": "image-merger",
+    "title": "Image Merger",
+    "description": "Tool for combining and merging multiple images seamlessly",
+    "image": "/images/projects/imagemerger.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://mergeimage.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-01-22"
+  },
+  {
+    "id": 13,
+    "slug": "is-ai-image",
+    "title": "Is AI Image",
+    "description": "AI detection tool to identify artificially generated images",
+    "image": "/images/projects/isaiimage.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://www.isaiimage.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-02-23"
+  },
+  {
+    "id": 14,
+    "slug": "is-fake-labubu",
+    "title": "Is Fake Labubu",
+    "description": "Authentication tool for Labubu collectible verification",
+    "image": "/images/projects/isfakelabubu.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://isfakelabubu.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-03-24"
+  },
+  {
+    "id": 15,
+    "slug": "reva",
+    "title": "Reva",
+    "description": "Modern business solution platform",
+    "image": "/images/projects/reva.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": false,
+    "published": true,
+    "date": "2024-04-25"
+  },
+  {
+    "id": 16,
+    "slug": "mini-labubu",
+    "title": "Mini Labubu",
+    "description": "Miniature version showcase of Labubu collectibles",
+    "image": "/images/projects/minilabubu.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://minilabubu.net",
+    "featured": false,
+    "published": true,
+    "date": "2024-05-26"
+  },
+  {
+    "id": 17,
+    "slug": "nail-art",
+    "title": "Nail Art",
+    "description": "Digital platform for nail art designs and tutorials",
+    "image": "/images/projects/nailart.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://nailartai.net/",
+    "featured": false,
+    "published": true,
+    "date": "2024-06-10"
+  },
+  {
+    "id": 18,
+    "slug": "watermark-ai",
+    "title": "Watermark AI",
+    "description": "AI-powered watermark generation and application tool",
+    "image": "/images/projects/watermarkai.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://watermarkremoval.net/",
+    "featured": false,
+    "published": true,
+    "date": "2024-07-11"
+  },
+  {
+    "id": 19,
+    "slug": "labubu-or-lafufu",
+    "title": "Labubu or Lafufu",
+    "description": "Interactive game to distinguish between Labubu characters",
+    "image": "/images/projects/labubuorlafufu.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://lafufuorlabubu.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-08-12"
+  },
+  {
+    "id": 20,
+    "slug": "coop-present",
+    "title": "Coop Present",
+    "description": "A presentation platform for cooperative banking solutions",
+    "image": "/images/projects/coopresent.png",
+    "categories": [
+      "mobile",
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": false,
+    "published": true,
+    "date": "2024-09-13"
+  },
+  {
+    "id": 21,
+    "slug": "geospy",
+    "title": "GeoSpy",
+    "description": "Location-based intelligence and mapping application",
+    "image": "/images/projects/geospy.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://geospy.net/",
+    "featured": false,
+    "published": true,
+    "date": "2024-10-14"
+  },
+  {
+    "id": 22,
+    "slug": "omicron",
+    "title": "Omicron",
+    "description": "A landing site for Omicron, Ethiopia's only supplier of Chint products.",
+    "image": "/images/projects/omicron.png",
+    "categories": [
+      "web",
+      "api",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "Laravel",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://omicronfront.vercel.app/",
+    "featured": false,
+    "published": true,
+    "date": "2024-11-15"
+  },
+  {
+    "id": 23,
+    "slug": "advanced-authentication-project",
+    "title": "Advanced Authentication Project",
+    "description": "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
+    "image": "/images/projects/auth.png",
+    "categories": [
+      "web",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Auth.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "https://github.com/MuhidinM/completeAuth",
+    "previewUrl": "https://complete-auth-weld.vercel.app/",
+    "featured": true,
+    "published": true,
+    "date": "2024-12-16"
+  },
+  {
+    "id": 24,
+    "slug": "eyoha",
+    "title": "Eyoha",
+    "description": "An innovative social platform for community engagement",
+    "image": "/images/projects/eyoha.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://eyoha-front.vercel.app/",
+    "featured": false,
+    "published": true,
+    "date": "2024-01-17"
+  },
+  {
+    "id": 25,
+    "slug": "fetawa",
+    "title": "Fetawa",
+    "description": "A collaborative online platform I contributed to, where users can pose questions and connect with knowledgeable teachers for insightful answers.",
+    "image": "/images/projects/fetawa.png",
+    "categories": [
+      "web",
+      "api",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Firebase",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://fatwa.vercel.app/",
+    "featured": false,
+    "published": true,
+    "date": "2024-02-18"
+  },
+  {
+    "id": 26,
+    "slug": "car-showcase",
+    "title": "Car Showcase",
+    "description": "A showcase project featuring a collection of car APIs",
+    "image": "/images/projects/car.png",
+    "categories": [
+      "web"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "https://github.com/MuhidinM/carShowcase",
+    "previewUrl": "https://muhidinm.github.io/carShowcase/",
+    "featured": false,
+    "published": true,
+    "date": "2024-03-19"
+  }
+]

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:projects": "node scripts/generate-projects-json.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",

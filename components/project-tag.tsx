@@ -2,7 +2,7 @@ import React from "react";
 
 interface ProjectTagProps {
   name: string;
-  onClick: (name: string) => void;
+  onClick: () => void;
   isSelected: boolean;
 }
 
@@ -15,7 +15,7 @@ const ProjectTag = ({ name, onClick, isSelected }: ProjectTagProps) => {
     <button
       type="button"
       className={`${buttonStyles} rounded-full border px-5 py-2.5 text-base sm:text-lg cursor-pointer transition-colors`}
-      onClick={() => onClick(name)}
+      onClick={onClick}
     >
       {name}
     </button>
