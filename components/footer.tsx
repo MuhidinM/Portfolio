@@ -6,33 +6,8 @@ import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 
 const Footer = () => {
   const footerRef = useRef<HTMLElement>(null);
-  const lineRef = useRef<SVGPathElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
-
-  useLayoutEffect(() => {
-    if (!lineRef.current || !footerRef.current || reduced) return;
-    registerGsap();
-    const path = lineRef.current;
-    const len = path.getTotalLength();
-    const ctx = gsap.context(() => {
-      gsap.set(path, {
-        strokeDasharray: len,
-        strokeDashoffset: len,
-      });
-      gsap.to(path, {
-        strokeDashoffset: 0,
-        duration: 1.1,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 94%",
-          once: true,
-        },
-      });
-    }, footerRef);
-    return () => ctx.revert();
-  }, [reduced]);
 
   useLayoutEffect(() => {
     if (!marqueeRef.current || reduced) return;
@@ -57,16 +32,16 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="footer relative border z-10 border-t border-stone-800/90 border-l-transparent border-r-transparent text-stone-400 mt-auto overflow-hidden"
+      className="footer relative z-10 mt-auto mb-10 overflow-hidden border-t border-stone-800/90 text-stone-400 md:mb-16"
     >
       {!reduced && (
         <div
-          className="pointer-events-none absolute bottom-6 left-0 right-0 overflow-hidden opacity-[0.06]"
+          className="pointer-events-none absolute bottom-4 left-0 right-0 overflow-hidden opacity-[0.06]"
           aria-hidden
         >
           <div
             ref={marqueeRef}
-            className="whitespace-nowrap text-[clamp(1.5rem,4vw,2.25rem)] font-light tracking-[0.35em] text-stone-100 pl-4"
+            className="whitespace-nowrap pl-4 text-[clamp(1.5rem,4vw,2.25rem)] font-light tracking-[0.35em] text-stone-100"
           >
             {Array(5)
               .fill("OPEN TO OPPORTUNITIES — CRAFT — MOTION — WEB — ")
@@ -76,27 +51,12 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div className="container px-6 py-10 md:py-12 relative z-10">
-        <svg
-          className="w-full h-3 mb-8 text-stone-700"
-          viewBox="0 0 1200 8"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden
-        >
-          <path
-            ref={lineRef}
-            d="M0 4 H1200"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-          />
-        </svg>
-        <div className="flex flex-col sm:flex-row justify-between gap-4 items-start sm:items-center">
-          <span className="text-stone-300 text-sm font-medium tracking-tight">
+      <div className="container relative z-10 px-6 pb-14 pt-10 md:pb-16 md:pt-12">
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <span className="text-sm font-medium tracking-tight text-stone-300">
             {"<Muhidin Misbah />"}
           </span>
-          <p className="text-stone-600 text-sm">All rights reserved.</p>
+          <p className="text-sm text-stone-600">All rights reserved.</p>
         </div>
       </div>
     </footer>
