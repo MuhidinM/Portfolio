@@ -11,21 +11,10 @@ const CATEGORIES: (ProjectCategory | "all")[] = [
   "desktop",
 ];
 
-const SORTS: ProjectSort[] = [
-  "date-desc",
-  "date-asc",
-  "title-asc",
-  "title-desc",
-];
+const SORTS: ProjectSort[] = ["id", "title-asc", "title-desc"];
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
-
-  const featuredOnly = searchParams.get("featuredOnly") === "true";
-  const featuredLimit = Math.min(
-    Math.max(Number(searchParams.get("featuredLimit") || "3"), 1),
-    12
-  );
 
   const page = Number(searchParams.get("page") || "1");
   const pageSize = Number(searchParams.get("pageSize") || "9");
@@ -36,23 +25,17 @@ export async function GET(request: NextRequest) {
   ) as ProjectCategory | "all";
 
   const q = searchParams.get("q") || "";
-  const sortParam = searchParams.get("sort") || "date-desc";
+  const sortParam = searchParams.get("sort") || "id";
   const sort = SORTS.includes(sortParam as ProjectSort)
     ? (sortParam as ProjectSort)
-    : "date-desc";
-
-  const excludeFeatured =
-    searchParams.get("excludeFeatured") !== "false";
+    : "id";
 
   const result = queryProjects({
-    featuredOnly,
-    featuredLimit,
     page: Number.isFinite(page) ? page : 1,
     pageSize: Number.isFinite(pageSize) ? pageSize : 9,
     category,
     q,
     sort,
-    excludeFeatured: featuredOnly ? false : excludeFeatured,
   });
 
   return NextResponse.json(result, {

@@ -26,8 +26,7 @@ const FILTERS: { key: ProjectCategory | "all"; label: string }[] = [
 ];
 
 const SORT_OPTIONS: { value: ProjectSort; label: string }[] = [
-  { value: "date-desc", label: "Newest first" },
-  { value: "date-asc", label: "Oldest first" },
+  { value: "id", label: "Default" },
   { value: "title-asc", label: "Title A–Z" },
   { value: "title-desc", label: "Title Z–A" },
 ];
@@ -65,9 +64,9 @@ const ProjectsSection = () => {
 
   const qParam = searchParams.get("q") || "";
 
-  const rawSort = searchParams.get("sort") || "date-desc";
+  const rawSort = searchParams.get("sort");
   const sort = (
-    SORT_OPTIONS.some((o) => o.value === rawSort) ? rawSort : "date-desc"
+    rawSort === "title-asc" || rawSort === "title-desc" ? rawSort : "id"
   ) as ProjectSort;
 
   const [searchInput, setSearchInput] = useState(qParam);
@@ -100,32 +99,9 @@ const ProjectsSection = () => {
     });
   }, [debouncedSearch, qParam, replaceQuery]);
 
-  const [featured, setFeatured] = useState<Project[]>([]);
   const [grid, setGrid] = useState<GridResponse | null>(null);
-  const [loadingFeatured, setLoadingFeatured] = useState(true);
   const [loadingGrid, setLoadingGrid] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const ac = new AbortController();
-    setLoadingFeatured(true);
-    fetch("/api/projects?featuredOnly=true&featuredLimit=3", {
-      signal: ac.signal,
-    })
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to load featured");
-        return r.json();
-      })
-      .then((data: GridResponse) => {
-        setFeatured(data.items);
-        setLoadingFeatured(false);
-      })
-      .catch((e: unknown) => {
-        if ((e as Error).name === "AbortError") return;
-        setLoadingFeatured(false);
-      });
-    return () => ac.abort();
-  }, []);
 
   useEffect(() => {
     const ac = new AbortController();
@@ -137,7 +113,6 @@ const ProjectsSection = () => {
       category,
       q: qParam,
       sort,
-      excludeFeatured: "true",
     });
     fetch(`/api/projects?${params}`, { signal: ac.signal })
       .then((r) => {
@@ -186,7 +161,11 @@ const ProjectsSection = () => {
   };
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    replaceQuery({ sort: e.target.value, page: "1" });
+    const v = e.target.value as ProjectSort;
+    replaceQuery({
+      sort: v === "id" ? null : v,
+      page: "1",
+    });
   };
 
   const goPage = (p: number) => {
@@ -248,35 +227,6 @@ const ProjectsSection = () => {
           />
         ))}
       </div>
-
-      {!loadingFeatured && featured.length > 0 && (
-        <div className="mb-12">
-          <h3 className="mb-6 text-center text-lg font-medium tracking-tight text-stone-300">
-            Featured
-          </h3>
-          <ul className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
-            {featured.map((project) => (
-              <li
-                key={`feat-${project.id}`}
-                className="project-card-item flex h-full min-w-0 w-full max-w-full"
-              >
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  imgUrl={project.image}
-                  gitUrl={project.gitUrl}
-                  previewUrl={project.previewUrl}
-                  app={project.stack}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <h3 className="mb-6 text-center text-lg font-medium tracking-tight text-stone-400">
-        All projects
-      </h3>
 
       {error && (
         <p className="mb-6 text-center text-sm text-red-400/90" role="alert">

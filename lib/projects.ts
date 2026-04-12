@@ -36,20 +36,15 @@ function matchesSearch(p: Project, q: string): boolean {
 function sortProjects(list: Project[], sort: ProjectSort): Project[] {
   const next = [...list];
   switch (sort) {
-    case "date-asc":
-      next.sort((a, b) => a.date.localeCompare(b.date));
-      break;
-    case "date-desc":
-      next.sort((a, b) => b.date.localeCompare(a.date));
-      break;
     case "title-asc":
       next.sort((a, b) => a.title.localeCompare(b.title));
       break;
     case "title-desc":
       next.sort((a, b) => b.title.localeCompare(a.title));
       break;
+    case "id":
     default:
-      next.sort((a, b) => b.date.localeCompare(a.date));
+      next.sort((a, b) => a.id - b.id);
   }
   return next;
 }
@@ -60,11 +55,6 @@ export interface ProjectsQuery {
   category?: ProjectCategory | "all";
   q?: string;
   sort?: ProjectSort;
-  /** When true, return only featured items (max `limit`) */
-  featuredOnly?: boolean;
-  featuredLimit?: number;
-  /** Exclude featured projects from paginated grid */
-  excludeFeatured?: boolean;
 }
 
 export interface ProjectsResult {
@@ -80,28 +70,10 @@ export function queryProjects(opts: ProjectsQuery): ProjectsResult {
   const page = Math.max(opts.page ?? 1, 1);
   const category = opts.category ?? "all";
   const q = opts.q ?? "";
-  const sort = opts.sort ?? "date-desc";
-  const excludeFeatured = opts.excludeFeatured ?? true;
-
-  if (opts.featuredOnly) {
-    const limit = opts.featuredLimit ?? 3;
-    let list = getPublishedProjects().filter((p) => p.featured);
-    list = sortProjects(list, "date-desc");
-    const items = list.slice(0, limit);
-    return {
-      items,
-      page: 1,
-      pageSize: items.length,
-      total: items.length,
-      totalPages: 1,
-    };
-  }
+  const sort = opts.sort ?? "id";
 
   let list = getPublishedProjects().filter((p) => matchesCategory(p, category));
   list = list.filter((p) => matchesSearch(p, q));
-  if (excludeFeatured) {
-    list = list.filter((p) => !p.featured);
-  }
   list = sortProjects(list, sort);
 
   const total = list.length;

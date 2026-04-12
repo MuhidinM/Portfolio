@@ -5,11 +5,8 @@ export type ProjectCategory =
   | "mobile"
   | "desktop";
 
-export type ProjectSort =
-  | "date-desc"
-  | "date-asc"
-  | "title-asc"
-  | "title-desc";
+/** `id` = stable order from data (default); title-* = alphabetical */
+export type ProjectSort = "id" | "title-asc" | "title-desc";
 
 export interface Project {
   id: number;
