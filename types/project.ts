@@ -1,5 +1,5 @@
 export type ProjectCategory =
-  | "web"
+  | "frontend"
   | "api"
   | "backend"
   | "mobile"

@@ -5,16 +5,8 @@
     "title": "Michu Mizan",
     "description": "An alternative financing platform for interest free banking.",
     "image": "/images/projects/michumizan.png",
-    "categories": [
-      "web",
-      "api"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "Framer Motion",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://michumizan.com/",
     "featured": true,
@@ -27,16 +19,8 @@
     "title": "Dxvalley",
     "description": "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
     "image": "/images/projects/dxvalley.png",
-    "categories": [
-      "web",
-      "api"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "Framer Motion",
-      "TypeScript"
-    ],
+    "categories": ["frontend", "backend"],
+    "stack": ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://dxvalley.com/",
     "featured": true,
@@ -49,16 +33,8 @@
     "title": "Souq",
     "description": "Coop product facilitating users with payment processing, buy-now-pay-later options, and revenue-based financing.",
     "image": "/images/projects/souqpass.png",
-    "categories": [
-      "web",
-      "api"
-    ],
-    "stack": [
-      "React",
-      "Redux",
-      "Tailwind",
-      "JavaScript"
-    ],
+    "categories": ["frontend", "backend", "mobile"],
+    "stack": ["React", "Redux", "Tailwind", "JavaScript"],
     "gitUrl": "/",
     "previewUrl": "https://souqpass.coopbankoromiasc.com/",
     "featured": false,
@@ -71,14 +47,8 @@
     "title": "Cartoon Any",
     "description": "Transform photos into cartoon-style illustrations",
     "image": "/images/projects/cartoonany.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://cartoonany.com/",
     "featured": false,
@@ -91,14 +61,8 @@
     "title": "Watermark Gone",
     "description": "Advanced watermark removal and image restoration tool",
     "image": "/images/projects/watermarkgone.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://watermarkgone.com/",
     "featured": false,
@@ -111,14 +75,8 @@
     "title": "Where Is The Place",
     "description": "Location discovery and identification application",
     "image": "/images/projects/whereistheplace.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://whereistheplace.net/en",
     "featured": false,
@@ -131,14 +89,8 @@
     "title": "They See Your Photo",
     "description": "Privacy-focused photo sharing and analysis platform",
     "image": "/images/projects/theyseeyourphoto.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://theyseeyourphotos.net/",
     "featured": false,
@@ -151,14 +103,8 @@
     "title": "Tattoo Editor",
     "description": "Digital tool for designing and editing tattoo artwork",
     "image": "/images/projects/tattooeditor.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://tattooeditor.com/",
     "featured": false,
@@ -171,14 +117,8 @@
     "title": "GeoSpy 2",
     "description": "Enhanced version of the location intelligence platform",
     "image": "/images/projects/geospy2.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://geospy.tech/",
     "featured": false,
@@ -191,14 +131,8 @@
     "title": "BYD",
     "description": "A modern web application for automotive solutions",
     "image": "/images/projects/byd.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://electriccar-byd.com/",
     "featured": false,
@@ -211,14 +145,8 @@
     "title": "AI Image Checker",
     "description": "An AI-powered tool to detect and analyze images for authenticity",
     "image": "/images/projects/aiimagechecker.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://aiimagechecker.net/",
     "featured": false,
@@ -231,14 +159,8 @@
     "title": "Image Merger",
     "description": "Tool for combining and merging multiple images seamlessly",
     "image": "/images/projects/imagemerger.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://mergeimage.com/",
     "featured": false,
@@ -251,14 +173,8 @@
     "title": "Is AI Image",
     "description": "AI detection tool to identify artificially generated images",
     "image": "/images/projects/isaiimage.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://www.isaiimage.com/",
     "featured": false,
@@ -271,14 +187,8 @@
     "title": "Is Fake Labubu",
     "description": "Authentication tool for Labubu collectible verification",
     "image": "/images/projects/isfakelabubu.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://isfakelabubu.com/",
     "featured": false,
@@ -291,14 +201,8 @@
     "title": "Reva",
     "description": "Modern business solution platform",
     "image": "/images/projects/reva.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend", "backend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "/",
     "featured": false,
@@ -311,14 +215,8 @@
     "title": "Mini Labubu",
     "description": "Miniature version showcase of Labubu collectibles",
     "image": "/images/projects/minilabubu.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://minilabubu.net",
     "featured": false,
@@ -331,14 +229,8 @@
     "title": "Nail Art",
     "description": "Digital platform for nail art designs and tutorials",
     "image": "/images/projects/nailart.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://nailartai.net/",
     "featured": false,
@@ -351,14 +243,8 @@
     "title": "Watermark AI",
     "description": "AI-powered watermark generation and application tool",
     "image": "/images/projects/watermarkai.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://watermarkremoval.net/",
     "featured": false,
@@ -371,14 +257,8 @@
     "title": "Labubu or Lafufu",
     "description": "Interactive game to distinguish between Labubu characters",
     "image": "/images/projects/labubuorlafufu.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://lafufuorlabubu.com/",
     "featured": false,
@@ -391,15 +271,8 @@
     "title": "Coop Present",
     "description": "A presentation platform for cooperative banking solutions",
     "image": "/images/projects/coopresent.png",
-    "categories": [
-      "mobile",
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["desktop"],
+    "stack": ["Electron", "React", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "/",
     "featured": false,
@@ -412,14 +285,8 @@
     "title": "GeoSpy",
     "description": "Location-based intelligence and mapping application",
     "image": "/images/projects/geospy.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://geospy.net/",
     "featured": false,
@@ -432,18 +299,8 @@
     "title": "Omicron",
     "description": "A landing site for Omicron, Ethiopia's only supplier of Chint products.",
     "image": "/images/projects/omicron.png",
-    "categories": [
-      "web",
-      "api",
-      "backend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "Framer Motion",
-      "Laravel",
-      "TypeScript"
-    ],
+    "categories": ["frontend", "backend"],
+    "stack": ["Next.js", "Tailwind", "Framer Motion", "Laravel", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://omicronfront.vercel.app/",
     "featured": false,
@@ -456,16 +313,8 @@
     "title": "Advanced Authentication Project",
     "description": "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
     "image": "/images/projects/auth.png",
-    "categories": [
-      "web",
-      "backend"
-    ],
-    "stack": [
-      "Next.js",
-      "Auth.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend", "backend"],
+    "stack": ["Next.js", "Auth.js", "Tailwind", "TypeScript"],
     "gitUrl": "https://github.com/MuhidinM/completeAuth",
     "previewUrl": "https://complete-auth-weld.vercel.app/",
     "featured": true,
@@ -478,14 +327,8 @@
     "title": "Eyoha",
     "description": "An innovative social platform for community engagement",
     "image": "/images/projects/eyoha.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://eyoha-front.vercel.app/",
     "featured": false,
@@ -498,18 +341,8 @@
     "title": "Fetawa",
     "description": "A collaborative online platform I contributed to, where users can pose questions and connect with knowledgeable teachers for insightful answers.",
     "image": "/images/projects/fetawa.png",
-    "categories": [
-      "web",
-      "api",
-      "backend"
-    ],
-    "stack": [
-      "Next.js",
-      "Firebase",
-      "Tailwind",
-      "Framer Motion",
-      "TypeScript"
-    ],
+    "categories": ["frontend", "backend"],
+    "stack": ["Next.js", "Firebase", "Tailwind", "Framer Motion", "TypeScript"],
     "gitUrl": "/",
     "previewUrl": "https://fatwa.vercel.app/",
     "featured": false,
@@ -522,14 +355,8 @@
     "title": "Car Showcase",
     "description": "A showcase project featuring a collection of car APIs",
     "image": "/images/projects/car.png",
-    "categories": [
-      "web"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
+    "categories": ["frontend"],
+    "stack": ["Next.js", "Tailwind", "TypeScript"],
     "gitUrl": "https://github.com/MuhidinM/carShowcase",
     "previewUrl": "https://muhidinm.github.io/carShowcase/",
     "featured": false,

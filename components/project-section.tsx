@@ -18,8 +18,7 @@ const PAGE_SIZE = 9;
 
 const FILTERS: { key: ProjectCategory | "all"; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "web", label: "Web" },
-  { key: "api", label: "API" },
+  { key: "frontend", label: "Front End" },
   { key: "backend", label: "Backend" },
   { key: "mobile", label: "Mobile" },
   { key: "desktop", label: "Desktop" },
