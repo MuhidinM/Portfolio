@@ -46,7 +46,11 @@ const ProjectCard = ({
       duration: 0.45,
       ease: "power2.out",
     });
-    const scaleM = gsap.quickTo(media, "scale", {
+    const scaleX = gsap.quickTo(media, "scaleX", {
+      duration: 0.35,
+      ease: "power2.out",
+    });
+    const scaleY = gsap.quickTo(media, "scaleY", {
       duration: 0.35,
       ease: "power2.out",
     });
@@ -59,14 +63,16 @@ const ProjectCard = ({
       magY(py * 10);
       rotY(px * 7);
       rotX(-py * 6);
-      scaleM(1.03);
+      scaleX(1.03);
+      scaleY(1.03);
     };
     const onLeave = () => {
       magX(0);
       magY(0);
       rotY(0);
       rotX(0);
-      scaleM(1);
+      scaleX(1);
+      scaleY(1);
     };
 
     mag.addEventListener("pointermove", onMove);
