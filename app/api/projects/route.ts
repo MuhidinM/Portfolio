@@ -4,8 +4,7 @@ import type { ProjectCategory, ProjectSort } from "@/types/project";
 
 const CATEGORIES: (ProjectCategory | "all")[] = [
   "all",
-  "web",
-  "api",
+  "frontend",
   "backend",
   "mobile",
   "desktop",
