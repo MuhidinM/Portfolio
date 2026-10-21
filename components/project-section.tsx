@@ -233,6 +233,10 @@ const ProjectsSection = () => {
         </p>
       )}
 
+      <p className="mb-8 text-center text-xs uppercase tracking-[0.18em] text-stone-500">
+        Hover to peek · Click a folder for screenshot and links
+      </p>
+
       {loadingGrid ? (
         <ul className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
           {Array(6)
@@ -252,12 +256,12 @@ const ProjectsSection = () => {
         </ul>
       ) : (
         <>
-          <ul className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
-            {items.map((project) => (
+          <ul className="grid w-full grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            {items.map((project, i) => (
               <li
                 key={project.id}
                 data-project-id={project.id}
-                className="project-card-item flex h-full min-w-0 w-full max-w-full"
+                className="project-card-item relative flex min-w-0 w-full max-w-full justify-center focus-within:z-10 hover:z-10"
               >
                 <ProjectCard
                   title={project.title}
@@ -266,6 +270,7 @@ const ProjectsSection = () => {
                   gitUrl={project.gitUrl}
                   previewUrl={project.previewUrl}
                   app={project.stack}
+                  index={i}
                 />
               </li>
             ))}
