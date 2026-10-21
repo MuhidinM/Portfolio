@@ -1,14 +1,38 @@
 "use client";
 
 import React, { useLayoutEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { handleDownload } from "@/lib/download";
 import { heroMobile } from "@/constants";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap-client";
 import { usePrefersReducedMotion } from "@/lib/reduced-motion";
+import KeycapOrb, { type Keycap } from "@/components/ui/keycap-orb";
 
-const ROLES = ["<Muhidin />", "Web Developer", "UI/UX Designer"];
+// Centre first: the stack from the CV, spiralling outward.
+const ORB_KEYS: Keycap[] = [
+  { label: "TS", finish: "cobalt", hotkey: "t" },
+  { label: "React", finish: "ink", hotkey: "r" },
+  { icon: "terminal", finish: "ash" },
+  { label: "Next", finish: "ink", hotkey: "n" },
+  { label: "K8s", finish: "ash", hotkey: "k" },
+  { icon: "braces", finish: "ink" },
+  { label: "SQL", finish: "glass", hotkey: "s" },
+  { icon: "gear", finish: "ink" },
+  { label: "Node", finish: "ash" },
+  { icon: "code", finish: "ink" },
+  { label: "CI", finish: "lime", hotkey: "c" },
+  { icon: "layers", finish: "glass" },
+  { label: "API", finish: "ink", hotkey: "a" },
+  { icon: "shield", finish: "ash" },
+  { icon: "cube", finish: "glass" },
+  { icon: "check", finish: "lime" },
+  { label: "Git", finish: "ink", hotkey: "g" },
+  { icon: "hash", finish: "cobalt" },
+  { label: "⌘", finish: "ash" },
+  { label: "Esc", finish: "lime" },
+];
+
+const ROLES = ["Muhidin Misbah", "Senior Software Engineer", "Full-Stack Engineer"];
 
 const HeroSection = () => {
   const rootRef = useRef<HTMLElement>(null);
@@ -69,16 +93,6 @@ const HeroSection = () => {
             })
             .to(roleEl, { opacity: 1, duration: 0.4, ease: "power2.out" })
             .to({}, { duration: 1.35 });
-        });
-      }
-
-      if (avatarWrapRef.current) {
-        gsap.to(avatarWrapRef.current, {
-          y: 8,
-          duration: 3.2,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
         });
       }
 
@@ -196,18 +210,18 @@ const HeroSection = () => {
             </Link>
           </div>
         </div>
-        <div className="col-span-4 place-self-center mt-10 lg:mt-0">
+        <div className="col-span-4 w-full place-self-center mt-10 sm:mt-0">
           <div
             ref={avatarWrapRef}
-            className="relative mx-auto h-[250px] w-[250px] overflow-hidden rounded-full border border-stone-800 bg-zinc-900/80 lg:h-[400px] lg:w-[400px]"
+            className="relative mx-auto w-full max-w-[460px] [container-type:inline-size] [--orb-max:360px] lg:[--orb-max:460px] [mask-image:radial-gradient(closest-side,black_72%,transparent)]"
           >
-            <Image
-              src="/images/hero-image.png"
-              alt="Muhidin Misbah"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 250px, 400px"
-              priority
+            <KeycapOrb
+              keys={ORB_KEYS}
+              background="#121212"
+              height="min(100cqw, var(--orb-max))"
+              scale={0.78}
+              speed={0.8}
+              aria-label="Interactive ball of keycaps showing my stack. Drag to spin it, or focus it and type."
             />
           </div>
         </div>
