@@ -5,10 +5,9 @@ import GithubIcon from "@/public/github-icon.svg";
 import LinkedinIcon from "@/public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { EmailSchema } from "@/schemas";
+import { EmailSchema, type EmailValues } from "@/schemas";
 import {
   Form,
   FormControl,
@@ -37,25 +36,33 @@ const EmailSection = () => {
   const submitLabelRef = useRef<HTMLSpanElement>(null);
   const reduced = usePrefersReducedMotion();
 
-  const form = useForm<z.infer<typeof EmailSchema>>({
+  const form = useForm<EmailValues>({
     resolver: zodResolver(EmailSchema),
     defaultValues: {
+      name: "",
       email: "",
       subject: "",
       message: "",
+      website: "",
     },
   });
 
-  const onSubmit = (values: z.infer<typeof EmailSchema>) => {
+  const onSubmit = (values: EmailValues) => {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
-      sendEmail(values).then((data) => {
-        setError(data?.error);
-        setSuccess(data?.success);
-        form.reset();
-      });
+    startTransition(async () => {
+      try {
+        const data = await sendEmail(values);
+        if ("success" in data) {
+          setSuccess(data.success);
+          form.reset();
+        } else {
+          setError(data.error);
+        }
+      } catch {
+        setError("Couldn't reach the server. Please email me directly instead.");
+      }
     });
   };
 
@@ -202,8 +209,43 @@ const EmailSection = () => {
       </div>
       <div ref={formColRef} className="relative z-10">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-6"
+            noValidate
+          >
             <div className="space-y-4">
+              <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden>
+                <label>
+                  Website
+                  <input
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...form.register("website")}
+                  />
+                </label>
+              </div>
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem className="form-field">
+                    <FormLabel className="text-stone-300">Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        className="text-stone-100 border-stone-700 bg-zinc-900/40 placeholder:text-stone-600"
+                        {...field}
+                        disabled={isPending}
+                        placeholder="Jane Doe"
+                        autoComplete="name"
+                        type="text"
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red-400" />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="email"
@@ -215,11 +257,12 @@ const EmailSection = () => {
                         className="text-stone-100 border-stone-700 bg-zinc-900/40 placeholder:text-stone-600"
                         {...field}
                         disabled={isPending}
-                        placeholder="john.doe@example.com"
+                        placeholder="jane@company.com"
+                        autoComplete="email"
                         type="email"
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
@@ -228,17 +271,19 @@ const EmailSection = () => {
                 name="subject"
                 render={({ field }) => (
                   <FormItem className="form-field">
-                    <FormLabel className="text-stone-300">Subject</FormLabel>
+                    <FormLabel className="text-stone-300">
+                      Subject <span className="text-stone-500">(optional)</span>
+                    </FormLabel>
                     <FormControl>
                       <Input
                         className="text-stone-100 border-stone-700 bg-zinc-900/40 placeholder:text-stone-600"
                         {...field}
                         disabled={isPending}
-                        placeholder="Hello"
+                        placeholder="Role, project, or question"
                         type="text"
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
@@ -256,16 +301,16 @@ const EmailSection = () => {
                         placeholder="Let's talk..."
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
             </div>
-            <div className="text-sm min-h-[1.25rem]">
+            <div className="text-sm min-h-[1.25rem]" role="status" aria-live="polite">
               {error ? (
-                <span className="text-red-400/90">{error}</span>
+                <span className="text-red-400">{error}</span>
               ) : success ? (
-                <span className="text-stone-400">{success}</span>
+                <span className="text-emerald-400">{success}</span>
               ) : null}
             </div>
             <Button
