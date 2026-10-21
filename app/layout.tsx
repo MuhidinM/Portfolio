@@ -6,8 +6,9 @@ import { CursorSpotlight } from "@/components/cursor-spotlight";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Muhidin Misbah",
-  description: "Personal portfolio website",
+  title: "Muhidin Misbah — Senior Software Engineer",
+  description:
+    "Senior software engineer in Addis Ababa with four years building production systems: React and Next.js frontends, backend APIs, and Kubernetes and CI/CD infrastructure.",
   icons: [
     {
       media: "(prefers-color-scheme:light)",

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { getLivePreviewCount, getPublishedCount } from "@/lib/projects";
 
 interface TabData {
   title: string;
@@ -7,13 +6,12 @@ interface TabData {
   content: React.ReactNode;
 }
 
-export const aboutMe = `I am a passionate full-stack web developer with a year of professional experience and four years of personal projects. While I specialize in JavaScript technologies I am open and eager to work with a diverse range of technologies. My expertise extends to web and API development, and I am currently contributing as a Software Developer at Cooperate Bank of Oromia. Committed to creating interactive and responsive web applications, I am always enthusiastic about expanding my knowledge and skill set. As a quick learner and a team player, I look forward to collaborating with others to deliver amazing applications.`;
+export const aboutMe = `I'm a Senior Software Engineer at Cooperative Bank of Oromia's DxValley, where I've worked since 2022. Over four years I've built and run production systems end to end: React and Next.js frontends, backend APIs and database design, and the CI/CD and Kubernetes infrastructure they deploy on. I led the frontend for Michu Mizan and co-built Souqpass, two national-first lending platforms in Ethiopia that have disbursed ETB 210M+ to 4,500+ borrowers. On contract with VK Tech, I built a multi-tenant fleet platform and a centralised AI media service, and scaled a suite of consumer AI tools to 150K+ users.`;
 
-export const contactMe = `I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!`;
+export const contactMe = `Have a role, a project, or a question? Send a message below or reach me directly. I read everything and reply by email.`;
 
-export const heroMobile = `Adaptable web developer with over a year of professional experience, complemented by dedicated practice during personal time. Specializing in React.js and Next.js. I'm also well-versed in agile project management and DevOps.`;
+export const heroMobile = `Senior software engineer with four years building production systems end to end: React and Next.js frontends, backend APIs, and the CI/CD and Kubernetes infrastructure they run on.`;
 
-// export const heroMd = `Adaptable web developer with over a year of professional experience, complemented by dedicated practice during university and personal time. Proficient in front-end development with a solid foundation in DevOps. Skilled in developing plans, managing projects, and user documentation.`;
 
 export interface AchievementItem {
   metric: string;
@@ -38,14 +36,20 @@ export const navLinks = [
 ];
 
 const SKILL_PILLS = [
-  "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
   "Node.js",
+  "NestJS",
+  "PostgreSQL",
+  "Redis",
+  "Docker",
+  "Kubernetes",
+  "GitHub Actions CI/CD",
+  "Playwright",
+  "Prometheus & Grafana",
+  "Sentry",
   "Tailwind CSS",
-  "REST & GraphQL",
-  "Git & CI/CD",
 ];
 
 export const TAB_DATA: TabData[] = [
@@ -70,7 +74,7 @@ export const TAB_DATA: TabData[] = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Bachelor of Science in Computer Science and Engineering</li>
+        <li>B.Sc. Computer Science and Engineering, 2022</li>
         <li>Adama Science and Technology University</li>
       </ul>
     ),
@@ -97,27 +101,27 @@ export const TAB_DATA: TabData[] = [
 
 export const achievementsList: AchievementItem[] = [
   {
-    metric: "Projects shipped",
-    value: String(getPublishedCount()),
-    prefix: "",
-    postfix: "+",
-  },
-  {
-    metric: "Years building",
-    value: "5",
+    metric: "Years in production",
+    value: "4",
     prefix: "",
     postfix: "",
   },
   {
-    metric: "Core technologies",
-    value: "12",
+    metric: "Disbursed via lending platforms",
+    value: "210",
+    prefix: "ETB ",
+    postfix: "M+",
+  },
+  {
+    metric: "Borrowers served",
+    value: "4500",
     prefix: "",
     postfix: "+",
   },
   {
-    metric: "Live Products",
-    value: String(getLivePreviewCount()),
+    metric: "AI tool users",
+    value: "150",
     prefix: "",
-    postfix: "+",
+    postfix: "K+",
   },
 ];

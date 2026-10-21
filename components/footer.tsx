@@ -44,7 +44,7 @@ const Footer = () => {
             className="whitespace-nowrap pl-4 text-[clamp(1.5rem,4vw,2.25rem)] font-light tracking-[0.35em] text-stone-100"
           >
             {Array(5)
-              .fill("OPEN TO OPPORTUNITIES — CRAFT — MOTION — WEB — ")
+              .fill("FRONTEND — BACKEND — INFRASTRUCTURE — ")
               .map((t, i) => (
                 <span key={i}>{t}</span>
               ))}

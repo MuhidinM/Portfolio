@@ -3,10 +3,17 @@
     "id": 1,
     "slug": "michu-mizan",
     "title": "Michu Mizan",
-    "description": "An alternative financing platform for interest free banking.",
+    "description": "Led frontend development for Ethiopia's first interest-free (Shariah-compliant) digital financing platform, now used to disburse ETB 60M+ to 1,500+ customers.",
     "image": "/images/projects/michumizan.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://michumizan.com/",
     "featured": true,
@@ -15,54 +22,204 @@
   },
   {
     "id": 2,
-    "slug": "dxvalley",
-    "title": "Dxvalley",
-    "description": "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
-    "image": "/images/projects/dxvalley.png",
-    "categories": ["frontend", "backend"],
-    "stack": ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
-    "gitUrl": "/",
-    "previewUrl": "https://dxvalley.com/",
-    "featured": true,
-    "published": true,
-    "date": "2024-03-12"
-  },
-  {
-    "id": 3,
-    "slug": "souq",
-    "title": "Souq",
-    "description": "Coop product facilitating users with payment processing, buy-now-pay-later options, and revenue-based financing.",
+    "slug": "souqpass",
+    "title": "Souqpass",
+    "description": "Co-built the frontend, in a two-engineer team, for Ethiopia's first revenue-based financing platform: ETB 150M+ funded to 3,000+ small businesses.",
     "image": "/images/projects/souqpass.png",
-    "categories": ["frontend", "backend", "mobile"],
-    "stack": ["React", "Redux", "Tailwind", "JavaScript"],
+    "categories": [
+      "frontend",
+      "backend",
+      "mobile"
+    ],
+    "stack": [
+      "React",
+      "Redux",
+      "Tailwind",
+      "JavaScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://souqpass.coopbankoromiasc.com/",
-    "featured": false,
+    "featured": true,
     "published": true,
     "date": "2024-04-13"
   },
   {
+    "id": 3,
+    "slug": "zakat-awqaf-platform",
+    "title": "Zakat & Awqaf Platform",
+    "description": "Ethiopia's national zakat and waqf platform, built with the Zakat and Awqaf Commission. I build the donor flows and the multi-level admin console, plus the CI/CD pipeline that deploys it to VMs. In development.",
+    "image": "",
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "CI/CD",
+      "Linux VMs"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": ""
+  },
+  {
     "id": 4,
+    "slug": "coopscale",
+    "title": "CoopScale HR Platform",
+    "description": "Deployment and platform work for Cooperative Bank of Oromia's HR system: Kubernetes in production, CI/CD pipelines built from scratch, and self-hosted GitHub Actions runners on a self-managed server.",
+    "image": "",
+    "categories": [
+      "backend"
+    ],
+    "stack": [
+      "Kubernetes",
+      "GitHub Actions",
+      "Self-hosted runners",
+      "Docker"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 5,
+    "slug": "fleet-os",
+    "title": "Fleet OS",
+    "description": "Multi-tenant platform for independent taxi fleets, built end to end: tenant-scoped database schema, APIs, and role-based auth behind dashboards for leased-vehicle management, driver assignment, and routing. VK Tech.",
+    "image": "",
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Multi-tenant",
+      "REST APIs",
+      "Role-based auth"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 6,
+    "slug": "charge-hub",
+    "title": "Charge Hub",
+    "description": "Operator console for a B2B EV charging platform. Real-time charger control over unreliable networks, using confirmation-gated UI state and idempotent commands to stop double-triggered chargers and billing drift. VK Tech.",
+    "image": "",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Real-time control",
+      "Idempotent commands"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 7,
+    "slug": "aigc-api",
+    "title": "AIGC API",
+    "description": "Centralised backend service that handles and standardises AI image and video generation requests across the VK Tech product suite, replacing per-product integrations.",
+    "image": "",
+    "categories": [
+      "backend"
+    ],
+    "stack": [
+      "Backend service",
+      "AI image & video generation"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 8,
+    "slug": "ai-saas-suite",
+    "title": "AI SaaS Suite",
+    "description": "Scaled a portfolio of 20+ consumer AI tools to 150K+ users, owning the Next.js rendering strategy (SSR/ISR) that kept Lighthouse and technical-SEO scores at 95+ as the surface grew. VK Tech.",
+    "image": "",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "SSR/ISR",
+      "TypeScript",
+      "Technical SEO"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 9,
+    "slug": "dxvalley",
+    "title": "Dxvalley",
+    "description": "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
+    "image": "/images/projects/dxvalley.png",
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://dxvalley.com/",
+    "featured": false,
+    "published": true,
+    "date": "2024-03-12"
+  },
+  {
+    "id": 10,
     "slug": "cartoon-any",
     "title": "Cartoon Any",
     "description": "Transform photos into cartoon-style illustrations",
     "image": "/images/projects/cartoonany.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://cartoonany.com/",
     "featured": false,
-    "published": true,
+    "published": false,
     "date": "2024-05-14"
   },
   {
-    "id": 5,
+    "id": 11,
     "slug": "watermark-gone",
     "title": "Watermark Gone",
     "description": "Advanced watermark removal and image restoration tool",
     "image": "/images/projects/watermarkgone.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://watermarkgone.com/",
     "featured": false,
@@ -70,13 +227,19 @@
     "date": "2024-06-15"
   },
   {
-    "id": 6,
+    "id": 12,
     "slug": "where-is-the-place",
     "title": "Where Is The Place",
     "description": "Location discovery and identification application",
     "image": "/images/projects/whereistheplace.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://whereistheplace.net/en",
     "featured": false,
@@ -84,13 +247,19 @@
     "date": "2024-07-16"
   },
   {
-    "id": 7,
+    "id": 13,
     "slug": "they-see-your-photo",
     "title": "They See Your Photo",
     "description": "Privacy-focused photo sharing and analysis platform",
     "image": "/images/projects/theyseeyourphoto.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://theyseeyourphotos.net/",
     "featured": false,
@@ -98,13 +267,19 @@
     "date": "2024-08-17"
   },
   {
-    "id": 8,
+    "id": 14,
     "slug": "tattoo-editor",
     "title": "Tattoo Editor",
     "description": "Digital tool for designing and editing tattoo artwork",
     "image": "/images/projects/tattooeditor.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://tattooeditor.com/",
     "featured": false,
@@ -112,13 +287,19 @@
     "date": "2024-09-18"
   },
   {
-    "id": 9,
+    "id": 15,
     "slug": "geospy-2",
     "title": "GeoSpy 2",
     "description": "Enhanced version of the location intelligence platform",
     "image": "/images/projects/geospy2.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://geospy.tech/",
     "featured": false,
@@ -126,13 +307,19 @@
     "date": "2024-10-19"
   },
   {
-    "id": 10,
+    "id": 16,
     "slug": "byd",
     "title": "BYD",
     "description": "A modern web application for automotive solutions",
     "image": "/images/projects/byd.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://electriccar-byd.com/",
     "featured": false,
@@ -140,13 +327,19 @@
     "date": "2024-11-20"
   },
   {
-    "id": 11,
+    "id": 17,
     "slug": "ai-image-checker",
     "title": "AI Image Checker",
     "description": "An AI-powered tool to detect and analyze images for authenticity",
     "image": "/images/projects/aiimagechecker.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://aiimagechecker.net/",
     "featured": false,
@@ -154,13 +347,19 @@
     "date": "2024-12-21"
   },
   {
-    "id": 12,
+    "id": 18,
     "slug": "image-merger",
     "title": "Image Merger",
     "description": "Tool for combining and merging multiple images seamlessly",
     "image": "/images/projects/imagemerger.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://mergeimage.com/",
     "featured": false,
@@ -168,41 +367,60 @@
     "date": "2024-01-22"
   },
   {
-    "id": 13,
+    "id": 19,
     "slug": "is-ai-image",
     "title": "Is AI Image",
     "description": "AI detection tool to identify artificially generated images",
     "image": "/images/projects/isaiimage.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://www.isaiimage.com/",
     "featured": false,
-    "published": true,
+    "published": false,
     "date": "2024-02-23"
   },
   {
-    "id": 14,
+    "id": 20,
     "slug": "is-fake-labubu",
     "title": "Is Fake Labubu",
     "description": "Authentication tool for Labubu collectible verification",
     "image": "/images/projects/isfakelabubu.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://isfakelabubu.com/",
     "featured": false,
-    "published": true,
+    "published": false,
     "date": "2024-03-24"
   },
   {
-    "id": 15,
+    "id": 21,
     "slug": "reva",
     "title": "Reva",
     "description": "Modern business solution platform",
     "image": "/images/projects/reva.png",
-    "categories": ["frontend", "backend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "/",
     "featured": false,
@@ -210,27 +428,39 @@
     "date": "2024-04-25"
   },
   {
-    "id": 16,
+    "id": 22,
     "slug": "mini-labubu",
     "title": "Mini Labubu",
     "description": "Miniature version showcase of Labubu collectibles",
     "image": "/images/projects/minilabubu.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://minilabubu.net",
     "featured": false,
-    "published": true,
+    "published": false,
     "date": "2024-05-26"
   },
   {
-    "id": 17,
+    "id": 23,
     "slug": "nail-art",
     "title": "Nail Art",
     "description": "Digital platform for nail art designs and tutorials",
     "image": "/images/projects/nailart.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://nailartai.net/",
     "featured": false,
@@ -238,41 +468,60 @@
     "date": "2024-06-10"
   },
   {
-    "id": 18,
+    "id": 24,
     "slug": "watermark-ai",
     "title": "Watermark AI",
     "description": "AI-powered watermark generation and application tool",
     "image": "/images/projects/watermarkai.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://watermarkremoval.net/",
     "featured": false,
-    "published": true,
+    "published": false,
     "date": "2024-07-11"
   },
   {
-    "id": 19,
+    "id": 25,
     "slug": "labubu-or-lafufu",
     "title": "Labubu or Lafufu",
     "description": "Interactive game to distinguish between Labubu characters",
     "image": "/images/projects/labubuorlafufu.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://lafufuorlabubu.com/",
     "featured": false,
-    "published": true,
+    "published": false,
     "date": "2024-08-12"
   },
   {
-    "id": 20,
+    "id": 26,
     "slug": "coop-present",
     "title": "Coop Present",
     "description": "A presentation platform for cooperative banking solutions",
     "image": "/images/projects/coopresent.png",
-    "categories": ["desktop"],
-    "stack": ["Electron", "React", "Tailwind", "TypeScript"],
+    "categories": [
+      "desktop"
+    ],
+    "stack": [
+      "Electron",
+      "React",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "/",
     "featured": false,
@@ -280,13 +529,19 @@
     "date": "2024-09-13"
   },
   {
-    "id": 21,
+    "id": 27,
     "slug": "geospy",
     "title": "GeoSpy",
     "description": "Location-based intelligence and mapping application",
     "image": "/images/projects/geospy.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://geospy.net/",
     "featured": false,
@@ -294,13 +549,22 @@
     "date": "2024-10-14"
   },
   {
-    "id": 22,
+    "id": 28,
     "slug": "omicron",
     "title": "Omicron",
-    "description": "A landing site for Omicron, Ethiopia's only supplier of Chint products.",
+    "description": "Next.js product showcase for Omicron, Ethiopia's exclusive Chint distributor. Built on contract with Keradion.",
     "image": "/images/projects/omicron.png",
-    "categories": ["frontend", "backend"],
-    "stack": ["Next.js", "Tailwind", "Framer Motion", "Laravel", "TypeScript"],
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "Laravel",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://omicronfront.vercel.app/",
     "featured": false,
@@ -308,27 +572,41 @@
     "date": "2024-11-15"
   },
   {
-    "id": 23,
+    "id": 29,
     "slug": "advanced-authentication-project",
     "title": "Advanced Authentication Project",
     "description": "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
     "image": "/images/projects/auth.png",
-    "categories": ["frontend", "backend"],
-    "stack": ["Next.js", "Auth.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Auth.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "https://github.com/MuhidinM/completeAuth",
     "previewUrl": "https://complete-auth-weld.vercel.app/",
-    "featured": true,
+    "featured": false,
     "published": true,
     "date": "2024-12-16"
   },
   {
-    "id": 24,
+    "id": 30,
     "slug": "eyoha",
     "title": "Eyoha",
-    "description": "An innovative social platform for community engagement",
+    "description": "Mobile-first frontend for Eyoha, a community platform. Built on contract with Keradion.",
     "image": "/images/projects/eyoha.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://eyoha-front.vercel.app/",
     "featured": false,
@@ -336,13 +614,22 @@
     "date": "2024-01-17"
   },
   {
-    "id": 25,
+    "id": 31,
     "slug": "fetawa",
     "title": "Fetawa",
     "description": "A collaborative online platform I contributed to, where users can pose questions and connect with knowledgeable teachers for insightful answers.",
     "image": "/images/projects/fetawa.png",
-    "categories": ["frontend", "backend"],
-    "stack": ["Next.js", "Firebase", "Tailwind", "Framer Motion", "TypeScript"],
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Firebase",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
     "gitUrl": "/",
     "previewUrl": "https://fatwa.vercel.app/",
     "featured": false,
@@ -350,13 +637,19 @@
     "date": "2024-02-18"
   },
   {
-    "id": 26,
+    "id": 32,
     "slug": "car-showcase",
     "title": "Car Showcase",
     "description": "A showcase project featuring a collection of car APIs",
     "image": "/images/projects/car.png",
-    "categories": ["frontend"],
-    "stack": ["Next.js", "Tailwind", "TypeScript"],
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
     "gitUrl": "https://github.com/MuhidinM/carShowcase",
     "previewUrl": "https://muhidinm.github.io/carShowcase/",
     "featured": false,
