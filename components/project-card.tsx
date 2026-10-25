@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import GlassFolder, {
   type ArtPreset,
   type FolderFile,
 } from "./ui/glass-folder-cards";
-import { Badge } from "./ui/badge";
+import ProjectViewer from "./project-viewer";
+import type { CaseStudy } from "@/types/project";
 
 interface ProjectCardProps {
   imgUrl: string;
@@ -14,6 +15,7 @@ interface ProjectCardProps {
   gitUrl: string;
   previewUrl: string;
   app: string[];
+  caseStudy?: CaseStudy;
   index?: number;
 }
 
@@ -60,17 +62,22 @@ const ProjectCard = ({
   gitUrl,
   previewUrl,
   app,
+  caseStudy,
   index = 0,
 }: ProjectCardProps) => {
   const [colRef, width] = useColumnWidth<HTMLDivElement>();
   const live = hasLink(previewUrl);
   const source = hasLink(gitUrl);
   const art = ART[index % ART.length];
+  const [viewer, setViewer] = useState<"screenshot" | "case" | null>(null);
+  const closeViewer = useCallback(() => setViewer(null), []);
+  const meta = live ? "Live · open for links" : source ? "Open for source" : "Internal project";
 
   // Opening the folder fans out what a visitor can actually do with the project.
   const files: FolderFile[] = [];
+  if (caseStudy) files.push({ name: "Case study", meta: "Read here" });
   if (imgUrl) {
-    files.push({ name: "Screenshot", meta: "Full size", image: optimized(imgUrl, 640) });
+    files.push({ name: "Screenshot", meta: "Open here", image: optimized(imgUrl, 640) });
   }
   if (source) files.push({ name: "Source code", meta: "GitHub ↗", href: gitUrl });
   if (live) files.push({ name: "Live site", meta: `${hostOf(previewUrl)} ↗`, href: previewUrl });
@@ -78,9 +85,12 @@ const ProjectCard = ({
     files.push({ name: "Internal build", meta: "No public link" });
   }
 
+  // The screenshot and case study open in place, inside a larger folder;
+  // links leave the page.
   const openFile = (file: FolderFile) => {
-    const url = file.href ?? (file.image ? imgUrl : undefined);
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
+    if (file.name === "Case study") setViewer("case");
+    else if (file.image) setViewer("screenshot");
+    else if (file.href) window.open(file.href, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -88,7 +98,7 @@ const ProjectCard = ({
       <h3 className="sr-only">{title}</h3>
       <GlassFolder
         label={title}
-        meta={live ? "Live · open for links" : source ? "Open for source" : "Internal project"}
+        meta={meta}
         tone="dark"
         image={imgUrl ? optimized(imgUrl, 640) : undefined}
         art={art}
@@ -100,21 +110,30 @@ const ProjectCard = ({
         onFileSelect={(file, i) => openFile(files[i] ?? file)}
       />
       <div className="mt-4 w-full max-w-[340px] text-left">
-        <p className="line-clamp-4 text-sm leading-relaxed text-stone-400">
+        <p className="line-clamp-4 text-sm leading-relaxed text-zinc-400">
           {description}
         </p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Stack">
           {app.map((item) => (
-            <Badge
-              key={item}
-              variant="outline"
-              className="border-stone-700/90 bg-stone-900/50 text-xs font-normal text-stone-400"
-            >
+            <li key={item} className="keycap">
               {item}
-            </Badge>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
+      {(imgUrl || caseStudy) && (
+        <ProjectViewer
+          open={viewer !== null}
+          onClose={closeViewer}
+          title={title}
+          meta={live ? hostOf(previewUrl) : source ? "Source on GitHub" : "Internal project"}
+          image={viewer === "screenshot" ? imgUrl : undefined}
+          caseStudy={viewer === "case" ? caseStudy : undefined}
+          liveUrl={live ? previewUrl : undefined}
+          sourceUrl={source ? gitUrl : undefined}
+          stack={app}
+        />
+      )}
     </article>
   );
 };

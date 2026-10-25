@@ -18,7 +18,16 @@
     "previewUrl": "https://michumizan.com/",
     "featured": true,
     "published": true,
-    "date": "2024-02-11"
+    "date": "2024-02-11",
+    "caseStudy": {
+      "role": "Frontend lead · Cooperative Bank of Oromia (DxValley)",
+      "context": "Ethiopia had no interest-free digital financing. Michu Mizan is the country's first Shariah-compliant lending platform, built inside the bank's digital innovation arm.",
+      "work": [
+        "Led frontend development for the platform's customer-facing web app.",
+        "Built it in Next.js and TypeScript, with Tailwind for the UI and Framer Motion for interaction."
+      ],
+      "outcome": "Now used to disburse ETB 60M+ in capital to 1,500+ customers."
+    }
   },
   {
     "id": 2,
@@ -41,14 +50,23 @@
     "previewUrl": "https://souqpass.coopbankoromiasc.com/",
     "featured": true,
     "published": true,
-    "date": "2024-04-13"
+    "date": "2024-04-13",
+    "caseStudy": {
+      "role": "Frontend engineer, two-person team · DxValley",
+      "context": "Small businesses in Ethiopia had no revenue-based financing. Souqpass is the country's first platform for it.",
+      "work": [
+        "Co-built the frontend with one other engineer.",
+        "React with Redux for state and Tailwind for the UI."
+      ],
+      "outcome": "ETB 150M+ funded to 3,000+ small businesses. It is now the primary financing tool for the country's agricultural sector."
+    }
   },
   {
     "id": 3,
     "slug": "zakat-awqaf-platform",
     "title": "Zakat & Awqaf Platform",
-    "description": "Ethiopia's national zakat and waqf platform, built with the Zakat and Awqaf Commission. I build the donor flows and the multi-level admin console, plus the CI/CD pipeline that deploys it to VMs. In development.",
-    "image": "",
+    "description": "Ethiopia's national zakat and waqf platform, built with the Zakat and Awqaf Commission. I build the donor flows and the multi-level admin console, plus the CI/CD pipeline that deploys it to VMs.",
+    "image": "/images/projects/ezac.png",
     "categories": [
       "frontend",
       "backend"
@@ -58,10 +76,20 @@
       "Linux VMs"
     ],
     "gitUrl": "/",
-    "previewUrl": "/",
+    "previewUrl": "https://ezaac.com/",
     "featured": true,
     "published": true,
-    "date": ""
+    "date": "",
+    "caseStudy": {
+      "role": "Frontend and CI/CD · built with the Zakat and Awqaf Commission",
+      "context": "Ethiopia's national platform for zakat and waqf: donors calculate and pay zakat, and the commission manages funds and assets.",
+      "work": [
+        "Donor flows on the frontend.",
+        "The multi-level admin console the commission runs on.",
+        "The CI/CD pipeline that deploys the platform to Linux VMs."
+      ],
+      "outcome": "Live at ezaac.com as the commission's national platform."
+    }
   },
   {
     "id": 4,
@@ -82,14 +110,24 @@
     "previewUrl": "/",
     "featured": true,
     "published": true,
-    "date": ""
+    "date": "",
+    "caseStudy": {
+      "role": "Deployment and platform owner · DxValley",
+      "context": "The bank's HR system needed a production platform and a build pipeline, on a free GitHub organisation with private repositories.",
+      "work": [
+        "Run the system on Kubernetes in production.",
+        "Built the CI/CD pipelines from scratch.",
+        "Set up self-hosted GitHub Actions runners on a self-managed server."
+      ],
+      "outcome": "Private-repository builds and tests keep running on a free GitHub organisation."
+    }
   },
   {
     "id": 5,
     "slug": "fleet-os",
     "title": "Fleet OS",
     "description": "Multi-tenant platform for independent taxi fleets, built end to end: tenant-scoped database schema, APIs, and role-based auth behind dashboards for leased-vehicle management, driver assignment, and routing. VK Tech.",
-    "image": "",
+    "image": "/images/projects/fleet os.png",
     "categories": [
       "frontend",
       "backend"
@@ -100,17 +138,27 @@
       "Role-based auth"
     ],
     "gitUrl": "/",
-    "previewUrl": "/",
+    "previewUrl": "https://ema-console.vercel.app/",
     "featured": true,
     "published": true,
-    "date": ""
+    "date": "",
+    "caseStudy": {
+      "role": "Built end to end · VK Tech (contract)",
+      "context": "Independent taxi fleets need one platform to manage leased vehicles, drivers and routes, with each fleet's data kept apart.",
+      "work": [
+        "A tenant-scoped database schema.",
+        "The APIs and role-based auth.",
+        "Dashboards for leased-vehicle management, driver assignment and routing."
+      ],
+      "outcome": "One multi-tenant platform serves many independent fleets."
+    }
   },
   {
     "id": 6,
     "slug": "charge-hub",
     "title": "Charge Hub",
     "description": "Operator console for a B2B EV charging platform. Real-time charger control over unreliable networks, using confirmation-gated UI state and idempotent commands to stop double-triggered chargers and billing drift. VK Tech.",
-    "image": "",
+    "image": "/images/projects/chargehub.png",
     "categories": [
       "frontend"
     ],
@@ -119,17 +167,26 @@
       "Idempotent commands"
     ],
     "gitUrl": "/",
-    "previewUrl": "/",
+    "previewUrl": "https://charging-station-console.to-iot.com/",
     "featured": true,
     "published": true,
-    "date": ""
+    "date": "",
+    "caseStudy": {
+      "role": "Operator console · VK Tech (contract)",
+      "context": "Operators of a B2B EV charging platform control chargers in real time, over networks that drop and retry.",
+      "work": [
+        "Confirmation-gated UI state: the console shows a charger as changed only once the charger confirms it.",
+        "Idempotent commands, so a retried request cannot trigger a charger twice."
+      ],
+      "outcome": "Stopped double-triggered chargers and the billing drift they caused."
+    }
   },
   {
     "id": 7,
     "slug": "aigc-api",
     "title": "AIGC API",
     "description": "Centralised backend service that handles and standardises AI image and video generation requests across the VK Tech product suite, replacing per-product integrations.",
-    "image": "",
+    "image": "/images/projects/aigc.png",
     "categories": [
       "backend"
     ],
@@ -138,31 +195,19 @@
       "AI image & video generation"
     ],
     "gitUrl": "/",
-    "previewUrl": "/",
+    "previewUrl": "https://api.videomaker.cool/contentflow/login/",
     "featured": true,
     "published": true,
-    "date": ""
-  },
-  {
-    "id": 8,
-    "slug": "ai-saas-suite",
-    "title": "AI SaaS Suite",
-    "description": "Scaled a portfolio of 20+ consumer AI tools to 150K+ users, owning the Next.js rendering strategy (SSR/ISR) that kept Lighthouse and technical-SEO scores at 95+ as the surface grew. VK Tech.",
-    "image": "",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "SSR/ISR",
-      "TypeScript",
-      "Technical SEO"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "/",
-    "featured": true,
-    "published": true,
-    "date": ""
+    "date": "",
+    "caseStudy": {
+      "role": "Backend service · VK Tech (contract)",
+      "context": "Each product in the suite integrated AI image and video generation separately.",
+      "work": [
+        "Built a central backend service that takes generation requests from every product.",
+        "Standardised how requests are handled across providers and products."
+      ],
+      "outcome": "Replaced the per-product integrations with one service."
+    }
   },
   {
     "id": 9,

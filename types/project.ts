@@ -8,6 +8,14 @@ export type ProjectCategory =
 /** `id` = stable order from data (default); title-* = alphabetical */
 export type ProjectSort = "id" | "title-asc" | "title-desc";
 
+/** A short write-up shown in the project folder. */
+export interface CaseStudy {
+  role: string;
+  context: string;
+  work: string[];
+  outcome: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -21,4 +29,5 @@ export interface Project {
   featured: boolean;
   published: boolean;
   date: string;
+  caseStudy?: CaseStudy;
 }

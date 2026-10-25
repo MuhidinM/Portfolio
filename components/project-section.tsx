@@ -169,6 +169,7 @@ const ProjectsSection = () => {
 
   const goPage = (p: number) => {
     replaceQuery({ page: p <= 1 ? null : String(p) });
+    sectionRef.current?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
   };
 
   const items = grid?.items ?? [];
@@ -176,45 +177,45 @@ const ProjectsSection = () => {
   const currentPage = grid?.page ?? page;
 
   return (
-    <section ref={sectionRef} id="projects" className="scroll-mt-24">
-      <h2 className="mt-6 mb-6 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl md:mb-10">
-        <span className="proj-head-word inline-block text-white">My</span>{" "}
-        <span className="proj-head-word inline-block text-white">Projects</span>
-      </h2>
-
-      <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
-        <label className="flex w-full max-w-md flex-col gap-1.5 text-left md:max-w-sm">
-          <span className="text-xs font-medium uppercase tracking-wide text-stone-500">
-            Search
-          </span>
-          <input
-            type="search"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Title, stack, description…"
-            className="rounded-full border border-stone-700 bg-zinc-900/50 px-4 py-2.5 text-sm text-stone-100 placeholder:text-stone-600 focus:border-stone-500 focus:outline-none focus:ring-1 focus:ring-stone-600"
-            autoComplete="off"
-          />
-        </label>
-        <label className="flex w-full flex-col gap-1.5 text-left md:w-56 md:shrink-0">
-          <span className="text-xs font-medium uppercase tracking-wide text-stone-500">
-            Sort
-          </span>
-          <select
-            value={sort}
-            onChange={handleSortChange}
-            className="cursor-pointer rounded-full border border-stone-700 bg-zinc-900/50 px-4 py-2.5 text-sm text-stone-200 focus:border-stone-500 focus:outline-none focus:ring-1 focus:ring-stone-600"
-          >
-            {SORT_OPTIONS.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select>
-        </label>
+    <section ref={sectionRef} id="projects" className="relative scroll-mt-28 py-16 sm:py-24">
+      <div className="dot-desk pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" aria-hidden />
+      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <h2 className="text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+            <span className="proj-head-word inline-block">Selected</span>{" "}
+            <span className="proj-head-word inline-block text-zinc-400">projects</span>
+          </h2>
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <label className="flex flex-col gap-1.5 sm:w-72">
+            <span className="sr-only">Search projects</span>
+            <input
+              type="search"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              placeholder="Search title, stack…"
+              className="glass-input px-4 py-2.5 text-sm"
+              autoComplete="off"
+            />
+          </label>
+          <label className="flex flex-col gap-1.5 sm:w-44">
+            <span className="sr-only">Sort projects</span>
+            <select
+              value={sort}
+              onChange={handleSortChange}
+              className="glass-input cursor-pointer px-4 py-2.5 text-sm [&>option]:bg-zinc-900"
+            >
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
       </div>
 
-      <div className="flex flex-row flex-wrap justify-center gap-2 py-4">
+      <div className="mb-6 flex flex-row flex-wrap gap-2" role="group" aria-label="Filter by category">
         {FILTERS.map(({ key, label }) => (
           <ProjectTag
             key={key}
@@ -227,15 +228,15 @@ const ProjectsSection = () => {
         ))}
       </div>
 
+      <p className="eyebrow mb-10 !text-[0.6875rem]">
+        Hover to peek · Click a folder to open it
+      </p>
+
       {error && (
         <p className="mb-6 text-center text-sm text-red-400/90" role="alert">
           {error}
         </p>
       )}
-
-      <p className="mb-8 text-center text-xs uppercase tracking-[0.18em] text-stone-500">
-        Hover to peek · Click a folder for screenshot and links
-      </p>
 
       {loadingGrid ? (
         <ul className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
@@ -244,13 +245,8 @@ const ProjectsSection = () => {
             .map((_, i) => (
               <li
                 key={i}
-                className="min-h-[28rem] animate-pulse rounded-xl border border-stone-800/50 bg-zinc-900/20"
+                className="glass h-[22rem] animate-pulse"
               >
-                <div className="h-52 bg-zinc-800/50 md:h-72" />
-                <div className="space-y-3 p-4">
-                  <div className="h-6 w-2/3 rounded bg-zinc-800/60" />
-                  <div className="h-16 rounded bg-zinc-800/40" />
-                </div>
               </li>
             ))}
         </ul>
@@ -270,13 +266,14 @@ const ProjectsSection = () => {
                   gitUrl={project.gitUrl}
                   previewUrl={project.previewUrl}
                   app={project.stack}
+                  caseStudy={project.caseStudy}
                   index={i}
                 />
               </li>
             ))}
           </ul>
           {items.length === 0 && (
-            <p className="py-16 text-center text-stone-500">
+            <p className="glass py-16 text-center text-zinc-400">
               No projects match your filters. Try another category or search
               term.
             </p>
@@ -293,21 +290,21 @@ const ProjectsSection = () => {
             type="button"
             disabled={currentPage <= 1}
             onClick={() => goPage(currentPage - 1)}
-            className="rounded-full border border-stone-700 bg-zinc-900/60 px-4 py-2 text-sm text-stone-200 transition-colors hover:border-stone-600 hover:bg-zinc-800/80 disabled:cursor-not-allowed disabled:opacity-40"
+            className="glass-key px-4 py-2 text-sm"
           >
             Previous
           </button>
-          <span className="px-3 text-sm text-stone-400">
+          <span className="px-3 font-mono text-xs text-zinc-400">
             Page {currentPage} of {totalPages}
             {grid != null && (
-              <span className="text-stone-600"> ({grid.total} total)</span>
+              <span className="text-zinc-500"> · {grid.total} total</span>
             )}
           </span>
           <button
             type="button"
             disabled={currentPage >= totalPages}
             onClick={() => goPage(currentPage + 1)}
-            className="rounded-full border border-stone-700 bg-zinc-900/60 px-4 py-2 text-sm text-stone-200 transition-colors hover:border-stone-600 hover:bg-zinc-800/80 disabled:cursor-not-allowed disabled:opacity-40"
+            className="glass-key px-4 py-2 text-sm"
           >
             Next
           </button>
