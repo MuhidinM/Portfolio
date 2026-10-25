@@ -19,7 +19,26 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        mono: [
+          "ui-monospace",
+          "SF Mono",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "monospace",
+        ],
+      },
       colors: {
+        // Taken from the keycap orb's glow and glass caps.
+        cobalt: {
+          200: "#c7d0ff",
+          300: "#a9bcff",
+          400: "#7b8cff",
+          500: "#3a50ff",
+          600: "#1f30ff",
+          700: "#141c8f",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

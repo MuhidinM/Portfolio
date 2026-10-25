@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="footer relative z-10 mt-auto mb-10 overflow-hidden border-t border-stone-800/90 text-stone-400 md:mb-16"
+      className="footer relative z-10 mt-auto overflow-hidden text-zinc-400"
     >
       {!reduced && (
         <div
@@ -41,7 +41,7 @@ const Footer = () => {
         >
           <div
             ref={marqueeRef}
-            className="whitespace-nowrap pl-4 text-[clamp(1.5rem,4vw,2.25rem)] font-light tracking-[0.35em] text-stone-100"
+            className="whitespace-nowrap pl-4 text-[clamp(1.5rem,4vw,2.25rem)] font-light tracking-[0.35em] text-zinc-100"
           >
             {Array(5)
               .fill("FRONTEND — BACKEND — INFRASTRUCTURE — ")
@@ -51,12 +51,16 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div className="container relative z-10 px-6 pb-14 pt-10 md:pb-16 md:pt-12">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <span className="text-sm font-medium tracking-tight text-stone-300">
-            {"<Muhidin Misbah />"}
+      <div className="container relative z-10 mx-auto px-4 pb-10 pt-6 md:px-12">
+        <div className="glass flex flex-col items-start justify-between gap-4 !rounded-2xl px-6 py-5 sm:flex-row sm:items-center">
+          <span className="text-sm font-medium tracking-tight text-zinc-200">
+            {"<"}
+            <span className="text-cobalt-300">Muhidin Misbah</span>
+            {" />"}
           </span>
-          <p className="text-sm text-stone-600">All rights reserved.</p>
+          <p className="font-mono text-xs tracking-[0.06em] text-zinc-400">
+            Addis Ababa · © {new Date().getFullYear()}
+          </p>
         </div>
       </div>
     </footer>

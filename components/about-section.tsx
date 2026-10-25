@@ -1,165 +1,148 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState, useTransition } from "react";
-import Image from "next/image";
-import TabButton from "./tab-button";
-import { TAB_DATA, aboutMe } from "@/constants";
-import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap-client";
+import React, { useLayoutEffect, useRef } from "react";
+import {
+  aboutFacts,
+  aboutParagraphs,
+  education,
+  experience,
+  stackGroups,
+} from "@/constants";
+import { gsap, registerGsap } from "@/lib/gsap-client";
 import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 
 const AboutSection = () => {
-  const [tab, setTab] = useState<string>("skills");
-  const [, startTransition] = useTransition();
   const sectionRef = useRef<HTMLElement>(null);
-  const imageWrapRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const copyRef = useRef<HTMLParagraphElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
-
-  const handleTabChange = (id: string) => {
-    startTransition(() => {
-      setTab(id);
-    });
-  };
-
-  const content = TAB_DATA.find((t) => t.id === tab)?.content ?? null;
 
   useLayoutEffect(() => {
     if (!sectionRef.current || reduced) return;
     registerGsap();
-
     const ctx = gsap.context(() => {
-      if (imageWrapRef.current && imageRef.current) {
-        gsap.set(imageRef.current, {
-          clipPath: "inset(100% 0% 0% 0%)",
-          yPercent: 8,
-          scale: 1.04,
+      gsap.utils.toArray<HTMLElement>(".about-reveal").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 24,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%", once: true },
         });
-        ScrollTrigger.create({
-          trigger: imageWrapRef.current,
-          start: "top 82%",
-          once: true,
-          onEnter: () => {
-            gsap.to(imageRef.current, {
-              clipPath: "inset(0% 0% 0% 0%)",
-              duration: 1.05,
-              ease: "power3.out",
-            });
-            gsap.to(imageRef.current, {
-              yPercent: 0,
-              scale: 1,
-              duration: 1.1,
-              ease: "power3.out",
-            });
-          },
-        });
-      }
-
-      if (titleRef.current && copyRef.current) {
-        const q = gsap.utils.selector(sectionRef);
-        ScrollTrigger.create({
-          trigger: titleRef.current,
-          start: "top 88%",
-          once: true,
-          onEnter: () => {
-            gsap
-              .timeline()
-              .from(q(".about-word"), {
-                opacity: 0,
-                y: 28,
-                rotateX: -38,
-                stagger: 0.11,
-                duration: 0.58,
-                ease: "power2.out",
-                transformOrigin: "50% 100%",
-              })
-              .from(
-                copyRef.current,
-                { opacity: 0, y: 16, duration: 0.55, ease: "power2.out" },
-                "-=0.22"
-              );
-          },
-        });
-      }
+      });
     }, sectionRef);
-
     return () => ctx.revert();
   }, [reduced]);
-
-  useLayoutEffect(() => {
-    if (!panelRef.current) return;
-    if (reduced) {
-      gsap.set(panelRef.current, { opacity: 1, y: 0 });
-      return;
-    }
-    registerGsap();
-    gsap.fromTo(
-      panelRef.current,
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
-    );
-  }, [tab, reduced]);
 
   return (
     <section
       ref={sectionRef}
-      className="text-stone-100 [perspective:1000px]"
       id="about"
+      className="scroll-mt-28 py-16 sm:py-24"
+      aria-labelledby="about-title"
     >
-      <div className="md:grid md:grid-cols-2 gap-8 py-8 sm:py-12 md:py-16 xl:gap-16">
-        <div
-          ref={imageWrapRef}
-          className="relative overflow-hidden rounded-xl border border-stone-800/90 bg-zinc-900/40"
-        >
-          <div ref={imageRef} className="relative w-full aspect-square max-h-[min(100vw,28rem)] md:max-h-none">
-            <Image
-              src="/images/code.gif"
-              width={800}
-              height={800}
-              alt="Code animation"
-              className="object-cover w-full h-full"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+      <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        {/* The story: what I do, then the proof. */}
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-32">
+            <h2
+              id="about-title"
+              className="about-reveal mb-6 text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl"
+            >
+              I ship systems,
+              <br />
+              <span className="text-zinc-400">not just screens.</span>
+            </h2>
+            <div className="about-reveal space-y-4 text-lg leading-relaxed text-zinc-400">
+              {aboutParagraphs.map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </div>
+            <dl className="about-reveal mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {aboutFacts.map((fact) => (
+                <div key={fact.label} className="glass !rounded-2xl px-4 py-3">
+                  <dt className="eyebrow !text-[0.6875rem] !tracking-[0.14em]">{fact.label}</dt>
+                  <dd className="mt-1 text-sm font-medium text-zinc-100">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2
-            ref={titleRef}
-            className="text-3xl sm:text-4xl font-semibold text-stone-100 mb-4 tracking-tight [transform-style:preserve-3d]"
-          >
-            <span className="about-word inline-block">About</span>{" "}
-            <span className="about-word inline-block">Me</span>
-          </h2>
-          <p
-            ref={copyRef}
-            className="text-base lg:text-lg text-stone-400 leading-relaxed"
-          >
-            {aboutMe}
-          </p>
-          <div className="flex flex-row flex-wrap justify-start gap-2 mt-8">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              Skills
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              Education
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              Certifications
-            </TabButton>
+
+        <div className="space-y-6 lg:col-span-7">
+          {/* Experience, newest first. */}
+          <div className="about-reveal glass p-6 sm:p-8">
+            <h3 className="eyebrow mb-6">Experience</h3>
+            <ol className="relative space-y-8 border-l border-white/10 pl-6">
+              {experience.map((job) => (
+                <li key={job.company} className="relative">
+                  <span
+                    className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-cobalt-400 shadow-[0_0_0_4px_#18181b,0_0_14px_2px_rgba(123,140,255,0.5)]"
+                    aria-hidden
+                  />
+                  <p className="text-lg font-semibold text-zinc-50">{job.company}</p>
+                  <p className="text-sm text-zinc-400">{job.context}</p>
+                  <ul className="mt-3 space-y-1">
+                    {job.roles.map((role) => (
+                      <li
+                        key={role.title}
+                        className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+                      >
+                        <span className="text-zinc-200">{role.title}</span>
+                        <span className="shrink-0 font-mono text-xs text-zinc-400">{role.period}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="mt-3 flex flex-wrap gap-1.5" aria-label={`Work at ${job.company}`}>
+                    {job.work.map((w) => (
+                      <li key={w} className="keycap">
+                        {w}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
           </div>
-          <div ref={panelRef} className="mt-8 text-stone-300 [&_a]:text-stone-400 [&_a]:underline-offset-2 [&_a]:hover:text-stone-200">
-            {content}
+
+          {/* Stack, grouped the way the CV groups it. */}
+          <div className="about-reveal glass p-6 sm:p-8">
+            <h3 className="eyebrow mb-6">Stack</h3>
+            <dl className="space-y-5">
+              {stackGroups.map((group) => (
+                <div key={group.name} className="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-4">
+                  <dt className="pt-1 text-sm font-medium text-zinc-300">{group.name}</dt>
+                  <dd className="flex flex-wrap gap-1.5">
+                    {group.items.map((item) => (
+                      <span key={item} className="keycap">
+                        {item}
+                      </span>
+                    ))}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="about-reveal glass p-6 sm:p-8">
+            <h3 className="eyebrow mb-6">Education &amp; certification</h3>
+            <ul className="space-y-4">
+              {education.map((item) => (
+                <li key={item.title}>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-zinc-100 underline decoration-cobalt-400/50 underline-offset-4 hover:decoration-cobalt-300"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <p className="font-medium text-zinc-100">{item.title}</p>
+                  )}
+                  <p className="text-sm text-zinc-400">{item.detail}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

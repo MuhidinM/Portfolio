@@ -6,14 +6,15 @@ interface MenuOverlayProps {
     title: string;
     path: string;
   }>;
+  onNavigate?: () => void;
 }
 
-const MenuOverlay = ({ links }: MenuOverlayProps) => {
+const MenuOverlay = ({ links, onNavigate }: MenuOverlayProps) => {
   return (
     <>
-      {links.map((link, index) => (
-        <li key={index}>
-          <NavLink href={link.path} title={link.title} />
+      {links.map((link) => (
+        <li key={link.path}>
+          <NavLink href={link.path} title={link.title} onNavigate={onNavigate} />
         </li>
       ))}
     </>

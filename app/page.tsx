@@ -11,34 +11,27 @@ import { ScrollMarqueeBand } from "@/components/scroll-marquee-band";
 
 export default function Home() {
   return (
-    <main
-      id="page-root"
-      className="relative flex min-h-screen flex-col"
-    >
+    <>
       <Navbar />
-      <div className="relative z-10 container mt-24 mx-auto px-4 md:px-12 py-4">
-        <div id="home">
-          <HeroSection />
-        </div>
-        <div id="about">
+      <main id="page-root" className="relative flex min-h-screen flex-col">
+        <div className="relative z-10 container mx-auto mt-28 px-4 py-4 md:px-12">
+          <div id="home">
+            <HeroSection />
+          </div>
+          <AchievementsSection />
           <AboutSection />
         </div>
-        <AchievementsSection />
-      </div>
-      <ScrollMarqueeBand />
-      <div className="relative z-10 container mx-auto px-4 md:px-12 py-4">
-        <div id="projects">
+        <ScrollMarqueeBand />
+        <div className="relative z-10 container mx-auto px-4 py-4 md:px-12">
           <Suspense fallback={<ProjectsSectionFallback />}>
             <ProjectsSection />
           </Suspense>
-        </div>
-        <div id="contact">
           <EmailSection />
         </div>
-      </div>
+      </main>
       <div className="relative z-10">
         <Footer />
       </div>
-    </main>
+    </>
   );
 }

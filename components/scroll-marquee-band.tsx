@@ -55,14 +55,14 @@ export function ScrollMarqueeBand() {
   return (
     <section
       ref={bandRef}
-      className="relative z-10 w-full overflow-hidden border-y border-stone-800/50 bg-[#121212] py-8 md:py-10 my-2"
+      className="relative z-10 w-full overflow-hidden border-y border-white/5 bg-[#121212] py-8 md:py-10 my-2"
       aria-hidden
     >
       <div className="pointer-events-none w-full px-0">
         <div className="mb-3 overflow-hidden opacity-[0.28] md:opacity-[0.24]">
           <div
             ref={rowARef}
-            className="whitespace-nowrap text-[clamp(1.75rem,6vw,3.75rem)] font-semibold tracking-tight text-stone-200"
+            className="whitespace-nowrap text-[clamp(1.75rem,6vw,3.75rem)] font-semibold tracking-tight text-zinc-200"
           >
             {Array(4)
               .fill(LINE_A)
@@ -74,7 +74,7 @@ export function ScrollMarqueeBand() {
         <div className="overflow-hidden opacity-[0.22] md:opacity-[0.2]">
           <div
             ref={rowBRef}
-            className="whitespace-nowrap text-[clamp(1.5rem,5vw,3rem)] font-medium tracking-tight text-stone-300"
+            className="whitespace-nowrap text-[clamp(1.5rem,5vw,3rem)] font-medium tracking-tight text-cobalt-300"
           >
             {Array(4)
               .fill(LINE_B)

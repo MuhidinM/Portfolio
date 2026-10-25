@@ -5,7 +5,7 @@ interface ContactCardProps {
   icon: string;
   title: string;
   first: string;
-  second: string;
+  second?: string;
   customClass: string;
 }
 
@@ -31,21 +31,21 @@ export const ContactCard = ({
   const isPhone = icon === "phone";
 
   const linkClass =
-    "text-xs font-light truncate text-stone-500 transition-colors hover:text-stone-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 rounded-sm";
+    "block break-all rounded-sm text-sm text-zinc-300 transition-colors hover:text-cobalt-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalt-400";
 
   return (
     <div
-      className={`flex items-center space-x-5 text-stone-200 border border-stone-800/90 rounded-lg p-4 bg-zinc-900/40 ${customClass}`}
+      className={`glass flex items-center gap-4 !rounded-2xl p-4 ${customClass}`}
     >
-      <div className="flex-shrink-0 bg-stone-800/80 p-3 rounded-full border border-stone-700/80">
+      <div className="glass-key h-11 w-11 shrink-0" aria-hidden>
         {isPhone ? (
-          <PhoneIcon width={22} className="text-stone-400" />
+          <PhoneIcon width={22} className="text-cobalt-300" />
         ) : (
-          <EnvelopeIcon width={22} className="text-stone-400" />
+          <EnvelopeIcon width={22} className="text-cobalt-300" />
         )}
       </div>
       <div className="flex-1 min-w-0">
-        <h3 className="text-sm font-medium text-stone-300">{title}</h3>
+        <p className="eyebrow mb-1 !text-[0.6875rem] !tracking-[0.14em]">{title}</p>
         {isPhone ? (
           <>
             <p className="min-w-0">
@@ -58,16 +58,18 @@ export const ContactCard = ({
                 {first}
               </a>
             </p>
-            <p className="min-w-0">
-              <a
-                href={whatsappUrl(second)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                {second}
-              </a>
-            </p>
+            {second && (
+              <p className="min-w-0">
+                <a
+                  href={whatsappUrl(second)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  {second}
+                </a>
+              </p>
+            )}
           </>
         ) : (
           <>
@@ -76,11 +78,13 @@ export const ContactCard = ({
                 {first}
               </a>
             </p>
-            <p className="min-w-0">
-              <a href={mailtoUrl(second)} className={linkClass}>
-                {second}
-              </a>
-            </p>
+            {second && (
+              <p className="min-w-0">
+                <a href={mailtoUrl(second)} className={linkClass}>
+                  {second}
+                </a>
+              </p>
+            )}
           </>
         )}
       </div>

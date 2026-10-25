@@ -42,32 +42,27 @@ const AchievementsSection = () => {
   }, [reduced]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-8 sm:py-12"
-      aria-label="Achievements"
-    >
-      <div className="rounded-lg border border-stone-800/90 bg-zinc-900/40 py-10 px-6 sm:px-10 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6 items-start justify-items-center">
-        {achievementsList.map((achievement, index) => {
+    <section ref={sectionRef} className="py-8 sm:py-12" aria-label="Highlights">
+      <dl className="glass grid grid-cols-2 gap-px overflow-hidden lg:grid-cols-4">
+        {achievementsList.map((achievement) => {
           const n = parseInt(achievement.value, 10);
           return (
             <div
-              key={index}
-              className="flex flex-col items-center justify-center text-center"
+              key={achievement.metric}
+              className="flex min-w-0 flex-col gap-2 px-4 py-6 text-left sm:px-8 sm:py-8"
             >
-              <h2 className="text-stone-100 text-3xl sm:text-4xl font-semibold tracking-tight flex flex-row items-baseline gap-0.5 tabular-nums">
-                <span className="sr-only">{achievement.metric}: </span>
-                {achievement.prefix}
-                <span data-count={n}>
-                  {reduced ? n.toLocaleString("en-US") : "0"}
-                </span>
-                {achievement.postfix}
-              </h2>
-              <p className="text-stone-500 text-sm mt-2">{achievement.metric}</p>
+              <dt className="eyebrow order-2 !tracking-[0.12em]">{achievement.metric}</dt>
+              <dd className="order-1 flex items-baseline whitespace-nowrap text-[1.75rem] font-semibold tracking-tight text-zinc-50 tabular-nums sm:text-4xl">
+                {achievement.prefix && (
+                  <span className="mr-1 text-base text-zinc-400 sm:text-lg">{achievement.prefix.trim()}</span>
+                )}
+                <span data-count={n}>{n.toLocaleString("en-US")}</span>
+                <span className="text-cobalt-400">{achievement.postfix}</span>
+              </dd>
             </div>
           );
         })}
-      </div>
+      </dl>
     </section>
   );
 };

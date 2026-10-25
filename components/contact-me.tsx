@@ -16,9 +16,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
 import { sendEmail } from "@/actions/email";
 import { contactMe } from "@/constants";
 import { ContactCard } from "./contact-card";
@@ -148,140 +145,114 @@ const EmailSection = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-16 py-20 md:py-24 gap-10 md:gap-12 relative z-0 scroll-mt-24 [perspective:900px]"
+      className="relative z-0 scroll-mt-28 py-16 sm:py-24 [perspective:900px]"
+      aria-labelledby="contact-title"
     >
       <div
         ref={blobRef}
-        className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/50 via-transparent to-transparent rounded-full h-72 w-72 z-0 blur-3xl absolute top-1/2 -left-24 -translate-y-1/2 pointer-events-none opacity-40"
+        className="pointer-events-none absolute -left-24 top-1/2 z-0 h-80 w-80 -translate-y-1/2 rounded-full bg-cobalt-600/20 opacity-40 blur-3xl"
         aria-hidden
       />
-      <div ref={leftColRef} className="z-10 space-y-1 relative">
-        <h5 className="text-lg font-semibold text-stone-100 tracking-tight flex flex-wrap gap-x-2 [transform-style:preserve-3d]">
-          <span className="contact-kw inline-block">Let&apos;s</span>
-          <span className="contact-kw inline-block">connect</span>
-        </h5>
-        <p className="contact-block text-stone-500 mb-6 max-w-md leading-relaxed">
-          {contactMe}
-        </p>
-        <div className="contact-block md:w-4/5 my-4 space-y-3">
-          <ContactCard
-            icon="phone"
-            title="Phone"
-            first="+251921435868"
-            second="+251799450102"
-            customClass=""
-          />
-          <ContactCard
-            icon="EnvelopeIcon"
-            title="Email"
-            first="misbahmuhidin@gmail.com"
-            second="muhidin.misbah@coopbankoromiasc.com"
-            customClass=""
-          />
-        </div>
-        <div className="socials socials-block flex flex-col gap-3 pt-4">
-          <p className="text-xs font-medium uppercase tracking-wide text-stone-500">
-            Profiles
+      <div className="relative z-10 grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div ref={leftColRef} className="lg:col-span-5">
+          <h2
+            id="contact-title"
+            className="mb-6 flex flex-wrap gap-x-3 text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl [transform-style:preserve-3d]"
+          >
+            <span className="contact-kw inline-block">Let&apos;s</span>
+            <span className="contact-kw inline-block text-zinc-400">talk.</span>
+          </h2>
+          <p className="contact-block mb-8 max-w-md text-lg leading-relaxed text-zinc-400">
+            {contactMe}
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+          <div className="contact-block space-y-3">
+            <ContactCard
+              icon="phone"
+              title="Phone · WhatsApp"
+              first="+251921435868"
+              customClass=""
+            />
+            <ContactCard
+              icon="EnvelopeIcon"
+              title="Email"
+              first="misbahmuhidin@gmail.com"
+              second="misbahmuhidin3@gmail.com"
+              customClass=""
+            />
+          </div>
+          <div className="socials-block mt-6 flex flex-wrap gap-3">
             <Link
               target="_blank"
+              rel="noopener noreferrer"
               href="https://github.com/MuhidinM"
-              className="group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
+              className="glass-key px-4 py-2.5 text-sm"
             >
-              <Image src={GithubIcon} alt="" width={32} height={32} />
-              <span className="border-b border-transparent text-sm group-hover:border-stone-500">
-                github.com/MuhidinM
-              </span>
+              <Image src={GithubIcon} alt="" width={18} height={18} />
+              github.com/MuhidinM
             </Link>
             <Link
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.linkedin.com/in/MuhidinM"
-              className="group inline-flex items-center gap-3 text-stone-300 transition-colors hover:text-stone-100"
+              className="glass-key px-4 py-2.5 text-sm"
             >
-              <Image src={LinkedinIcon} alt="" width={32} height={32} />
-              <span className="border-b border-transparent text-sm group-hover:border-stone-500">
-                linkedin.com/in/MuhidinM
-              </span>
+              <Image src={LinkedinIcon} alt="" width={18} height={18} />
+              linkedin.com/in/MuhidinM
             </Link>
           </div>
         </div>
-      </div>
-      <div ref={formColRef} className="relative z-10">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-6"
-            noValidate
-          >
-            <div className="space-y-4">
+
+        <div ref={formColRef} className="lg:col-span-7">
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="glass relative space-y-6 p-6 sm:p-8"
+              noValidate
+            >
               <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden>
                 <label>
                   Website
-                  <input
-                    type="text"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    {...form.register("website")}
-                  />
+                  <input type="text" tabIndex={-1} autoComplete="off" {...form.register("website")} />
                 </label>
               </div>
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem className="form-field">
-                    <FormLabel className="text-stone-300">Name</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="text-stone-100 border-stone-700 bg-zinc-900/40 placeholder:text-stone-600"
-                        {...field}
-                        disabled={isPending}
-                        placeholder="Jane Doe"
-                        autoComplete="name"
-                        type="text"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-red-400" />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="form-field">
-                    <FormLabel className="text-stone-300">Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="text-stone-100 border-stone-700 bg-zinc-900/40 placeholder:text-stone-600"
-                        {...field}
-                        disabled={isPending}
-                        placeholder="jane@company.com"
-                        autoComplete="email"
-                        type="email"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-red-400" />
-                  </FormItem>
-                )}
-              />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem className="form-field">
+                      <FormLabel className="text-sm text-zinc-300">Name</FormLabel>
+                      <FormControl>
+                        <input {...field} disabled={isPending} placeholder="Jane Doe" autoComplete="name" type="text" className="glass-input h-11 w-full px-4 text-sm disabled:opacity-50" />
+                      </FormControl>
+                      <FormMessage className="text-red-400" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="form-field">
+                      <FormLabel className="text-sm text-zinc-300">Email</FormLabel>
+                      <FormControl>
+                        <input {...field} disabled={isPending} placeholder="jane@company.com" autoComplete="email" type="email" className="glass-input h-11 w-full px-4 text-sm disabled:opacity-50" />
+                      </FormControl>
+                      <FormMessage className="text-red-400" />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <FormField
                 control={form.control}
                 name="subject"
                 render={({ field }) => (
                   <FormItem className="form-field">
-                    <FormLabel className="text-stone-300">
-                      Subject <span className="text-stone-500">(optional)</span>
+                    <FormLabel className="text-sm text-zinc-300">
+                      Subject <span className="text-zinc-500">(optional)</span>
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        className="text-stone-100 border-stone-700 bg-zinc-900/40 placeholder:text-stone-600"
-                        {...field}
-                        disabled={isPending}
-                        placeholder="Role, project, or question"
-                        type="text"
-                      />
+                      <input {...field} disabled={isPending} placeholder="Role, project, or question" type="text" className="glass-input h-11 w-full px-4 text-sm disabled:opacity-50" />
                     </FormControl>
                     <FormMessage className="text-red-400" />
                   </FormItem>
@@ -292,38 +263,38 @@ const EmailSection = () => {
                 name="message"
                 render={({ field }) => (
                   <FormItem className="form-field">
-                    <FormLabel className="text-stone-300">Message</FormLabel>
+                    <FormLabel className="text-sm text-zinc-300">Message</FormLabel>
                     <FormControl>
-                      <Textarea
-                        className="text-stone-100 border-stone-700 bg-zinc-900/40 min-h-[120px] placeholder:text-stone-600"
+                      <textarea
                         {...field}
                         disabled={isPending}
-                        placeholder="Let's talk..."
+                        placeholder="Let&apos;s talk..."
+                        className="glass-input block min-h-[140px] w-full resize-y px-4 py-3 text-sm disabled:opacity-50"
                       />
                     </FormControl>
                     <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
-            </div>
-            <div className="text-sm min-h-[1.25rem]" role="status" aria-live="polite">
-              {error ? (
-                <span className="text-red-400">{error}</span>
-              ) : success ? (
-                <span className="text-emerald-400">{success}</span>
-              ) : null}
-            </div>
-            <Button
-              type="submit"
-              disabled={isPending}
-              className="w-full rounded-full border border-stone-600 bg-zinc-800/90 text-stone-100 hover:bg-zinc-700/90"
-            >
-              <span ref={submitLabelRef}>
-                {isPending ? "Sending…" : "Send message"}
-              </span>
-            </Button>
-          </form>
-        </Form>
+              <div className="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-h-[1.25rem] text-sm" role="status" aria-live="polite">
+                  {error ? (
+                    <span className="text-red-400">{error}</span>
+                  ) : success ? (
+                    <span className="text-emerald-400">{success}</span>
+                  ) : null}
+                </div>
+                <button
+                  type="submit"
+                  disabled={isPending}
+                  className="glass-key glass-key-primary px-6 py-3 font-medium"
+                >
+                  <span ref={submitLabelRef}>{isPending ? "Sending…" : "Send message"}</span>
+                </button>
+              </div>
+            </form>
+          </Form>
+        </div>
       </div>
     </section>
   );
