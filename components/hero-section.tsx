@@ -2,7 +2,6 @@
 
 import React, { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
-import { handleDownload } from "@/lib/download";
 import { heroMobile } from "@/constants";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap-client";
 import { usePrefersReducedMotion } from "@/lib/reduced-motion";
@@ -29,10 +28,76 @@ const ORB_KEYS: Keycap[] = [
   { label: "Git", finish: "ink", hotkey: "g" },
   { icon: "hash", finish: "cobalt" },
   { label: "⌘", finish: "ash" },
-  { label: "Esc", finish: "lime" },
+  { label: "Esc", finish: "lime", hotkey: "Escape" },
+  // The rest of the ball, one cap per slot (82 at the default 9 rings), so no
+  // legend repeats.
+  { label: "JS", finish: "glass", hotkey: "j" },
+  { icon: "search", finish: "ash" },
+  { label: "HTML", finish: "glass", hotkey: "h" },
+  { label: "CSS", finish: "ash" },
+  { icon: "bolt", finish: "ash" },
+  { label: "Redux", finish: "ash" },
+  { label: "Nest", finish: "ink" },
+  { icon: "chevrons", finish: "lime" },
+  { label: "REST", finish: "cobalt" },
+  { label: "GQL", finish: "lime" },
+  { icon: "folder", finish: "lime" },
+  { label: "PG", finish: "glass", hotkey: "p" },
+  { label: "Redis", finish: "glass" },
+  { label: "Mongo", finish: "ink", hotkey: "m" },
+  { icon: "cursor", finish: "ash" },
+  { label: "Docker", finish: "ash", hotkey: "d" },
+  { label: "AWS", finish: "lime", hotkey: "w" },
+  { label: "Linux", finish: "ink", hotkey: "l" },
+  { icon: "at", finish: "lime" },
+  { label: "YAML", finish: "ash", hotkey: "y" },
+  { label: "Bash", finish: "lime", hotkey: "b" },
+  { label: "Helm", finish: "ink" },
+  { icon: "pen", finish: "ink" },
+  { label: "JWT", finish: "ink" },
+  { label: "RBAC", finish: "ash" },
+  { label: "JSON", finish: "ash" },
+  { icon: "frame", finish: "ink" },
+  { label: "MySQL", finish: "ink" },
+  { label: "Supa", finish: "lime" },
+  { label: "Query", finish: "cobalt", hotkey: "q" },
+  { icon: "quote", finish: "ink" },
+  { label: "Vercel", finish: "ink", hotkey: "v" },
+  { label: "Nginx", finish: "ash" },
+  { label: "Sentry", finish: "ash" },
+  { icon: "slash", finish: "glass" },
+  { label: "Graf", finish: "cobalt" },
+  { label: "Prom", finish: "ink" },
+  { label: "HTTP", finish: "ash" },
+  { icon: "star", finish: "ink" },
+  { label: "pnpm", finish: "ink" },
+  { label: "Zod", finish: "ash", hotkey: "z" },
+  { label: "Tab", finish: "lime" },
+  { icon: "arrow", finish: "ash" },
+  { label: "Shift", finish: "lime", hotkey: "Shift" },
+  { label: "Ctrl", finish: "ink", hotkey: "Control" },
+  { label: "Alt", finish: "cobalt", hotkey: "Alt" },
+  { icon: "plus", finish: "cobalt" },
+  { label: "Enter", finish: "glass", hotkey: "Enter" },
+  { label: "⌫", finish: "ink", hotkey: "Backspace" },
+  { label: "Fn", finish: "ash", hotkey: "f" },
+  { icon: "heart", finish: "ink" },
+  { label: "←", finish: "lime", hotkey: "ArrowLeft" },
+  { label: "→", finish: "cobalt", hotkey: "ArrowRight" },
+  { label: "↑", finish: "ink", hotkey: "ArrowUp" },
+  { label: "↓", finish: "ash", hotkey: "ArrowDown" },
+  { label: "⌥", finish: "cobalt" },
+  { label: "=>", finish: "cobalt" },
+  { label: "&&", finish: "ink" },
+  { label: "λ", finish: "lime" },
+  { label: "[ ]", finish: "glass" },
+  { label: "$", finish: "ash" },
+  { label: "0x", finish: "lime", hotkey: "0" },
 ];
 
-const ROLES = ["Muhidin Misbah", "Senior Software Engineer", "Full-Stack Engineer"];
+// Short words of similar length, so the rotating line never wraps or
+// changes the hero height.
+const ROLES = ["Muhidin.", "a builder.", "full-stack."];
 
 const HeroSection = () => {
   const rootRef = useRef<HTMLElement>(null);
@@ -158,59 +223,51 @@ const HeroSection = () => {
   return (
     <section
       ref={rootRef}
-      className="relative overflow-visible lg:py-16 [perspective:1200px]"
+      className="relative overflow-visible pt-8 lg:py-16 [perspective:1200px]"
     >
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-8 min-w-0 place-self-center text-center sm:text-left justify-self-start overflow-visible">
-          <h1 className="text-stone-100 mb-4 text-4xl sm:text-5xl lg:text-7xl xl:text-8xl lg:leading-[1.08] font-semibold tracking-tight">
+      <div className="relative z-10 grid grid-cols-1 items-center gap-10 sm:grid-cols-12">
+        <div className="min-w-0 text-center sm:col-span-7 sm:text-left">
+          <h1 className="mb-6 text-5xl font-semibold leading-[1.05] tracking-tight text-zinc-50 sm:text-6xl lg:text-7xl">
             <span className="hero-word-line block [transform-style:preserve-3d]">
-              <span className="hero-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-stone-200 to-stone-500">
-                Hello,
-              </span>{" "}
-              <span className="hero-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-stone-200 to-stone-500">
-                I&apos;m
-              </span>
+              <span className="hero-word inline-block text-zinc-400">Hello,</span>{" "}
+              <span className="hero-word inline-block text-zinc-400">I&apos;m</span>
             </span>
-            <span ref={roleRef} className="block mt-1 text-stone-100">
+            <span
+              ref={roleRef}
+              className="block whitespace-nowrap bg-gradient-to-r from-zinc-50 via-cobalt-200 to-cobalt-400 bg-clip-text text-transparent"
+            >
               {ROLES[0]}
             </span>
           </h1>
           <p
             ref={subRef}
-            className="text-stone-500 text-base sm:text-lg mb-8 lg:text-xl max-w-xl leading-relaxed"
+            className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-zinc-400 sm:mx-0"
           >
             {heroMobile}
           </p>
           <div
             ref={ctaRef}
-            className="relative z-20 flex flex-col gap-3 overflow-visible py-2 sm:flex-row sm:gap-4 sm:items-start"
+            className="relative z-20 flex flex-col gap-3 sm:flex-row sm:gap-4"
           >
-            <Link
-              href="/#contact"
-              className="inline-block w-full overflow-visible rounded-full sm:w-fit"
-            >
+            <Link href="/#contact" className="inline-block rounded-2xl">
               <span
                 ref={hireRef}
-                className="relative z-10 block rounded-full border border-stone-700/80 bg-zinc-800/90 px-6 py-3 text-center text-stone-100 transition-colors duration-300 will-change-transform hover:border-stone-600 hover:bg-zinc-700/90"
+                className="glass-key glass-key-primary w-full px-6 py-3 font-medium will-change-transform sm:w-auto"
               >
-                Hire Me
+                Get in touch
               </span>
             </Link>
-            <Link
-              href="/"
-              className="inline-block w-full overflow-visible rounded-full sm:w-fit"
-              onClick={handleDownload}
-            >
+            <a href="/MuhidinMisbah.pdf" download className="inline-block rounded-2xl">
               <span
                 ref={cvRef}
-                className="relative z-10 block rounded-full border border-stone-700 bg-zinc-900 px-6 py-3 text-center text-stone-200 transition-colors duration-300 will-change-transform hover:border-stone-600 hover:bg-zinc-800/80"
+                className="glass-key w-full px-6 py-3 font-medium will-change-transform sm:w-auto"
               >
                 Download CV
               </span>
-            </Link>
+            </a>
           </div>
         </div>
-        <div className="col-span-4 w-full place-self-center mt-10 sm:mt-0">
+        <div className="w-full sm:col-span-5">
           <div
             ref={avatarWrapRef}
             className="relative mx-auto w-full max-w-[460px] [container-type:inline-size] [--orb-max:360px] lg:[--orb-max:460px] [mask-image:radial-gradient(closest-side,black_72%,transparent)]"

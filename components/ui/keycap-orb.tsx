@@ -937,18 +937,35 @@ export default function KeycapOrb({
     const step = Math.PI / (ringCount - 1)
     const capWorld = RADIUS * step * 0.92
 
+    // The far side reuses the list with a stride, so neighbours there do
+    // not repeat the front's sequence.
+    const pool = order.map((_, rank) => (rank < list.length ? list[rank] : list[(rank * 7) % list.length]))
+    // Walk out from the front. Each slot takes a tone none of its side-by-side
+    // neighbours has, choosing the tone with the most caps left so no tone runs
+    // out early and clumps at the back; diagonals may match, like a
+    // checkerboard. Glass picks up the blue glow, so it counts as cobalt.
+    const tone = (k: Keycap) => (k.finish === "glass" ? "cobalt" : k.finish ?? "ink")
     const assigned: Keycap[] = new Array(count)
-    order.forEach((slot, rank) => {
-      // The far side reuses the list with a stride, so neighbours there do
-      // not repeat the front's sequence.
-      assigned[slot] = rank < list.length ? list[rank] : list[(rank * 7) % list.length]
-    })
+    const near = step * 1.25
+    for (const slot of order) {
+      const taken = new Set<string>()
+      slots.forEach((s, j) => {
+        if (assigned[j] && angleBetween(s.dir, slots[slot].dir) < near) taken.add(tone(assigned[j]))
+      })
+      const left = new Map<string, number>()
+      for (const k of pool) left.set(tone(k), (left.get(tone(k)) ?? 0) + 1)
+      let best = ""
+      for (const [t, n] of left) if (!taken.has(t) && (!best || n > left.get(best)!)) best = t
+      const pick = best ? pool.findIndex((k) => tone(k) === best) : 0
+      assigned[slot] = pool[pick]
+      pool.splice(pick, 1)
+    }
 
     const legends: string[] = []
     const cellOf = new Map<string, number>()
     for (const k of assigned) {
       const id = legendKey(k)
-      if (id && !cellOf.has(id) && legends.length < 64) {
+      if (id && !cellOf.has(id) && legends.length < 100) {
         cellOf.set(id, legends.length)
         legends.push(id)
       }
