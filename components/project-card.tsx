@@ -129,6 +129,9 @@ const ProjectCard = ({
           meta={live ? hostOf(previewUrl) : source ? "Source on GitHub" : "Internal project"}
           image={viewer === "screenshot" ? imgUrl : undefined}
           caseStudy={viewer === "case" ? caseStudy : undefined}
+          backImage={imgUrl ? optimized(imgUrl, 640) : undefined}
+          art={art}
+          seed={index + 3}
           liveUrl={live ? previewUrl : undefined}
           sourceUrl={source ? gitUrl : undefined}
           stack={app}

@@ -443,7 +443,7 @@ function paint(recipe: ArtRecipe, seed: number, w: number, h: number, priority: 
   return p
 }
 
-function ArtCanvas({
+export function ArtCanvas({
   art,
   seed,
   w,
