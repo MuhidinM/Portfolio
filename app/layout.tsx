@@ -21,18 +21,6 @@ export const metadata: Metadata = {
     lastName: "Misbah",
   },
   twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION },
-  icons: [
-    {
-      media: "(prefers-color-scheme:light)",
-      url: "/logo.png",
-      href: "/logo.png",
-    },
-    {
-      media: "(prefers-color-scheme:dark)",
-      url: "/logo-dark.png",
-      href: "/logo-dark.png",
-    },
-  ],
 };
 
 // Lets search engines show a name, role and profiles for the site.

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BrandMark } from "@/lib/brand";
 import { SITE_DESCRIPTION } from "@/lib/site";
 
 export const alt = "Muhidin Misbah — Senior Software Engineer";
@@ -23,10 +24,8 @@ export default function OpengraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 30, color: "#a1a1aa" }}>
-          {"<"}
-          <span style={{ color: "#a5b4ff" }}>Muhidin</span>
-          {" />"}
+        <div style={{ display: "flex" }}>
+          <BrandMark size={96} accent="#a5b4ff" />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -2, lineHeight: 1.05 }}>Muhidin Misbah</div>
