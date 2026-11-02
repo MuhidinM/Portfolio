@@ -169,14 +169,14 @@ const EmailSection = () => {
             <ContactCard
               icon="phone"
               title="Phone · WhatsApp"
-              first="+251921435868"
+              first="+251 92 143 5868"
               customClass=""
             />
             <ContactCard
               icon="EnvelopeIcon"
               title="Email"
-              first="misbahmuhidin@gmail.com"
-              second="misbahmuhidin3@gmail.com"
+              first="misbahmuhidin3@gmail.com"
+              second="misbahmuhidin@gmail.com"
               customClass=""
             />
           </div>

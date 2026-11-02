@@ -40,34 +40,34 @@ const ORB_KEYS: Keycap[] = [
   { label: "Nest", finish: "ink" },
   { icon: "chevrons", finish: "lime" },
   { label: "REST", finish: "cobalt" },
-  { label: "GQL", finish: "lime" },
+  { label: "LLM", finish: "lime" },
   { icon: "folder", finish: "lime" },
   { label: "PG", finish: "glass", hotkey: "p" },
-  { label: "Redis", finish: "glass" },
-  { label: "Mongo", finish: "ink", hotkey: "m" },
+  { label: "Jest", finish: "glass" },
+  { label: "OpenAI", finish: "ink", hotkey: "o" },
   { icon: "cursor", finish: "ash" },
   { label: "Docker", finish: "ash", hotkey: "d" },
-  { label: "AWS", finish: "lime", hotkey: "w" },
+  { label: "Stripe", finish: "lime" },
   { label: "Linux", finish: "ink", hotkey: "l" },
   { icon: "at", finish: "lime" },
   { label: "YAML", finish: "ash", hotkey: "y" },
   { label: "Bash", finish: "lime", hotkey: "b" },
-  { label: "Helm", finish: "ink" },
+  { label: "SSR", finish: "ink" },
   { icon: "pen", finish: "ink" },
   { label: "JWT", finish: "ink" },
   { label: "RBAC", finish: "ash" },
   { label: "JSON", finish: "ash" },
   { icon: "frame", finish: "ink" },
-  { label: "MySQL", finish: "ink" },
+  { label: "Vapi", finish: "ink" },
   { label: "Supa", finish: "lime" },
   { label: "Query", finish: "cobalt", hotkey: "q" },
   { icon: "quote", finish: "ink" },
   { label: "Vercel", finish: "ink", hotkey: "v" },
-  { label: "Nginx", finish: "ash" },
+  { label: "SEO", finish: "ash" },
   { label: "Sentry", finish: "ash" },
   { icon: "slash", finish: "glass" },
-  { label: "Graf", finish: "cobalt" },
-  { label: "Prom", finish: "ink" },
+  { label: "a11y", finish: "cobalt" },
+  { label: "shadcn", finish: "ink" },
   { label: "HTTP", finish: "ash" },
   { icon: "star", finish: "ink" },
   { label: "pnpm", finish: "ink" },
@@ -97,7 +97,7 @@ const ORB_KEYS: Keycap[] = [
 
 // Short words of similar length, so the rotating line never wraps or
 // changes the hero height.
-const ROLES = ["Muhidin.", "a builder.", "full-stack."];
+const ROLES = ["Muhidin.", "a builder.", "an engineer."];
 
 const HeroSection = () => {
   const rootRef = useRef<HTMLElement>(null);
@@ -257,7 +257,7 @@ const HeroSection = () => {
                 Get in touch
               </span>
             </Link>
-            <a href="/MuhidinMisbah.pdf" download className="inline-block rounded-2xl">
+            <a href="/MuhidinMisbah.pdf" download="Muhidin-Misbah-Dawud-Frontend-Engineer-CV.pdf" className="inline-block rounded-2xl">
               <span
                 ref={cvRef}
                 className="glass-key w-full px-6 py-3 font-medium will-change-transform sm:w-auto"

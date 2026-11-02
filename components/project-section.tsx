@@ -20,7 +20,6 @@ const FILTERS: { key: ProjectCategory | "all"; label: string }[] = [
   { key: "all", label: "All" },
   { key: "frontend", label: "Front End" },
   { key: "backend", label: "Backend" },
-  { key: "mobile", label: "Mobile" },
   { key: "desktop", label: "Desktop" },
 ];
 

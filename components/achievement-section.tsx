@@ -5,6 +5,10 @@ import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap-client";
 import { achievementsList } from "@/constants";
 import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 
+// Keeps decimals in the count-up, so "6.4" animates 0.0 → 6.4, not 0.4 → 6.4.
+const formatCount = (val: number, decimals: number) =>
+  val.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+
 const AchievementsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
@@ -18,7 +22,8 @@ const AchievementsSection = () => {
       if (!items?.length) return;
 
       items.forEach((el) => {
-        const target = parseInt(el.getAttribute("data-count") || "0", 10);
+        const target = parseFloat(el.getAttribute("data-count") || "0");
+        const decimals = Number(el.getAttribute("data-decimals") || "0");
         const obj = { val: 0 };
         ScrollTrigger.create({
           trigger: el,
@@ -30,7 +35,7 @@ const AchievementsSection = () => {
               duration: 1.15,
               ease: "power2.out",
               onUpdate: () => {
-                el.textContent = Math.round(obj.val).toLocaleString("en-US");
+                el.textContent = formatCount(obj.val, decimals);
               },
             });
           },
@@ -45,7 +50,8 @@ const AchievementsSection = () => {
     <section ref={sectionRef} className="py-8 sm:py-12" aria-label="Highlights">
       <dl className="glass grid grid-cols-2 gap-px overflow-hidden lg:grid-cols-4">
         {achievementsList.map((achievement) => {
-          const n = parseInt(achievement.value, 10);
+          const n = parseFloat(achievement.value);
+          const decimals = achievement.value.split(".")[1]?.length ?? 0;
           return (
             <div
               key={achievement.metric}
@@ -56,7 +62,7 @@ const AchievementsSection = () => {
                 {achievement.prefix && (
                   <span className="mr-1 text-base text-zinc-400 sm:text-lg">{achievement.prefix.trim()}</span>
                 )}
-                <span data-count={n}>{n.toLocaleString("en-US")}</span>
+                <span data-count={n} data-decimals={decimals}>{formatCount(n, decimals)}</span>
                 <span className="text-cobalt-400">{achievement.postfix}</span>
               </dd>
             </div>

@@ -3,7 +3,7 @@
     "id": 1,
     "slug": "michu-mizan",
     "title": "Michu Mizan",
-    "description": "Led frontend development for Ethiopia's first interest-free (Shariah-compliant) digital financing platform, now used to disburse ETB 60M+ to 1,500+ customers.",
+    "description": "Led the Next.js frontend of an Islamic (interest-free) finance platform at Cooperative Bank of Oromia: US$1.2M+ financed for 2,000+ customers.",
     "image": "/images/projects/michumizan.png",
     "categories": [
       "frontend"
@@ -18,27 +18,25 @@
     "previewUrl": "https://michumizan.com/",
     "featured": true,
     "published": true,
-    "date": "2024-02-11",
+    "date": "",
     "caseStudy": {
       "role": "Frontend lead · Cooperative Bank of Oromia (DxValley)",
-      "context": "Ethiopia had no interest-free digital financing. Michu Mizan is the country's first Shariah-compliant lending platform, built inside the bank's digital innovation arm.",
+      "context": "Michu Mizan is an Islamic (Shariah-compliant, interest-free) finance platform, built inside the bank's digital innovation arm.",
       "work": [
-        "Led frontend development for the platform's customer-facing web app.",
+        "Led the Next.js frontend of the platform's customer-facing web app.",
         "Built it in Next.js and TypeScript, with Tailwind for the UI and Framer Motion for interaction."
       ],
-      "outcome": "Now used to disburse ETB 60M+ in capital to 1,500+ customers."
+      "outcome": "US$1.2M+ financed for 2,000+ customers."
     }
   },
   {
     "id": 2,
     "slug": "souqpass",
     "title": "Souqpass",
-    "description": "Co-built the frontend, in a two-engineer team, for Ethiopia's first revenue-based financing platform: ETB 150M+ funded to 3,000+ small businesses.",
+    "description": "Revenue-based financing for small merchants: US$12M+ in transactions, US$920K+ in loans to 3,000+ businesses. Co-built the React frontend (team of two).",
     "image": "/images/projects/souqpass.png",
     "categories": [
-      "frontend",
-      "backend",
-      "mobile"
+      "frontend"
     ],
     "stack": [
       "React",
@@ -50,22 +48,86 @@
     "previewUrl": "https://souqpass.coopbankoromiasc.com/",
     "featured": true,
     "published": true,
-    "date": "2024-04-13",
+    "date": "",
     "caseStudy": {
       "role": "Frontend engineer, two-person team · DxValley",
-      "context": "Small businesses in Ethiopia had no revenue-based financing. Souqpass is the country's first platform for it.",
+      "context": "Souqpass offers revenue-based financing to small merchants, so onboarding had to be simple for them.",
       "work": [
-        "Co-built the frontend with one other engineer.",
+        "Co-built the React frontend with one other engineer.",
+        "Simple onboarding for small merchants.",
         "React with Redux for state and Tailwind for the UI."
       ],
-      "outcome": "ETB 150M+ funded to 3,000+ small businesses. It is now the primary financing tool for the country's agricultural sector."
+      "outcome": "US$12M+ in transactions and US$920K+ in loans to 3,000+ businesses."
     }
   },
   {
     "id": 3,
+    "slug": "furtuu",
+    "title": "Furtuu",
+    "description": "Shipped the frontend of a farmer financing platform with simple onboarding: US$4.3M+ financed for 5,000+ users. Cooperative Bank of Oromia (DxValley).",
+    "image": "",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Simple onboarding",
+      "Farmer financing"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": "",
+    "caseStudy": {
+      "role": "Frontend engineer · Cooperative Bank of Oromia (DxValley)",
+      "context": "Furtuu finances farmers, so onboarding had to be simple for them. It was built inside the bank's digital innovation arm.",
+      "work": [
+        "Shipped the platform's frontend.",
+        "Simple onboarding for farmers."
+      ],
+      "outcome": "US$4.3M+ financed for 5,000+ users."
+    }
+  },
+  {
+    "id": 4,
+    "slug": "revy-ai",
+    "title": "Revy AI",
+    "description": "AI real-estate assistant: a HeyGen video-avatar agent for buyers, a CRM with AI phone calls (Vapi) for realtors. I built most of the web and Electron apps.",
+    "image": "/images/projects/reva.png",
+    "categories": [
+      "frontend",
+      "desktop"
+    ],
+    "stack": [
+      "Next.js 14",
+      "TypeScript",
+      "Vercel AI SDK",
+      "OpenAI",
+      "Supabase",
+      "Stripe",
+      "Electron"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": true,
+    "published": true,
+    "date": "",
+    "caseStudy": {
+      "role": "Frontend engineer · freelance, Upwork client",
+      "context": "An AI real-estate assistant with two sides: buyers search US property data by chatting with an AI agent, and realtors run leads and deals in a CRM.",
+      "work": [
+        "Most of the web app and the Electron desktop app, in Next.js 14 and TypeScript with the Vercel AI SDK, OpenAI, Supabase and Stripe.",
+        "For buyers: chat with an AI agent on a HeyGen streaming video avatar to search US property data.",
+        "For realtors: a CRM with leads, deals, AI phone calls (Vapi) and virtual staging."
+      ],
+      "outcome": "The product is private, so there is no public link."
+    }
+  },
+  {
+    "id": 5,
     "slug": "zakat-awqaf-platform",
     "title": "Zakat & Awqaf Platform",
-    "description": "Ethiopia's national zakat and waqf platform, built with the Zakat and Awqaf Commission. I build the donor flows and the multi-level admin console, plus the CI/CD pipeline that deploys it to VMs.",
+    "description": "Ethiopia's national zakat and waqf platform. I'm building its donor flows, admin console and CI/CD pipeline to Linux VMs.",
     "image": "/images/projects/ezac.png",
     "categories": [
       "frontend",
@@ -92,50 +154,17 @@
     }
   },
   {
-    "id": 4,
-    "slug": "coopscale",
-    "title": "CoopScale HR Platform",
-    "description": "Deployment and platform work for Cooperative Bank of Oromia's HR system: Kubernetes in production, CI/CD pipelines built from scratch, and self-hosted GitHub Actions runners on a self-managed server.",
-    "image": "",
-    "categories": [
-      "backend"
-    ],
-    "stack": [
-      "Kubernetes",
-      "GitHub Actions",
-      "Self-hosted runners",
-      "Docker"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "/",
-    "featured": true,
-    "published": true,
-    "date": "",
-    "caseStudy": {
-      "role": "Deployment and platform owner · DxValley",
-      "context": "The bank's HR system needed a production platform and a build pipeline, on a free GitHub organisation with private repositories.",
-      "work": [
-        "Run the system on Kubernetes in production.",
-        "Built the CI/CD pipelines from scratch.",
-        "Set up self-hosted GitHub Actions runners on a self-managed server."
-      ],
-      "outcome": "Private-repository builds and tests keep running on a free GitHub organisation."
-    }
-  },
-  {
-    "id": 5,
+    "id": 6,
     "slug": "fleet-os",
     "title": "Fleet OS",
-    "description": "Multi-tenant platform for independent taxi fleets, built end to end: tenant-scoped database schema, APIs, and role-based auth behind dashboards for leased-vehicle management, driver assignment, and routing. VK Tech.",
+    "description": "Multi-tenant frontend for independent taxi fleets: role-based dashboards for leased vehicles, drivers and routing. VK Tech.",
     "image": "/images/projects/fleet os.png",
     "categories": [
-      "frontend",
-      "backend"
+      "frontend"
     ],
     "stack": [
       "Multi-tenant",
-      "REST APIs",
-      "Role-based auth"
+      "Role-based dashboards"
     ],
     "gitUrl": "/",
     "previewUrl": "https://ema-console.vercel.app/",
@@ -143,21 +172,20 @@
     "published": true,
     "date": "",
     "caseStudy": {
-      "role": "Built end to end · VK Tech (contract)",
+      "role": "Frontend · VK Tech (contract)",
       "context": "Independent taxi fleets need one platform to manage leased vehicles, drivers and routes, with each fleet's data kept apart.",
       "work": [
-        "A tenant-scoped database schema.",
-        "The APIs and role-based auth.",
-        "Dashboards for leased-vehicle management, driver assignment and routing."
+        "Built the multi-tenant frontend.",
+        "Role-based dashboards for leased vehicles, drivers and routing."
       ],
-      "outcome": "One multi-tenant platform serves many independent fleets."
+      "outcome": "One multi-tenant frontend for many independent fleets."
     }
   },
   {
-    "id": 6,
+    "id": 7,
     "slug": "charge-hub",
     "title": "Charge Hub",
-    "description": "Operator console for a B2B EV charging platform. Real-time charger control over unreliable networks, using confirmation-gated UI state and idempotent commands to stop double-triggered chargers and billing drift. VK Tech.",
+    "description": "Operator console for an EV charging platform: real-time charger control with confirmation-gated UI state and idempotent commands. VK Tech.",
     "image": "/images/projects/chargehub.png",
     "categories": [
       "frontend"
@@ -173,19 +201,19 @@
     "date": "",
     "caseStudy": {
       "role": "Operator console · VK Tech (contract)",
-      "context": "Operators of a B2B EV charging platform control chargers in real time, over networks that drop and retry.",
+      "context": "Operators of an EV charging platform control chargers in real time, over networks that drop and retry.",
       "work": [
         "Confirmation-gated UI state: the console shows a charger as changed only once the charger confirms it.",
         "Idempotent commands, so a retried request cannot trigger a charger twice."
       ],
-      "outcome": "Stopped double-triggered chargers and the billing drift they caused."
+      "outcome": "Live at charging-station-console.to-iot.com."
     }
   },
   {
-    "id": 7,
+    "id": 8,
     "slug": "aigc-api",
     "title": "AIGC API",
-    "description": "Centralised backend service that handles and standardises AI image and video generation requests across the VK Tech product suite, replacing per-product integrations.",
+    "description": "The shared generative AI service behind every VK Tech AI tool: one API for image and video generation, replacing per-product generation code.",
     "image": "/images/projects/aigc.png",
     "categories": [
       "backend"
@@ -211,373 +239,70 @@
   },
   {
     "id": 9,
-    "slug": "dxvalley",
-    "title": "Dxvalley",
-    "description": "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
-    "image": "/images/projects/dxvalley.png",
+    "slug": "qen",
+    "title": "Qen",
+    "description": "Open-source, zero-dependency Gregorian, Ethiopian and Hijri calendar engine with accessible React components. 1.9K+ npm downloads a month.",
+    "image": "",
     "categories": [
-      "frontend",
-      "backend"
+      "frontend"
     ],
     "stack": [
-      "Next.js",
-      "Tailwind",
-      "Framer Motion",
-      "TypeScript"
+      "TypeScript",
+      "React",
+      "Zero dependencies"
     ],
-    "gitUrl": "/",
-    "previewUrl": "https://dxvalley.com/",
-    "featured": false,
+    "gitUrl": "https://github.com/MuhidinM/qen",
+    "previewUrl": "https://qen-3.vercel.app/",
+    "featured": true,
     "published": true,
-    "date": "2024-03-12"
+    "date": "",
+    "caseStudy": {
+      "role": "Author · open source",
+      "context": "An open-source calendar library for Gregorian, Ethiopian and Hijri dates.",
+      "work": [
+        "@qen/core: a zero-dependency engine for Gregorian, Ethiopian and Hijri dates.",
+        "@qen/react: accessible React components built on the engine."
+      ],
+      "outcome": "1.9K+ npm downloads a month."
+    }
   },
   {
     "id": 10,
-    "slug": "cartoon-any",
-    "title": "Cartoon Any",
-    "description": "Transform photos into cartoon-style illustrations",
-    "image": "/images/projects/cartoonany.png",
+    "slug": "coopscale",
+    "title": "CoopScale HR Platform",
+    "description": "Cooperative Bank of Oromia's HR platform, in progress. As one of a few seniors among ~60 engineers, I review code and set up CI/CD and Kubernetes.",
+    "image": "",
     "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://cartoonany.com/",
-    "featured": false,
-    "published": false,
-    "date": "2024-05-14"
-  },
-  {
-    "id": 11,
-    "slug": "watermark-gone",
-    "title": "Watermark Gone",
-    "description": "Advanced watermark removal and image restoration tool",
-    "image": "/images/projects/watermarkgone.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://watermarkgone.com/",
-    "featured": false,
-    "published": true,
-    "date": "2024-06-15"
-  },
-  {
-    "id": 12,
-    "slug": "where-is-the-place",
-    "title": "Where Is The Place",
-    "description": "Location discovery and identification application",
-    "image": "/images/projects/whereistheplace.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://whereistheplace.net/en",
-    "featured": false,
-    "published": true,
-    "date": "2024-07-16"
-  },
-  {
-    "id": 13,
-    "slug": "they-see-your-photo",
-    "title": "They See Your Photo",
-    "description": "Privacy-focused photo sharing and analysis platform",
-    "image": "/images/projects/theyseeyourphoto.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://theyseeyourphotos.net/",
-    "featured": false,
-    "published": true,
-    "date": "2024-08-17"
-  },
-  {
-    "id": 14,
-    "slug": "tattoo-editor",
-    "title": "Tattoo Editor",
-    "description": "Digital tool for designing and editing tattoo artwork",
-    "image": "/images/projects/tattooeditor.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://tattooeditor.com/",
-    "featured": false,
-    "published": true,
-    "date": "2024-09-18"
-  },
-  {
-    "id": 15,
-    "slug": "geospy-2",
-    "title": "GeoSpy 2",
-    "description": "Enhanced version of the location intelligence platform",
-    "image": "/images/projects/geospy2.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://geospy.tech/",
-    "featured": false,
-    "published": true,
-    "date": "2024-10-19"
-  },
-  {
-    "id": 16,
-    "slug": "byd",
-    "title": "BYD",
-    "description": "A modern web application for automotive solutions",
-    "image": "/images/projects/byd.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://electriccar-byd.com/",
-    "featured": false,
-    "published": true,
-    "date": "2024-11-20"
-  },
-  {
-    "id": 17,
-    "slug": "ai-image-checker",
-    "title": "AI Image Checker",
-    "description": "An AI-powered tool to detect and analyze images for authenticity",
-    "image": "/images/projects/aiimagechecker.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://aiimagechecker.net/",
-    "featured": false,
-    "published": true,
-    "date": "2024-12-21"
-  },
-  {
-    "id": 18,
-    "slug": "image-merger",
-    "title": "Image Merger",
-    "description": "Tool for combining and merging multiple images seamlessly",
-    "image": "/images/projects/imagemerger.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://mergeimage.com/",
-    "featured": false,
-    "published": true,
-    "date": "2024-01-22"
-  },
-  {
-    "id": 19,
-    "slug": "is-ai-image",
-    "title": "Is AI Image",
-    "description": "AI detection tool to identify artificially generated images",
-    "image": "/images/projects/isaiimage.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://www.isaiimage.com/",
-    "featured": false,
-    "published": false,
-    "date": "2024-02-23"
-  },
-  {
-    "id": 20,
-    "slug": "is-fake-labubu",
-    "title": "Is Fake Labubu",
-    "description": "Authentication tool for Labubu collectible verification",
-    "image": "/images/projects/isfakelabubu.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://isfakelabubu.com/",
-    "featured": false,
-    "published": false,
-    "date": "2024-03-24"
-  },
-  {
-    "id": 21,
-    "slug": "reva",
-    "title": "Reva",
-    "description": "Modern business solution platform",
-    "image": "/images/projects/reva.png",
-    "categories": [
-      "frontend",
       "backend"
     ],
     "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
+      "Kubernetes",
+      "GitHub Actions",
+      "Self-hosted runners",
+      "Docker"
     ],
     "gitUrl": "/",
     "previewUrl": "/",
-    "featured": false,
+    "featured": true,
     "published": true,
-    "date": "2024-04-25"
+    "date": "",
+    "caseStudy": {
+      "role": "Code review, CI/CD and Kubernetes · DxValley",
+      "context": "The bank's HR platform is still in progress. It needed a deployment platform and a build pipeline, on a free GitHub organisation with private repositories.",
+      "work": [
+        "Review code for the team, as one of a few seniors among ~60 engineers.",
+        "Set up the platform's Kubernetes deployment.",
+        "Built the CI/CD pipelines from scratch.",
+        "Set up self-hosted GitHub Actions runners on a self-managed server."
+      ],
+      "outcome": "Private-repository builds and tests keep running on a free GitHub organisation."
+    }
   },
   {
-    "id": 22,
-    "slug": "mini-labubu",
-    "title": "Mini Labubu",
-    "description": "Miniature version showcase of Labubu collectibles",
-    "image": "/images/projects/minilabubu.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://minilabubu.net",
-    "featured": false,
-    "published": false,
-    "date": "2024-05-26"
-  },
-  {
-    "id": 23,
-    "slug": "nail-art",
-    "title": "Nail Art",
-    "description": "Digital platform for nail art designs and tutorials",
-    "image": "/images/projects/nailart.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://nailartai.net/",
-    "featured": false,
-    "published": true,
-    "date": "2024-06-10"
-  },
-  {
-    "id": 24,
-    "slug": "watermark-ai",
-    "title": "Watermark AI",
-    "description": "AI-powered watermark generation and application tool",
-    "image": "/images/projects/watermarkai.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://watermarkremoval.net/",
-    "featured": false,
-    "published": false,
-    "date": "2024-07-11"
-  },
-  {
-    "id": 25,
-    "slug": "labubu-or-lafufu",
-    "title": "Labubu or Lafufu",
-    "description": "Interactive game to distinguish between Labubu characters",
-    "image": "/images/projects/labubuorlafufu.png",
-    "categories": [
-      "frontend"
-    ],
-    "stack": [
-      "Next.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "https://lafufuorlabubu.com/",
-    "featured": false,
-    "published": false,
-    "date": "2024-08-12"
-  },
-  {
-    "id": 26,
-    "slug": "coop-present",
-    "title": "Coop Present",
-    "description": "A presentation platform for cooperative banking solutions",
-    "image": "/images/projects/coopresent.png",
-    "categories": [
-      "desktop"
-    ],
-    "stack": [
-      "Electron",
-      "React",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "/",
-    "previewUrl": "/",
-    "featured": false,
-    "published": true,
-    "date": "2024-09-13"
-  },
-  {
-    "id": 27,
+    "id": 11,
     "slug": "geospy",
-    "title": "GeoSpy",
-    "description": "Location-based intelligence and mapping application",
+    "title": "geospy.net",
+    "description": "Free AI photo location finder: upload a photo and it estimates where it was taken. With geospy.tech, 180K+ monthly users. Built at VK Tech.",
     "image": "/images/projects/geospy.png",
     "categories": [
       "frontend"
@@ -591,58 +316,174 @@
     "previewUrl": "https://geospy.net/",
     "featured": false,
     "published": true,
-    "date": "2024-10-14"
+    "date": ""
   },
   {
-    "id": 28,
+    "id": 12,
+    "slug": "geospy-2",
+    "title": "geospy.tech",
+    "description": "AI photo geolocation from landmarks, architecture, signs and landscape. With geospy.net, 180K+ monthly users. Built at VK Tech.",
+    "image": "/images/projects/geospy2.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://geospy.tech/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 13,
+    "slug": "where-is-the-place",
+    "title": "Where Is The Place",
+    "description": "Upload a photo and AI reads its visual clues to estimate where it was taken. Built at VK Tech.",
+    "image": "/images/projects/whereistheplace.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://whereistheplace.net/en",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 14,
+    "slug": "they-see-your-photo",
+    "title": "They See Your Photo",
+    "description": "AI photo analysis that shows the hidden data and privacy risks in an image. Built at VK Tech.",
+    "image": "/images/projects/theyseeyourphoto.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://theyseeyourphotos.net/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 15,
+    "slug": "watermark-gone",
+    "title": "Watermark Gone",
+    "description": "AI watermark remover: takes watermarks, logos and text out of images. Built at VK Tech.",
+    "image": "/images/projects/watermarkgone.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://watermarkgone.com/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 16,
+    "slug": "ai-image-checker",
+    "title": "AI Image Checker",
+    "description": "Checks whether an image may be AI-generated, with tools to read text and estimate location. Built at VK Tech.",
+    "image": "/images/projects/aiimagechecker.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://aiimagechecker.net/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 17,
+    "slug": "image-merger",
+    "title": "Image Merger",
+    "description": "Combines multiple images into one. Built at VK Tech.",
+    "image": "/images/projects/imagemerger.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://mergeimage.com/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 18,
+    "slug": "nail-art",
+    "title": "Nail Art",
+    "description": "AI nail art generator for creating nail designs. Built at VK Tech.",
+    "image": "/images/projects/nailart.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://nailartai.net/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 19,
     "slug": "omicron",
     "title": "Omicron",
-    "description": "Next.js product showcase for Omicron, Ethiopia's exclusive Chint distributor. Built on contract with Keradion.",
+    "description": "Next.js company website for Omicron, a Chint distributor in Ethiopia. Built on contract with Keradion.",
     "image": "/images/projects/omicron.png",
     "categories": [
-      "frontend",
-      "backend"
+      "frontend"
     ],
     "stack": [
       "Next.js",
       "Tailwind",
       "Framer Motion",
-      "Laravel",
       "TypeScript"
     ],
     "gitUrl": "/",
     "previewUrl": "https://omicronfront.vercel.app/",
     "featured": false,
     "published": true,
-    "date": "2024-11-15"
+    "date": ""
   },
   {
-    "id": 29,
-    "slug": "advanced-authentication-project",
-    "title": "Advanced Authentication Project",
-    "description": "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
-    "image": "/images/projects/auth.png",
-    "categories": [
-      "frontend",
-      "backend"
-    ],
-    "stack": [
-      "Next.js",
-      "Auth.js",
-      "Tailwind",
-      "TypeScript"
-    ],
-    "gitUrl": "https://github.com/MuhidinM/completeAuth",
-    "previewUrl": "https://complete-auth-weld.vercel.app/",
-    "featured": false,
-    "published": true,
-    "date": "2024-12-16"
-  },
-  {
-    "id": 30,
+    "id": 20,
     "slug": "eyoha",
     "title": "Eyoha",
-    "description": "Mobile-first frontend for Eyoha, a community platform. Built on contract with Keradion.",
+    "description": "Next.js company website for Eyoha, a clinic. Built on contract with Keradion.",
     "image": "/images/projects/eyoha.png",
     "categories": [
       "frontend"
@@ -656,10 +497,10 @@
     "previewUrl": "https://eyoha-front.vercel.app/",
     "featured": false,
     "published": true,
-    "date": "2024-01-17"
+    "date": ""
   },
   {
-    "id": 31,
+    "id": 21,
     "slug": "fetawa",
     "title": "Fetawa",
     "description": "A collaborative online platform I contributed to, where users can pose questions and connect with knowledgeable teachers for insightful answers.",
@@ -679,10 +520,73 @@
     "previewUrl": "https://fatwa.vercel.app/",
     "featured": false,
     "published": true,
-    "date": "2024-02-18"
+    "date": ""
   },
   {
-    "id": 32,
+    "id": 22,
+    "slug": "advanced-authentication-project",
+    "title": "Advanced Authentication Project",
+    "description": "A comprehensive authentication project that incorporates sign-in and sign-out functionalities utilizing both OAuth and credentials. The project includes email verification, password reset, two-factor authentication, and an admin role",
+    "image": "/images/projects/auth.png",
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Auth.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "https://github.com/MuhidinM/completeAuth",
+    "previewUrl": "https://complete-auth-weld.vercel.app/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 23,
+    "slug": "byd",
+    "title": "BYD",
+    "description": "Website for an export company that sells BYD electric cars. Built at VK Tech.",
+    "image": "/images/projects/byd.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://electriccar-byd.com/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 24,
+    "slug": "coop-present",
+    "title": "Coop Present",
+    "description": "Windows desktop app built with Electron and React: a presentation platform for cooperative banking solutions.",
+    "image": "/images/projects/coopresent.png",
+    "categories": [
+      "desktop"
+    ],
+    "stack": [
+      "Electron",
+      "React",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "/",
+    "featured": false,
+    "published": true,
+    "date": ""
+  },
+  {
+    "id": 25,
     "slug": "car-showcase",
     "title": "Car Showcase",
     "description": "A showcase project featuring a collection of car APIs",
@@ -699,6 +603,168 @@
     "previewUrl": "https://muhidinm.github.io/carShowcase/",
     "featured": false,
     "published": true,
-    "date": "2024-03-19"
+    "date": ""
+  },
+  {
+    "id": 26,
+    "slug": "cartoon-any",
+    "title": "Cartoon Any",
+    "description": "Transform photos into cartoon-style illustrations",
+    "image": "/images/projects/cartoonany.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://cartoonany.com/",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 27,
+    "slug": "tattoo-editor",
+    "title": "Tattoo Editor",
+    "description": "Digital tool for designing and editing tattoo artwork",
+    "image": "/images/projects/tattooeditor.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://tattooeditor.com/",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 28,
+    "slug": "is-ai-image",
+    "title": "Is AI Image",
+    "description": "AI detection tool to identify artificially generated images",
+    "image": "/images/projects/isaiimage.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://www.isaiimage.com/",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 29,
+    "slug": "is-fake-labubu",
+    "title": "Is Fake Labubu",
+    "description": "Authentication tool for Labubu collectible verification",
+    "image": "/images/projects/isfakelabubu.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://isfakelabubu.com/",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 30,
+    "slug": "mini-labubu",
+    "title": "Mini Labubu",
+    "description": "Miniature version showcase of Labubu collectibles",
+    "image": "/images/projects/minilabubu.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://minilabubu.net",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 31,
+    "slug": "watermark-ai",
+    "title": "Watermark AI",
+    "description": "AI-powered watermark generation and application tool",
+    "image": "/images/projects/watermarkai.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://watermarkremoval.net/",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 32,
+    "slug": "labubu-or-lafufu",
+    "title": "Labubu or Lafufu",
+    "description": "Interactive game to distinguish between Labubu characters",
+    "image": "/images/projects/labubuorlafufu.png",
+    "categories": [
+      "frontend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://lafufuorlabubu.com/",
+    "featured": false,
+    "published": false,
+    "date": ""
+  },
+  {
+    "id": 33,
+    "slug": "dxvalley",
+    "title": "Dxvalley",
+    "description": "Developed a web platform for DxValley to showcase its mission of fostering innovation and entrepreneurship in Ethiopia, connect with partners, and manage hackathons, competitions, and training programs.",
+    "image": "/images/projects/dxvalley.png",
+    "categories": [
+      "frontend",
+      "backend"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "gitUrl": "/",
+    "previewUrl": "https://dxvalley.com/",
+    "featured": false,
+    "published": false,
+    "date": ""
   }
 ]

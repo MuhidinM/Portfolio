@@ -6,7 +6,6 @@ const CATEGORIES: (ProjectCategory | "all")[] = [
   "all",
   "frontend",
   "backend",
-  "mobile",
   "desktop",
 ];
 

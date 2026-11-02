@@ -5,9 +5,9 @@ import { gsap, registerGsap } from "@/lib/gsap-client";
 import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 
 const LINE_A =
-  "FULL STACK — REACT — NEXT.JS — TYPESCRIPT — NODE — NESTJS — ";
+  "FRONTEND — REACT — NEXT.JS — TYPESCRIPT — AI PRODUCTS — FINTECH — ";
 const LINE_B =
-  "POSTGRESQL — REDIS — KUBERNETES — CI/CD — OBSERVABILITY — ";
+  "LLM APIS — VERCEL AI SDK — NODE.JS — POSTGRESQL — CI/CD — ";
 
 /**
  * Full-bleed strip between achievements and projects: scroll-scrubbed horizontal type.

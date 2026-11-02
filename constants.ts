@@ -1,11 +1,12 @@
 export const aboutParagraphs = [
-  `I'm a Senior Software Engineer at Cooperative Bank of Oromia's DxValley, where I've worked since 2022. I build and run production systems end to end: React and Next.js frontends, backend APIs and database design, and the CI/CD and Kubernetes infrastructure they deploy on.`,
-  `I led the frontend for Michu Mizan and co-built Souqpass, two national-first lending platforms in Ethiopia that have disbursed ETB 210M+ to 4,500+ borrowers. On contract with VK Tech, I built a multi-tenant fleet platform and a centralised AI media service, and scaled a suite of consumer AI tools to 150K+ users.`,
+  `I'm a frontend engineer with 4 years building production React, Next.js and TypeScript apps for fintech and AI products, doing full-stack work (Node.js, NestJS, PostgreSQL, CI/CD) when needed. I work full-time at Cooperative Bank of Oromia's DxValley, now as a Senior Software Engineer, and part-time on contract for VK Tech.`,
+  `At the bank I delivered the frontends of three financing platforms, leading Michu Mizan, shipping Furtuu and co-building Souqpass: US$6.4M+ financed for 10,000+ customers. At VK Tech I built 12 consumer AI tools (8 live, 200K+ monthly users), from upload pipelines to generation queue UX and result galleries, plus the shared generative AI service behind them. For the newer tools I owned Next.js SSR/ISR, web performance and technical SEO.`,
+  `I also built most of the web and Electron apps for Revy AI, a real-estate assistant with a video avatar and AI phone calls, and I wrote Qen, an open-source calendar library with 1.9K+ npm downloads a month.`,
 ];
 
 export const aboutFacts = [
   { label: "Based in", value: "Addis Ababa (UTC+3)" },
-  { label: "Works", value: "Remote" },
+  { label: "Works", value: "Remote or relocation" },
   { label: "Experience", value: "4 years in production" },
 ];
 
@@ -19,47 +20,46 @@ export interface ExperienceItem {
 export const experience: ExperienceItem[] = [
   {
     company: "Cooperative Bank of Oromia — DxValley",
-    context: "Addis Ababa · Digital innovation arm of the bank",
+    context: "Addis Ababa · Full-time · Digital innovation arm of the bank",
     roles: [
       { title: "Senior Software Engineer, Payments Platform Innovation", period: "10/2026 – Now" },
       { title: "Software Engineer", period: "09/2022 – 10/2026" },
     ],
-    work: ["CoopScale HR platform", "Michu Mizan", "Souqpass", "Zakat & Awqaf platform"],
+    work: ["Michu Mizan", "Furtuu", "Souqpass", "Zakat & Awqaf platform", "CoopScale HR platform"],
   },
   {
     company: "VK Tech",
-    context: "Remote · Beijing · AI product studio",
-    roles: [{ title: "Frontend Engineer (Contract)", period: "03/2025 – Now" }],
-    work: ["Fleet OS", "AIGC API", "Charge Hub"],
+    context: "Remote · Beijing · Contract, part-time",
+    roles: [{ title: "Frontend Engineer", period: "03/2025 – Now" }],
+    work: ["12 AI SaaS tools", "AIGC API", "Charge Hub", "Fleet OS"],
   },
   {
-    company: "Keradion",
-    context: "Addis Ababa",
-    roles: [{ title: "Frontend Engineer (Contract)", period: "01/2025 – 03/2025" }],
-    work: ["Omicron", "Eyoha"],
+    company: "Freelance and contract work",
+    context: "Remote and Addis Ababa · Part-time",
+    roles: [
+      { title: "Frontend Engineer · Revy AI (Upwork client)", period: "2025" },
+      { title: "Frontend Engineer · Keradion (contract)", period: "01/2025 – 03/2025" },
+    ],
+    work: ["Revy AI", "Omicron", "Eyoha"],
   },
 ];
 
 export const stackGroups = [
   {
-    name: "Frontend",
-    items: ["TypeScript", "React", "Next.js", "TanStack Query", "Zustand", "Redux Toolkit", "Tailwind CSS"],
+    name: "Front-end",
+    items: ["TypeScript", "JavaScript", "HTML", "CSS", "React", "Next.js (App Router, SSR/ISR)", "Tailwind CSS", "shadcn/ui", "Redux Toolkit", "Zustand", "TanStack Query", "Electron", "Responsive design"],
   },
   {
-    name: "Backend",
-    items: ["Node.js", "NestJS", "REST", "GraphQL", "Auth & RBAC", "Background jobs"],
+    name: "AI integration",
+    items: ["LLM APIs (OpenAI, Google AI)", "Multi-model apps", "Vercel AI SDK", "Mem0", "HeyGen streaming avatars", "Vapi voice agents", "Vision and image generation", "Async job queues", "Streaming UIs"],
   },
   {
-    name: "Data",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase", "Firebase"],
+    name: "Backend and data",
+    items: ["Node.js", "NestJS", "REST APIs", "PostgreSQL", "Supabase", "Stripe"],
   },
   {
-    name: "Testing & observability",
-    items: ["Playwright", "Prometheus", "Grafana", "Sentry"],
-  },
-  {
-    name: "Infrastructure",
-    items: ["Kubernetes", "Docker", "GitHub Actions", "Linux VMs", "AWS", "Cloudflare", "Vercel"],
+    name: "Quality and delivery",
+    items: ["Jest", "Playwright", "Lighthouse", "Core Web Vitals", "Accessibility", "Technical SEO", "Docker", "Kubernetes", "GitHub Actions", "CI/CD", "Vercel", "Sentry", "Claude Code", "Cursor"],
   },
 ];
 
@@ -77,7 +77,7 @@ export const education = [
 
 export const contactMe = `Have a role, a project, or a question? Send a message below or reach me directly. I read everything and reply by email.`;
 
-export const heroMobile = `Senior software engineer with four years building production systems end to end: React and Next.js frontends, backend APIs, and the CI/CD and Kubernetes infrastructure they run on.`;
+export const heroMobile = `Frontend engineer with 4 years building production React, Next.js and TypeScript apps for AI products and fintech. Based in Addis Ababa (UTC+3), open to remote or relocation.`;
 
 
 export interface AchievementItem {
@@ -111,20 +111,20 @@ export const achievementsList: AchievementItem[] = [
     postfix: "",
   },
   {
-    metric: "Disbursed via lending platforms",
-    value: "210",
-    prefix: "ETB ",
+    metric: "Financed via bank platforms",
+    value: "6.4",
+    prefix: "US$ ",
     postfix: "M+",
   },
   {
-    metric: "Borrowers served",
-    value: "4500",
+    metric: "Customers financed",
+    value: "10000",
     prefix: "",
     postfix: "+",
   },
   {
-    metric: "AI tool users",
-    value: "150",
+    metric: "Monthly AI tool users",
+    value: "200",
     prefix: "",
     postfix: "K+",
   },

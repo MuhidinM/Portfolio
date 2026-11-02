@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { BrandMark } from "@/lib/brand";
 import { SITE_DESCRIPTION } from "@/lib/site";
 
-export const alt = "Muhidin Misbah — Senior Software Engineer";
+export const alt = "Muhidin Misbah Dawud — Frontend Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,16 +28,16 @@ export default function OpengraphImage() {
           <BrandMark size={96} accent="#a5b4ff" />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -2, lineHeight: 1.05 }}>Muhidin Misbah</div>
-          <div style={{ fontSize: 44, fontWeight: 600, color: "#a5b4ff", marginTop: 12 }}>Senior Software Engineer</div>
+          <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -2, lineHeight: 1.05 }}>Muhidin Misbah Dawud</div>
+          <div style={{ fontSize: 44, fontWeight: 600, color: "#a5b4ff", marginTop: 12 }}>Frontend Engineer</div>
           <div style={{ fontSize: 26, color: "#a1a1aa", marginTop: 28, maxWidth: 900, lineHeight: 1.4 }}>
             {SITE_DESCRIPTION}
           </div>
         </div>
         <div style={{ display: "flex", gap: 40, fontSize: 24, color: "#d4d4d8" }}>
-          <span>ETB 210M+ disbursed</span>
-          <span>4,500+ borrowers</span>
-          <span>150K+ AI tool users</span>
+          <span>US$6.4M+ financed</span>
+          <span>10,000+ customers</span>
+          <span>200K+ monthly AI tool users</span>
         </div>
       </div>
     ),
