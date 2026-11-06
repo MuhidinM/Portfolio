@@ -257,7 +257,7 @@ const HeroSection = () => {
                 Get in touch
               </span>
             </Link>
-            <a href="/MuhidinMisbah.pdf" download="Muhidin-Misbah-Dawud-Frontend-Engineer-CV.pdf" className="inline-block rounded-2xl">
+            <a href="/MuhidinMisbah.pdf" download="Muhidin-Misbah-Dawud-Full-Stack-Engineer-CV.pdf" className="inline-block rounded-2xl">
               <span
                 ref={cvRef}
                 className="glass-key w-full px-6 py-3 font-medium will-change-transform sm:w-auto"

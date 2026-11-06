@@ -29,7 +29,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Muhidin Misbah Dawud",
   alternateName: "Muhidin Misbah",
-  jobTitle: "Frontend Engineer",
+  jobTitle: "Full-Stack Engineer",
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   email: "mailto:misbahmuhidin3@gmail.com",

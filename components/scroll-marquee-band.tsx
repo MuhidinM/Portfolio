@@ -5,7 +5,7 @@ import { gsap, registerGsap } from "@/lib/gsap-client";
 import { usePrefersReducedMotion } from "@/lib/reduced-motion";
 
 const LINE_A =
-  "FRONTEND — REACT — NEXT.JS — TYPESCRIPT — AI PRODUCTS — FINTECH — ";
+  "FULL-STACK — REACT — NEXT.JS — NODE.JS — AI PRODUCTS — FINTECH — ";
 const LINE_B =
   "LLM APIS — VERCEL AI SDK — NODE.JS — POSTGRESQL — CI/CD — ";
 

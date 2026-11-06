@@ -1,5 +1,5 @@
 export const aboutParagraphs = [
-  `I'm a frontend engineer with 4 years building production React, Next.js and TypeScript apps for fintech and AI products, doing full-stack work (Node.js, NestJS, PostgreSQL, CI/CD) when needed. I work full-time at Cooperative Bank of Oromia's DxValley, now as a Senior Software Engineer, and part-time on contract for VK Tech.`,
+  `I'm a full-stack engineer with 4 years building production web and mobile apps for fintech and AI products: React, Next.js, React Native and TypeScript on Node.js, NestJS and PostgreSQL backends, shipped with CI/CD, Docker, Kubernetes and Sentry. I work full-time at Cooperative Bank of Oromia's DxValley, now as a Senior Software Engineer, and part-time on contract for VK Tech.`,
   `At the bank I delivered the frontends of three financing platforms, leading Michu Mizan, owning Furtuu and co-building Souqpass: US$6.4M+ financed for 10,000+ customers. At VK Tech I built 12 consumer AI tools (8 live, 200K+ monthly users), from upload pipelines to generation queue UX and result galleries, plus the shared generative AI service behind them. For the newer tools I owned Next.js SSR/ISR, web performance and technical SEO.`,
   `I also built most of the web and Electron apps for Revy AI, a real-estate assistant with a video avatar and AI phone calls, and I wrote Qen, an open-source calendar library with 1.9K+ npm downloads a month.`,
 ];
@@ -46,8 +46,8 @@ export const experience: ExperienceItem[] = [
 
 export const stackGroups = [
   {
-    name: "Front-end",
-    items: ["TypeScript", "JavaScript", "HTML", "CSS", "React", "Next.js (App Router, SSR/ISR)", "Tailwind CSS", "shadcn/ui", "Redux Toolkit", "Zustand", "TanStack Query", "Electron", "Responsive design"],
+    name: "Front-end and mobile",
+    items: ["TypeScript", "JavaScript", "HTML", "CSS", "React", "Next.js (App Router, SSR/ISR)", "React Native", "Tailwind CSS", "shadcn/ui", "Redux Toolkit", "Zustand", "TanStack Query", "Electron", "Responsive design"],
   },
   {
     name: "AI integration",
@@ -55,11 +55,11 @@ export const stackGroups = [
   },
   {
     name: "Backend and data",
-    items: ["Node.js", "NestJS", "REST APIs", "PostgreSQL", "Supabase", "Stripe"],
+    items: ["Node.js", "NestJS", "Python", "Go", "REST APIs", "SQL", "PostgreSQL", "Supabase", "Stripe"],
   },
   {
-    name: "Quality and delivery",
-    items: ["Jest", "Playwright", "Lighthouse", "Core Web Vitals", "Accessibility", "Technical SEO", "Docker", "Kubernetes", "GitHub Actions", "CI/CD", "Vercel", "Sentry", "Claude Code", "Cursor"],
+    name: "DevOps, observability and quality",
+    items: ["Git", "Linux", "Jest", "Playwright", "Lighthouse", "Core Web Vitals", "Accessibility", "Technical SEO", "Docker", "Kubernetes", "GitHub Actions", "CI/CD", "Vercel", "Sentry", "Claude Code", "Cursor"],
   },
 ];
 
@@ -77,7 +77,7 @@ export const education = [
 
 export const contactMe = `Have a role, a project, or a question? Send a message below or reach me directly. I read everything and reply by email.`;
 
-export const heroMobile = `Frontend engineer with 4 years building production React, Next.js and TypeScript apps for AI products and fintech. Based in Addis Ababa (UTC+3), open to remote or relocation.`;
+export const heroMobile = `Full-stack engineer with 4 years building production web and mobile apps for AI products and fintech. Based in Addis Ababa (UTC+3), open to remote or relocation.`;
 
 
 export interface AchievementItem {

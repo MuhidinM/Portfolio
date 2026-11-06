@@ -64,12 +64,13 @@
     "id": 3,
     "slug": "furtuu",
     "title": "Furtuu",
-    "description": "Owned the frontend of a farmer financing platform with simple onboarding: US$4.3M+ financed for 5,000+ users. Cooperative Bank of Oromia (DxValley).",
+    "description": "Owned the React Native frontend of a farmer financing mobile app with simple onboarding: US$4.3M+ financed for 5,000+ users. Cooperative Bank of Oromia (DxValley).",
     "image": "",
     "categories": [
       "frontend"
     ],
     "stack": [
+      "React Native",
       "Simple onboarding",
       "Farmer financing"
     ],

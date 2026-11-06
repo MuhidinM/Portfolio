@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { BrandMark } from "@/lib/brand";
 import { SITE_DESCRIPTION } from "@/lib/site";
 
-export const alt = "Muhidin Misbah Dawud — Frontend Engineer";
+export const alt = "Muhidin Misbah Dawud — Full-Stack Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,7 +29,7 @@ export default function OpengraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -2, lineHeight: 1.05 }}>Muhidin Misbah Dawud</div>
-          <div style={{ fontSize: 44, fontWeight: 600, color: "#a5b4ff", marginTop: 12 }}>Frontend Engineer</div>
+          <div style={{ fontSize: 44, fontWeight: 600, color: "#a5b4ff", marginTop: 12 }}>Full-Stack Engineer</div>
           <div style={{ fontSize: 26, color: "#a1a1aa", marginTop: 28, maxWidth: 900, lineHeight: 1.4 }}>
             {SITE_DESCRIPTION}
           </div>
