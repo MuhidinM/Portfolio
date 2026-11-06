@@ -64,7 +64,7 @@
     "id": 3,
     "slug": "furtuu",
     "title": "Furtuu",
-    "description": "Shipped the frontend of a farmer financing platform with simple onboarding: US$4.3M+ financed for 5,000+ users. Cooperative Bank of Oromia (DxValley).",
+    "description": "Owned the frontend of a farmer financing platform with simple onboarding: US$4.3M+ financed for 5,000+ users. Cooperative Bank of Oromia (DxValley).",
     "image": "",
     "categories": [
       "frontend"
@@ -79,10 +79,10 @@
     "published": true,
     "date": "",
     "caseStudy": {
-      "role": "Frontend engineer · Cooperative Bank of Oromia (DxValley)",
+      "role": "Frontend owner · Cooperative Bank of Oromia (DxValley)",
       "context": "Furtuu finances farmers, so onboarding had to be simple for them. It was built inside the bank's digital innovation arm.",
       "work": [
-        "Shipped the platform's frontend.",
+        "Owned the whole frontend.",
         "Simple onboarding for farmers."
       ],
       "outcome": "US$4.3M+ financed for 5,000+ users."
@@ -127,7 +127,7 @@
     "id": 5,
     "slug": "zakat-awqaf-platform",
     "title": "Zakat & Awqaf Platform",
-    "description": "Ethiopia's national zakat and waqf platform. I'm building its donor flows, admin console and CI/CD pipeline to Linux VMs.",
+    "description": "Ethiopia's national zakat and waqf platform. I own its frontend (donor flows and admin console) and its CI/CD pipeline to Linux VMs.",
     "image": "/images/projects/ezac.png",
     "categories": [
       "frontend",
@@ -143,7 +143,7 @@
     "published": true,
     "date": "",
     "caseStudy": {
-      "role": "Frontend and CI/CD · built with the Zakat and Awqaf Commission",
+      "role": "Frontend owner and CI/CD · built with the Zakat and Awqaf Commission",
       "context": "Ethiopia's national platform for zakat and waqf: donors calculate and pay zakat, and the commission manages funds and assets.",
       "work": [
         "Donor flows on the frontend.",
